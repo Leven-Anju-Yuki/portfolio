@@ -3,6 +3,10 @@
   padding: 0;
   /* border: solid 1px red; */
 }
+.logo {
+  width: 10%;
+  right: 50%;
+}
 body {
   background: linear-gradient(rgba(246, 212, 149, 0.457), black),
     url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/image/fond.jpg");
@@ -13,18 +17,16 @@ body {
 }
 section {
   display: flex;
-  /* Utilise Flexbox pour aligner les éléments horizontalement */
+  flex-wrap: wrap;
   flex-direction: row;
-  /* Aligne les éléments horizontalement */
-  align-items: center;
-  /* Centre les éléments verticalement */
-  width: 90%;
-  margin: 0px 200px;
-  margin: auto;
+  align-items: stretch;
+  margin-bottom: 5px;
+  /* padding-top: 5px; */
+  --bs-gutter-x: 0 !important;
 }
 
 /* Style des articles */
-article {
+/* article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -33,14 +35,15 @@ article {
   background-color: rgba(225, 130, 7, 0.603);
   border-radius: 5px;
   padding: 10px;
-}
+} */
 
 /* Style de la colonne latérale */
 aside {
-  width: 100%;
-  border: solid 4px black;
+  width: 10%;
+  border: solid 3px black;
   border-radius: 10px 10px 0 0;
-  margin-left: 20px;
+  margin: 10px 0 0 1px !important;
+  padding: 5px 0;
 }
 button {
   padding: 10px;
@@ -50,10 +53,22 @@ button {
   box-shadow: 3px 3px black;
   cursor: pointer;
   margin: 15px 0;
-
 }
 button:active {
   box-shadow: none;
   transform: translate(3px, 3px);
 }
-img{width: 50%;}
+.accueil img {
+  width: 60%;
+  height: 115px;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1024px) {
+  section {
+    width: 95%;
+    margin-left: 10px !important;
+  }
+}
