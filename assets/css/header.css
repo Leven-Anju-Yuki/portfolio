@@ -1,0 +1,50 @@
+.logo {
+  width: 10%;
+  right: 50%;
+}
+/* Style de la barre de navigation */
+nav ul {
+  display: flex;
+  align-items: stretch;
+  list-style-type: none;
+  text-align: center;
+  position: relative;
+  padding: 5px;
+  width: 100%;
+  flex-direction: row;
+}
+
+/* Style des éléments de la liste de la navigation */
+nav ul li {
+  display: flex;
+  /* Utilise Flexbox pour aligner les éléments horizontalement */
+  align-items: center;
+  /* Centre les éléments verticalement */
+  width: 100%;
+  height: 100%;
+}
+
+/* Style des liens dans la navigation */
+nav ul li a {
+  display: flex;
+  /* Utilise Flexbox pour aligner les éléments horizontalement */
+  justify-content: center;
+  /* Centre le contenu horizontalement */
+  align-items: center;
+  /* Centre le contenu verticalement */
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(255, 255, 255) !important;
+  font-size: 1em;
+  padding: 2px;
+  width: 100%;
+  font-family: "exo", "serif";
+}
+
+/* Style des liens survolés */
+nav a:hover {
+  color: var(--dragon) !important;
+}
+nav a:active {
+  color: var(--dragon) !important;
+}
