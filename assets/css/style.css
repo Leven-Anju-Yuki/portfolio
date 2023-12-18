@@ -1,4 +1,7 @@
-/* ===============DEBUT DES PAGES EN GENERAL=============== */
+:root {
+  --dragon: #ec0000;
+  --fond: rgba(255, 255, 255, 0.7);
+} /* ===============DEBUT DES PAGES EN GENERAL=============== */
 * {
   margin: 0;
   padding: 0;
@@ -33,11 +36,15 @@ h1 {
 }
 /* Style des sections */
 section {
-  display: flex !important;
+  display: flex;
+  /* Utilise Flexbox pour aligner les éléments horizontalement */
   flex-direction: row;
-  align-items: stretch;
+  /* Aligne les éléments horizontalement */
+  align-items: center;
+  /* Centre les éléments verticalement */
   width: 90%;
-  margin: 0 20px;
+  margin: 20px 100px;
+  /* margin: auto; */
 }
 
 /* Style des articles */
@@ -46,25 +53,37 @@ article {
   flex-direction: column;
   justify-content: space-around;
   align-items: stretch;
-  width: 90%;
-  background-color: rgba(255, 255, 255, 0.7);
+  width: 50%;
+  background-color: var(--fond);
   border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  box-shadow: 3px 3px 4px 0px var(--dragon);
 }
-
+.articlemax {
+  width: 100%;
+  margin: 1% 0 1% 0;
+}
 /* Style de la colonne latérale */
 aside {
   width: 50%;
   border: none;
   display: flex;
 }
-img {
-  width: 100%;
+section aside img {
+  width: 100%;  margin-right: 10px;
+  border-radius: 20px 20px 0 0;
+  border: solid rgba(0, 0, 0, 0.152);
+  box-shadow: 3px 3px 4px 0px var(--dragon);
+
 }
 p {
   padding: 10px;
   text-align: left;
 }
-div{display: block;}
+div {
+  display: block;
+}
 @media screen and (max-width: 1024px) {
   /* section {
     /* width: 95%;
