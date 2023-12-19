@@ -1,7 +1,8 @@
 :root {
   --dragon: #ec0000;
   --fond: rgba(255, 255, 255, 0.7);
-} /* ===============DEBUT DES PAGES EN GENERAL=============== */
+}
+ /* ===============DEBUT DES PAGES EN GENERAL=============== */
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +44,7 @@ section {
   align-items: center;
   /* Centre les éléments verticalement */
   width: 90%;
-  margin: 20px 100px;
+  margin: 20px 100px !important;
   /* margin: auto; */
 }
 
@@ -71,12 +72,13 @@ aside {
   display: flex;
 }
 section aside img {
-  width: 100%;  margin-right: 10px;
+  width: 100%;
+  margin-right: 10px;
   border-radius: 20px 20px 0 0;
   border: solid rgba(0, 0, 0, 0.152);
   box-shadow: 3px 3px 4px 0px var(--dragon);
-
 }
+
 p {
   padding: 10px;
   text-align: left;
@@ -84,6 +86,15 @@ p {
 div {
   display: block;
 }
+/*=================PAGE DRAGONS=================*/
+.image50 {
+  width: 50% !important;
+}
+.imageheight {
+  height: 200px;
+}
+/*=================FIN PAGE DRAGONS=================*/
+
 @media screen and (max-width: 1024px) {
   /* section {
     /* width: 95%;
