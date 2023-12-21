@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.713)),
+  background: linear-gradient(rgba(246, 204, 125, 0.645), rgba(0, 0, 0, 0.713)),
     url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/image/fond.jpg");
   background-attachment: fixed;
   background-size: cover;
