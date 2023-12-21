@@ -20,6 +20,7 @@ button {
   box-shadow: 3px 3px black;
   cursor: pointer;
   margin: 15px 0;
+  text-shadow: 1px 1px white !important;
 }
 button:active {
   box-shadow: none;
@@ -32,8 +33,11 @@ h1 {
 }
 h2 {
   color: black !important;
-  text-shadow:  1px 1px white !important;
+  text-shadow: 1px 1px white !important;
   text-transform: uppercase !important;
+}
+h4 {
+  text-transform: capitalize !important;
 }
 .accueil img {
   width: 60%;
