@@ -30,7 +30,11 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 }
-
+h2 {
+  color: black;
+  text-shadow:  1px 1px white !important;
+  text-transform: uppercase !important;
+}
 .accueil img {
   width: 60%;
   height: 115px;

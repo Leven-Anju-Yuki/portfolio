@@ -10,7 +10,7 @@
 }
 
 body {
-  background: linear-gradient(rgba(246, 212, 149, 0.457), black),
+  background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
     url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/image/fond.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -21,7 +21,7 @@ button {
   padding: 10px;
   border-radius: 10px;
   border: 2px solid black;
-  background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.802));
+  background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.816));
   box-shadow: 3px 3px black;
   cursor: pointer;
   margin: 15px 0;
@@ -38,6 +38,7 @@ h1 {
 h2 {
   font-size: 2em;
   color: black;
+  text-shadow:  1px 1px white !important;
   text-transform: uppercase !important;
 }
 /* Style des sections */
