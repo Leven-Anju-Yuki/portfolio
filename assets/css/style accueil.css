@@ -31,7 +31,7 @@ h1 {
   text-transform: uppercase;
 }
 h2 {
-  color: black;
+  color: black !important;
   text-shadow:  1px 1px white !important;
   text-transform: uppercase !important;
 }
