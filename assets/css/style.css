@@ -2,7 +2,7 @@
   --dragon: #ec0000;
   --fond: rgba(255, 255, 255, 0.7);
 }
- /* ===============DEBUT DES PAGES EN GENERAL=============== */
+/* ===============DEBUT DES PAGES EN GENERAL=============== */
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +34,11 @@ button:active {
 h1 {
   text-align: center;
   text-transform: uppercase;
+}
+h2 {
+  font-size: 2em;
+  color: black;
+  text-transform: uppercase !important;
 }
 /* Style des sections */
 section {
@@ -93,6 +98,22 @@ div {
 .imageheight {
   height: 200px;
 }
+.accordion-body {
+  background-color: transparent !important;
+}
+.accordion {
+  width: 90%;
+  margin: 20px 100px !important;
+}
+.accordion-item {
+  background-color: transparent !important;
+  border: none !important;
+}
+.accordion-button:not(.collapsed) {
+  color: red !important;
+  background-color: none;
+  box-shadow: none !important;
+}
 /*=================FIN PAGE DRAGONS=================*/
 
 @media screen and (max-width: 1024px) {
@@ -100,4 +121,26 @@ div {
     /* width: 95%;
     margin-left: 10px !important; 
   } */
+  section {
+    display: block;
+    margin: 0 !important;
+    /* border: black solid 1px; */
+  }
+  .accordion {
+    width: 90%;
+    margin: 5px 25px !important;
+  }
+
+  article {
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+  }
+  .magasin div aside {
+    display: block;
+  }
+  .magasin div aside img {
+    width: 75%;
+  }
 }

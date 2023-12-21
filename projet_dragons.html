@@ -25,73 +25,172 @@
         </ul>
       </nav>
     </header>
-    <section>
-      <article>
-        <p>
-          Pour ce projet, j'ai choisi le thème des dragons et j'ai mis en place plusieurs menus, dont un principal et
-          quatre menus secondaires.
-          <br /><br />
-          Le menu principal est conçu pour offrir une navigation intuitive et claire, permettant aux utilisateurs de se
-          diriger facilement vers les différentes sections du site. Il sert de point central pour explorer les diverses
-          fonctionnalités liées aux dragons.
-          <br /><br />
-          Les quatre menus secondaires sont spécifiquement élaborés pour approfondir les aspects particuliers du thème
-          des dragons. Chaque menu secondaire se concentre sur un domaine spécifique, offrant une expérience plus ciblée
-          aux utilisateurs intéressés par des aspects particuliers des dragons, tels que l'histoire, les différentes
-          espèces, les légendes associées, et bien plus encore.
-        </p>
-      </article>
-      <aside><img src="./assets/image/dragon/films.png" alt="" /></aside>
-    </section>
-    <section class="row justify-content-center ">
-      <aside class="col-12 col-lg-4">
-        <img class="imageheight" src="./assets/image/dragon/pagesdragons.png" alt="" />
-      </aside>
-      <aside class="col-12 col-lg-4">
-        <img class="imageheight" src="./assets/image/dragon/pageshumains.png" alt=" " />
-      </aside>
-      <aside class="col-12 col-lg-4">
-        <img class="imageheight" src="./assets/image/dragon/modal ouvert.png" alt="" />
-      </aside>
-    </section>
-    <section>
-      <article class="articlemax">
-        <p>
-          Sur la page dédiée aux dragons et aux humains, j'ai mis en place un système de tags permettant de trier et de
-          catégoriser facilement les différentes espèces. Chaque tag représente une caractéristique spécifique,
-          facilitant ainsi la navigation pour les utilisateurs souhaitant explorer des catégories particulières.
-          <br /><br />
-          Lorsque vous cliquez sur l'un des personnages, une modal s'ouvre, affichant des détails détaillés sur le
-          dragon ou l'humain sélectionné. Cette modal offre une présentation visuelle attrayante, mettant en avant les
-          caractéristiques uniques du personnage, son histoire, ses compétences, ou toute autre information pertinente.
-        </p>
-      </article>
-    </section>
-    <section>
-      <aside><img src="./assets/image/dragon/quiz.png" alt="" /></aside>
-      <article>
-        <p>
-          Chaque questions est conçue pour être informative et divertissante, offrant ainsi aux utilisateurs une
-          expérience enrichissante tout en explorant l'univers fascinant des dragons à travers différents médias.<br /><br />
-          N'hésitez pas à participer et à tester vos connaissances dans ces différentes catégories. Amusez-vous bien !
-        </p>
-      </article>
-    </section>
-    <section>
-      <article>
-        <p>
-          Dans la section dédiée aux personnages, films et séries, vous trouverez des diaporamas qui mettent en avant
-          l'univers riche et captivant des dragons. <br /><br />
-          Ces diaporamas sont conçus pour captiver votre imagination et vous plonger davantage dans l'univers
-          fantastique des dragons. N'hésitez pas à parcourir les images, à en apprendre davantage sur chaque personnage
-          et à vous laisser emporter par la magie des affiches de films et de séries.
-        </p>
-      </article>
-      <aside>
-        <img class="image50" src="./assets/image/dragon/diapo.png" alt="" />
-        <img class="image50" src="./assets/image/dragon/diapoaccueil.png" alt="" />
-      </aside>
-    </section>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Les différents menu
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section>
+              <article>
+                <p>
+                  Pour ce projet, j'ai choisi le thème des dragons et j'ai mis en place plusieurs menus, dont un
+                  principal et quatre menus secondaires.
+                  <br /><br />
+                  Le menu principal est conçu pour offrir une navigation intuitive et claire, permettant aux
+                  utilisateurs de se diriger facilement vers les différentes sections du site. Il sert de point central
+                  pour explorer les diverses fonctionnalités liées aux dragons.
+                  <br /><br />
+                  Les quatre menus secondaires sont spécifiquement élaborés pour approfondir les aspects particuliers du
+                  thème des dragons. Chaque menu secondaire se concentre sur un domaine spécifique, offrant une
+                  expérience plus ciblée aux utilisateurs intéressés par des aspects particuliers des dragons, tels que
+                  l'histoire, les différentes espèces, les légendes associées, et bien plus encore.
+                </p>
+              </article>
+              <aside><img src="./assets/image/dragon/films.png" alt="" /></aside>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Les tags et les modals
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body dragon">
+            <section class="row justify-content-center">
+              <aside class="col-12 col-lg-4">
+                <img class="imageheight" src="./assets/image/dragon/pagesdragons.png" alt="" />
+              </aside>
+              <aside class="col-12 col-lg-4">
+                <img class="imageheight" src="./assets/image/dragon/pageshumains.png" alt=" " />
+              </aside>
+              <aside class="col-12 col-lg-4">
+                <img class="imageheight" src="./assets/image/dragon/modal ouvert.png" alt="" />
+              </aside>
+            </section>
+            <section>
+              <article class="articlemax">
+                <p>
+                  Sur la page dédiée aux dragons et aux humains, j'ai mis en place un système de tags permettant de
+                  trier et de catégoriser facilement les différentes espèces. Chaque tag représente une caractéristique
+                  spécifique, facilitant ainsi la navigation pour les utilisateurs souhaitant explorer des catégories
+                  particulières.
+                  <br /><br />
+                  Lorsque vous cliquez sur l'un des personnages, une modal s'ouvre, affichant des détails détaillés sur
+                  le dragon ou l'humain sélectionné. Cette modal offre une présentation visuelle attrayante, mettant en
+                  avant les caractéristiques uniques du personnage, son histoire, ses compétences, ou toute autre
+                  information pertinente.
+                </p>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Les diapo
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <section>
+              <aside>
+                <img class="image50" src="./assets/image/dragon/diapo.png" alt="" />
+                <img class="image50" src="./assets/image/dragon/diapoaccueil.png" alt="" />
+              </aside>
+              <article>
+                <p>
+                  Dans la section dédiée aux personnages, films et séries, vous trouverez des diaporamas qui mettent en
+                  avant l'univers riche et captivant des dragons. <br /><br />
+                  Ces diaporamas sont conçus pour captiver votre imagination et vous plonger davantage dans l'univers
+                  fantastique des dragons. N'hésitez pas à parcourir les images, à en apprendre davantage sur chaque
+                  personnage et à vous laisser emporter par la magie des affiches de films et de séries.
+                </p>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+            Le quiz
+          </button>
+        </h2>
+        <div
+          id="collapseFour"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFour"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body dragon">
+            <section>
+              <article>
+                <p>
+                  Chaque questions est conçue pour être informative et divertissante, offrant ainsi aux utilisateurs une
+                  expérience enrichissante tout en explorant l'univers fascinant des dragons à travers différents
+                  médias.<br /><br />
+                  N'hésitez pas à participer et à tester vos connaissances dans ces différentes catégories. Amusez-vous
+                  bien !
+                </p>
+              </article>
+              <aside><img src="./assets/image/dragon/quiz.png" alt="" /></aside>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/jquery-3.6.1.min.js"></script>
   </body>
