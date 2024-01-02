@@ -49,7 +49,8 @@ h4 {
 }
 .maj a {
   color: transparent;
-  text-shadow: none;  cursor:pointer !important;
+  text-shadow: none;
+  cursor:pointer !important;
 
 }
 section {
