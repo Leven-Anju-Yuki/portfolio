@@ -12,7 +12,7 @@ body {
   background-position: center;
   z-index: -100;
 }
-button {
+.bouton {
   padding: 10px;
   border-radius: 10px;
   border: 2px solid black;
@@ -22,7 +22,7 @@ button {
   margin: 15px 0;
   text-shadow: 1px 1px white !important;
 }
-button:active {
+.bouton:active {
   box-shadow: none;
   transform: translate(3px, 3px);
 }
@@ -42,6 +42,15 @@ h4 {
 .accueil img {
   width: 60%;
   height: 115px;
+}
+.maj {
+  background: transparent;
+  border: 0px solid transparent;
+}
+.maj a {
+  color: transparent;
+  text-shadow: none;  cursor:pointer !important;
+
 }
 section {
   display: flex;

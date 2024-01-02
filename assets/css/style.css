@@ -38,7 +38,7 @@ h1 {
 h2 {
   font-size: 2em;
   color: black;
-  text-shadow:  1px 1px white !important;
+  text-shadow: 1px 1px white !important;
   text-transform: uppercase !important;
 }
 /* Style des sections */
@@ -99,6 +99,8 @@ div {
 .imageheight {
   height: 200px;
 }
+/*=================FIN PAGE DRAGONS=================*/
+/*=================PARTIE ACCORDÉON=================*/
 .accordion-body {
   background-color: transparent !important;
 }
@@ -115,7 +117,7 @@ div {
   background-color: none;
   box-shadow: none !important;
 }
-/*=================FIN PAGE DRAGONS=================*/
+/*=================FIN PARTIE ACCORDÉON=================*/
 
 @media screen and (max-width: 1024px) {
   /* section {
