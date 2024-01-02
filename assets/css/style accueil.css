@@ -45,13 +45,12 @@ h4 {
 }
 .maj {
   background: transparent;
-  border: 0px solid transparent;
+  border: 0px solid transparent; 
 }
 .maj a {
   color: transparent;
-  text-shadow: none;
-  cursor:pointer !important;
-
+  text-shadow: none; 
+  cursor:default !important;
 }
 section {
   display: flex;
