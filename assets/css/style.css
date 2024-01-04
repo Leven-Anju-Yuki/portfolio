@@ -17,6 +17,14 @@ body {
   background-position: center;
   z-index: -100;
 }
+.jeux {
+  background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+    url("../image/mangajeux/css\ accueil\ arcane.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -100;
+}
 button {
   padding: 10px;
   border-radius: 10px;
@@ -147,5 +155,11 @@ div {
   }
   .magasin div aside img {
     width: 75%;
+  }
+  .jeux {
+    background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+      url("../image/mangajeux/css\ accueil\ arcane\ tel.jpg");
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
