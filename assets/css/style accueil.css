@@ -1,79 +1,79 @@
 * {
-  margin: 0;
-  padding: 0;
-  /* border: solid 1px red; */
+    margin: 0;
+    padding: 0;
+    /* border: solid 1px red; */
 }
 
 body {
-  background: linear-gradient(rgba(246, 204, 125, 0.645), rgba(0, 0, 0, 0.713)),
-    url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/image/fond.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  z-index: -100;
+    background: linear-gradient(rgba(246, 204, 125, 0.645), rgba(0, 0, 0, 0.713)),
+        url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
 }
 .bouton {
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid black;
-  background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.802));
-  box-shadow: 3px 3px black;
-  cursor: pointer;
-  margin: 15px 0;
-  text-shadow: 1px 1px white !important;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.802));
+    box-shadow: 3px 3px black;
+    cursor: pointer;
+    margin: 15px 0;
+    text-shadow: 1px 1px white !important;
 }
 .bouton:active {
-  box-shadow: none;
-  transform: translate(3px, 3px);
+    box-shadow: none;
+    transform: translate(3px, 3px);
 }
 
 h1 {
-  text-align: center;
-  text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
 }
 h2 {
-  color: black !important;
-  text-shadow: 1px 1px white !important;
-  text-transform: uppercase !important;
+    color: black !important;
+    text-shadow: 1px 1px white !important;
+    text-transform: uppercase !important;
 }
 h4 {
-  text-transform: capitalize !important;
+    text-transform: capitalize !important;
 }
 .accueil img {
-  width: 60%;
-  height: 115px;
+    width: 60%;
+    height: 115px;
 }
 .maj {
-  background: transparent;
-  border: 0px solid transparent; 
+    background: transparent;
+    border: 0px solid transparent;
 }
 .maj a {
-  color: transparent;
-  text-shadow: none; 
-  cursor:default !important;
+    color: transparent;
+    text-shadow: none;
+    cursor: default !important;
 }
 section {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: stretch;
-  margin-bottom: 5px;
-  /* padding-top: 5px; */
-  --bs-gutter-x: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 5px;
+    /* padding-top: 5px; */
+    --bs-gutter-x: 0 !important;
 }
 /* Style de la colonne latérale */
 aside {
-  width: 10%;
-  border: solid 3px black;
-  border-radius: 10px 10px 0 0;
-  margin: 10px 0 0 1px !important;
-  padding: 5px 0;
+    width: 10%;
+    border: solid 3px black;
+    border-radius: 10px 10px 0 0;
+    margin: 10px 0 0 1px !important;
+    padding: 5px 0;
 }
 /* ===============FIN DE LA PAGE ACCUEIL=============== */
 
 @media screen and (max-width: 1024px) {
-  section {
-    width: 95%;
-    margin-left: 10px !important;
-  }
+    section {
+        width: 95%;
+        margin-left: 10px !important;
+    }
 }
