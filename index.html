@@ -1,153 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/css/style accueil.css" />
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style accueil.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png" />
 
-        <title>Portfolio</title>
-    </head>
+    <title>Portfolio</title>
+  </head>
 
-    <body class="accueil">
-        <button class="maj"><a href="./mise a jour.html">mise a jour</a></button>
-        <h1>Mon portfolio</h1>
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img
-                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701425376/Dragon/films/dragon%202/montage%20de%20tt.jpg"
-                        alt=""
-                    /><!--a creer une page-->
-                    <h2>projet Dragons</h2>
-                    <a href="projet_dragons.html"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img
-                        src="./assets/image/mangajeux/css accueil arcane.jpeg"
-                        alt=" "
-                    /><!--a créer une page-->
-                    <h2>projet manga jeux</h2>
-                    <a href="projet_manga_jeux.html"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/magasin/magasin.png" alt="" /><!--a créer une page-->
-                    <h2>Magasin</h2>
-                    <a href="magasin.html"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-        </section>
+  <body class="accueil">
+    <header>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="./index.html"><img src="./assets/image/portefeuille.png" alt=""></a>
 
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/calculatrice.png" alt="" />
-                    <h2>calculatrice en front</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/CalculatriceFront/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/calculatriceAlert.png" alt="" />
-                    <h2>calculatrice en Alert</h2>
-                    <a
-                        target="_blank"
-                        href="https://leven-anju-yuki.github.io/CalculatriceEnAlert/"
-                    >
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/convertisseur.png" alt="" />
-                    <h2>convertisseur en euro</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/Convertisseur-euro/"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                    <!-- target="_blank" permet d'ouvrir le lien dans une nouvelles fenetres -->
-                </center>
-            </aside>
-        </section>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Mes projet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./apropos.html">A propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./competence.html">Mes compétence</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <button class="maj"><a href="./mise a jour.html">mise a jour</a></button>
+    <h1>Mon portfolio</h1>
+    <section class="row justify-content-center">
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img
+            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701425376/Dragon/films/dragon%202/montage%20de%20tt.jpg"
+            alt=""
+          /><!--a creer une page-->
+          <h2>projet Dragons</h2>
+          <a href="projet_dragons.html"
+            ><button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/mangajeux/css accueil arcane.jpeg" alt=" " /><!--a créer une page-->
+          <h2>projet manga jeux</h2>
+          <a href="projet_manga_jeux.html"
+            ><button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/magasin/magasin.png" alt="" /><!--a créer une page-->
+          <h2>Magasin</h2>
+          <a href="magasin.html"
+            ><button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+    </section>
+    <section class="row justify-content-center">
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/calculatrice.png" alt="" />
+          <h2>calculatrice en front</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/CalculatriceFront/">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
 
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/todolist.png" alt="" />
-                    <h2>To do list</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/ToDoList/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/formulaire.png" alt="" />
-                    <h2>formulaire</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/formulaire/"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/quiz.png" alt="" />
-                    <h2>quiz</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/quiz/"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-        </section>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/calculatriceAlert.png" alt="" />
+          <h2>calculatrice en Alert</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/CalculatriceEnAlert/">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/convertisseur.png" alt="" />
+          <h2>convertisseur en euro</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/Convertisseur-euro/"
+            ><button class="bouton"><h4>voir plus</h4></button></a
+          >
+          <!-- target="_blank" permet d'ouvrir le lien dans une nouvelles fenetres -->
+        </center>
+      </aside>
+    </section>
+    <section class="row justify-content-center">
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/todolist.png" alt="" />
+          <h2>To do list</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/ToDoList/">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/formulaire.png" alt="" />
+          <h2>formulaire</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/formulaire/"
+            ><button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/quiz.png" alt="" />
+          <h2>quiz</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/quiz/"
+            ><button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+    </section>
+    <section class="row justify-content-center">
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="assets/image/jeux de bulles.png" alt="" />
+          <h2>jeux de bulles</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/jeux-de-bulles/">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/generateur.png" alt="" /><!--a recuperer sur github-->
+          <h2>generateur de mot</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/generateur-de-mot/">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="./assets/image/shifumi.png" alt="" />
+          <h2>Shifumi</h2>
+          <a target="_blank" href="https://leven-anju-yuki.github.io/shifumi/">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+    </section>
+    <section class="row justify-content-center">
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
+          <h2>En traveaux</h2>
+          <a target="_blank" href="./travaux.html">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img
+            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
+            alt=""
+          /><!--a recuperer sur github-->
+          <h2>En traveaux</h2>
+          <a target="_blank" href="./travaux.html">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+      <aside class="col-12 col-lg-3">
+        <center>
+          <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
+          <h2>En traveaux</h2>
+          <a target="_blank" href="./travaux.html">
+            <button class="bouton"><h4>voir plus</h4></button></a
+          >
+        </center>
+      </aside>
+    </section>
 
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="assets/image/jeux de bulles.png" alt="" />
-                    <h2>jeux de bulles</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/jeux-de-bulles/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img src="./assets/image/generateur.png" alt="" /><!--a recuperer sur github-->
-                    <h2>generateur de mot</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/generateur-de-mot/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            <aside class="col-12 col-lg-3">
-                <center>
-                    <img
-                        src="./assets/image/shifumi.png"
-                        alt=""
-                    />
-                    <h2>Shifumi</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/shifumi/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-        </section>
-
-        <!-- <section class="row justify-content-center">
+    <!-- <section class="row justify-content-center">
         <aside class=" col-12 col-lg-3 ">
             <img src="./image/dragons" alt="">
             <h2></h2>
@@ -162,7 +208,8 @@
         </aside>
     </section> -->
 
-        <script src="./assets/js/bootstrap.min.js"></script>
-        <script src="./assets/js/jquery-3.6.1.min.js"></script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
