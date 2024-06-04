@@ -41,7 +41,7 @@ h4 {
 }
 .accueil img {
     width: 60%;
-    height: 115px;
+    height: 130px !important;
 }
 .maj {
     background: transparent;
@@ -69,6 +69,7 @@ aside {
     margin: 10px 0 0 1px !important;
     padding: 5px 0;
 }
+
 /* ===============FIN DE LA PAGE ACCUEIL=============== */
 
 @media screen and (max-width: 1024px) {
