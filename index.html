@@ -11,6 +11,16 @@
     </head>
 
     <body class="accueil">
+        <button class="maj"><a href="./mise a jour.html">mise a jour</a></button>
+        <h1>Mon portfolio</h1>
+        <div class="filters">
+            <button class="all" onclick="filterProjects('all')">Tous</button>
+            <button class="js" onclick="filterProjects('js')">JavaScript</button>
+            <button class="php" onclick="filterProjects('php')">PHP</button>
+            <button class="html" onclick="filterProjects('html')">HTML/CSS</button>
+            <!-- Ajoutez plus de boutons de filtre selon vos catégories -->
+        </div>
+        <div id="no-results" class="no-results">Aucun projet trouvé dans cette catégorie.</div>
         <!-- <header>
             <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 <!- Brand ->
@@ -44,10 +54,8 @@
                 </div>
             </nav>
         </header> -->
-        <button class="maj"><a href="./mise a jour.html">mise a jour</a></button>
-        <h1>Mon portfolio</h1>
         <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 php">
                 <center>
                     <img
                         src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701425376/Dragon/films/dragon%202/montage%20de%20tt.jpg"
@@ -59,7 +67,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 php">
                 <center>
                     <img
                         src="./assets/image/mangajeux/css accueil arcane.jpeg"
@@ -71,7 +79,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 php">
                 <center>
                     <img src="./assets/image/magasin/magasin.png" alt="" /><!--a créer une page-->
                     <h2>Magasin</h2>
@@ -80,9 +88,7 @@
                     >
                 </center>
             </aside>
-        </section>
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/calculatrice.png" alt="" />
                     <h2>calculatrice en front</h2>
@@ -91,8 +97,7 @@
                     >
                 </center>
             </aside>
-
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/calculatriceAlert.png" alt="" />
                     <h2>calculatrice en Alert</h2>
@@ -104,7 +109,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/convertisseur.png" alt="" />
                     <h2>convertisseur en euro</h2>
@@ -114,9 +119,7 @@
                     <!-- target="_blank" permet d'ouvrir le lien dans une nouvelles fenetres -->
                 </center>
             </aside>
-        </section>
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/todolist.png" alt="" />
                     <h2>To do list</h2>
@@ -125,7 +128,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/formulaire.png" alt="" />
                     <h2>formulaire</h2>
@@ -134,7 +137,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/quiz.png" alt="" />
                     <h2>quiz</h2>
@@ -143,9 +146,7 @@
                     >
                 </center>
             </aside>
-        </section>
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="assets/image/jeux de bulles.png" alt="" />
                     <h2>jeux de bulles</h2>
@@ -154,7 +155,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/generateur.png" alt="" /><!--a recuperer sur github-->
                     <h2>générateur de mot</h2>
@@ -163,7 +164,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/shifumi.png" alt="" />
                     <h2>Shifumi</h2>
@@ -172,9 +173,7 @@
                     >
                 </center>
             </aside>
-        </section>
-        <section class="row justify-content-center">
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="assets/image/age.png" alt="" />
                     <h2>âge et signes astro</h2>
@@ -183,7 +182,7 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
                     <img src="./assets/image/pourcentage.png" alt="" /><!--a recuperer sur github-->
                     <h2>Promotion</h2>
@@ -192,12 +191,9 @@
                     >
                 </center>
             </aside>
-            <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
                 <center>
-                    <img
-                        src="./assets/image/clickergame.png"
-                        alt=""
-                    />
+                    <img src="./assets/image/clickergame.png" alt="" />
                     <h2>clikergame</h2>
                     <a target="_blank" href="https://leven-anju-yuki.github.io/clikergame/">
                         <button class="bouton"><h4>voir plus</h4></button></a
@@ -224,5 +220,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="assets/js/filtre.js"></script>
     </body>
 </html>
