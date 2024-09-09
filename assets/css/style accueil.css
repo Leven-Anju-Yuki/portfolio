@@ -3,7 +3,9 @@
     padding: 0;
     /* border: solid 1px red; */
 }
-
+:root {
+    --htmlcss: linear-gradient(70deg, #e34f26 50%, #2965f1 50%);
+}
 body {
     background: linear-gradient(rgba(246, 204, 125, 0.645), rgba(0, 0, 0, 0.713)),
         url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
@@ -55,8 +57,18 @@ body {
 .filters .css {
     border: 4px solid #2965f1;
 }
+.filters .htmlcss {
+   border-left:    4px solid #e34f26;
+    border-top: 4px solid #e34f26;
+  border-right: 4px solid #2965f1;
+    border-bottom: 4px solid #2965f1;
+}
+
 .filters .all {
     border: 4px solid #6c757d;
+}
+.filters .symfony {
+    border: 4px solid black;
 }
 .filters button:hover {
     opacity: 0.8;
