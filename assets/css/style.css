@@ -6,9 +6,14 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "police", "serif";
+
   /* border: solid 1px red; */
 }
-
+@font-face {
+  font-family: police;
+  src: url(../font/NotoSerifBalinese-Regular.ttf);
+}
 body {
   background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
     url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
@@ -108,6 +113,49 @@ div {
   height: 200px;
 }
 /*=================FIN PAGE DRAGONS=================*/
+/*=================PAGE A PROPOS=================*/
+.apropos section .articlemax h3 {
+  text-decoration: underline red;
+}
+.apropos h2 {
+  margin-left: 10px;
+}
+.apropos section .articlemax {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+.apropos section aside img{
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+.logo-competence {
+  width: 15%;
+}
+.azetmoi {
+  width: 90%;
+}
+/* .sectionazetmoi {
+  display: flex;
+  width: 96%;
+} */
+.sectionazetmoi article {
+  width: 90%;
+}
+.sectionazetmoi article strong {
+  color: red;
+}
+.sectionazetmoi article h2 {
+  text-transform: none !important;
+  text-align: center;
+  text-decoration: underline red;
+}
+.sectionazetmoi aside {
+  width: 50%;
+}
+
+/*=================FIN PAGE A PROPOS=================*/
 /*=================PARTIE ACCORDÉON=================*/
 .accordion-body {
   background-color: transparent !important;
@@ -142,11 +190,7 @@ div {
   .sectionazetmoi article {
     width: 90%;
   }
-  .sectionazetmoi article h2 {
-    text-transform: none !important;
-    text-align: center;
-   text-decoration: underline red;
-  }
+
   .sectionazetmoi aside {
     width: 50%;
   }
