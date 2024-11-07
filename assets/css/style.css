@@ -132,6 +132,25 @@ div {
     /* width: 95%;
     margin-left: 10px !important; 
   } */
+  .azetmoi {
+    width: 90%;
+  }
+  /* .sectionazetmoi {
+    display: flex;
+    width: 96%;
+  } */
+  .sectionazetmoi article {
+    width: 90%;
+  }
+  .sectionazetmoi article h2 {
+    text-transform: none !important;
+    text-align: center;
+   text-decoration: underline red;
+  }
+  .sectionazetmoi aside {
+    width: 50%;
+  }
+
   section {
     display: block;
     margin: 0 !important;

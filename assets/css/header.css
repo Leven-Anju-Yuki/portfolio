@@ -4,8 +4,8 @@
   /* border: solid 1px red; */
 }
 
-.logo {
-  width: 60%;
+.portefeuille {
+  width: 20%;
 }
 /* .logo:active {
   box-shadow: none;
@@ -52,4 +52,14 @@ nav h1:hover {
 }
 nav a:active {
   color: black !important;
+}
+/* .navbar {
+  padding: 0px 0px !important;
+  height: 120px !important;
+} */
+
+@media screen and (max-width: 1024px) {
+  /* .portefeuille {
+    width: 20% !important;
+  } */
 }
