@@ -191,7 +191,7 @@ div {
     display: flex;
     width: 96%;
   } */
-  .apropos article {
+  .sectionazetmoi article {
     margin-left: 50%;
     transform: translateX(-50%);
   }
@@ -221,7 +221,7 @@ div {
     margin-left: 5%;
   }
   .apropos h3 {
-    margin-left: 20px;
+    margin: 10px 0px 0px 20px;
   }
   .magasin div aside {
     display: block;
