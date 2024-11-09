@@ -130,7 +130,7 @@ div {
   padding: 0;
   margin: 0;
 }
-.apropos section aside img{
+.apropos section aside img {
   box-shadow: none !important;
   border-radius: 0px !important;
 }
@@ -191,10 +191,9 @@ div {
     display: flex;
     width: 96%;
   } */
-  .sectionazetmoi article {
+  .apropos article {
     margin-left: 50%;
     transform: translateX(-50%);
-
   }
 
   .sectionazetmoi aside {
@@ -218,11 +217,11 @@ div {
     margin: 10px 0;
   }
   aside {
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    margin-left: 5%;
   }
-  .logo-competence {
-    width: 30%;
+  .apropos h3 {
+    margin-left: 20px;
   }
   .magasin div aside {
     display: block;
