@@ -105,6 +105,10 @@ p {
 div {
   display: block;
 }
+.portefeuille {
+  width: 10%;
+  margin-left: 10px;
+}
 /*=================PAGE DRAGONS=================*/
 .image50 {
   width: 50% !important;
@@ -188,7 +192,9 @@ div {
     width: 96%;
   } */
   .sectionazetmoi article {
-    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
   }
 
   .sectionazetmoi aside {
@@ -212,7 +218,11 @@ div {
     margin: 10px 0;
   }
   aside {
-    width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .logo-competence {
+    width: 30%;
   }
   .magasin div aside {
     display: block;

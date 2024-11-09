@@ -68,7 +68,6 @@ body {
   border-right: 4px solid #2965f1;
   border-bottom: 4px solid #2965f1;
 }
-
 .filters .all {
   border: 4px solid #6c757d;
 }
@@ -114,6 +113,10 @@ h4 {
 .accueil img {
   width: 60%;
   height: 130px !important;
+}
+.portefeuille {
+  width: 10%;
+  margin-left: 10px;
 }
 .maj {
   background: transparent;
