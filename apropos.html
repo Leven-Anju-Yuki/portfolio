@@ -54,6 +54,9 @@
               <a class="nav-link" href="./apropos.html">A propos</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#diplomes">Mes diplômes</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#competence">Mes compétence</a>
             </li>
             <center>
@@ -117,6 +120,39 @@
       </article>
     </section>
     <br />
+    <h2 id="diplome">Diplômes</h2>
+<section class="diplomes-section">
+  <article class="diplome-item">
+    <div class="diplome-date">
+      <span>Sept. 2024</span>
+    </div>
+    <div class="diplome-info">
+      <p>Titre Professionnel Concepteur Développeur d'Application / <b>AFCI</b></p>
+      <p>La Croix St Ouen, France (60)</p>
+    </div>
+  </article>
+  
+  <article class="diplome-item">
+    <div class="diplome-date">
+      <span>Juin 2023</span>
+    </div>
+    <div class="diplome-info">
+      <p>Titre Professionnel Développeur WEB/WEB mobile / <b>SJT Fitz-James</b></p>
+      <p>Fitz-James, France (60)</p>
+    </div>
+  </article>
+
+  <article class="diplome-item">
+    <div class="diplome-date">
+      <span>Juin 2021</span>
+    </div>
+    <div class="diplome-info">
+      <p>Bac Général option Science de l'Ingénieur, Numérique et Science informatique, complément math / <b>Lycée Marie Curie</b></p>
+      <p>Nogent-sur-Oise, France (60)</p>
+    </div>
+  </article>
+</section>
+
     <h2 id="competence">Compétence</h2>
     <section>
       <article class="articlemax"><h3>Front end</h3></article>
@@ -200,11 +236,53 @@
         <img class="logo-competence" src="./assets/image/logo-competence/autre/canva.webp" alt="Logo Canva" />
       </aside>
     </section>
-
-    <br />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/js/installer.js"></script>
   </body>
+  <style>
+  /* .diplomes-section {
+  border-top: 2px solid #00aaff;
+  padding-top: 20px;
+} */
+
+.diplome-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.diplome-date {
+  background-color: rgb(233, 178, 77);
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.diplome-info {
+  color: #333;
+}
+
+.diplome-info p {
+  margin: 0;
+}
+
+.diplome-info b {
+  color: red;
+  text-decoration: underline black;
+}
+
+.diplome-info a:hover {
+  text-decoration: underline;
+}
+</style>
 </html>
