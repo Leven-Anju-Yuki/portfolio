@@ -30,16 +30,17 @@ body {
   background-position: center;
   z-index: -100;
 }
-button {
+.bouton {
   padding: 10px;
   border-radius: 10px;
   border: 2px solid black;
-  background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.816));
+  background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.802));
   box-shadow: 3px 3px black;
   cursor: pointer;
   margin: 15px 0;
+  text-shadow: 1px 1px white !important;
 }
-button:active {
+.bouton:active {
   box-shadow: none;
   transform: translate(3px, 3px);
 }
@@ -158,7 +159,39 @@ div {
 .sectionazetmoi aside {
   width: 50%;
 }
+.diplomes-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
+.diplome-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 200px; /* Ajuste la hauteur selon ton besoin */
+  flex: 1;
+}
+
+.diplome-info {
+  flex-grow: 1;
+}
+
+.bouton a {
+  text-decoration: none;font-size: 1.2em;
+  color: red;
+}
+.bouton a:hover{
+  text-decoration: none;
+  color: black;
+}
 /*=================FIN PAGE A PROPOS=================*/
 /*=================PARTIE ACCORDÉON=================*/
 .accordion-body {

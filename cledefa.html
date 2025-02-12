@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/image/az.jpg" />
+    <title>Clé de Fa</title>
+  </head>
+  <style>
+    .row {
+      display: flex;
+      align-items: stretch;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: transparent; padding: 5px;
+      border: 2px solid black;
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;      border: 2px solid black;
+
+    }
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-text {
+      flex-grow: 1;
+    }
+    .btn {
+      align-self: center;
+    }
+  </style>
+  <body class="">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">
+            <img
+              class="logo"
+              src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1704188194/Dragon/modifback/backrouge.png"
+              alt="Logo"
+              width="50"
+            />
+          </a>
+          <h1 class="text-center w-100">Clé de Fa</h1>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-5">
+      <div class="text-center mb-4">
+        <h2 class="mb-3">Mon expérience chez Clé de Fa</h2>
+        <p>
+          Durant mon stage chez <strong>Clé de Fa</strong>, j'ai eu l'opportunité de travailler sur divers projets en
+          lien avec le développement web et web mobile. Ce stage m'a permis d'approfondir mes compétences en conception
+          de sites web, en rédaction de contenus techniques et en gestion de projet. Voici quelques réalisations
+          concrètes sur lesquelles j'ai collaboré :
+        </p>
+      </div>
+
+      <section class="row text-center">
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm">
+            <img
+              src="./assets/image/cle_de_fa/parole de stagiaire.png"
+              class="card-img-top"
+              alt="Parole de stagiaire"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Parole de stagiaire</h5>
+              <p class="card-text">
+                Découvrez mon témoignage sur mon stage chez Clé de Fa, où je partage mes découvertes, mes apprentissages
+                et mon évolution professionnelle.
+              </p>
+              <button class="bouton">
+                <a href="https://cledefa.fr/parole-de-stagiaire-episode-5/" class="btn">Voir plus</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm">
+            <img src="./assets/image/cle_de_fa/minute jargon.png" class="card-img-top" alt="Minute jargon" />
+            <div class="card-body">
+              <h5 class="card-title">La Minute Jargon</h5>
+              <p class="card-text">
+                Une série d'articles expliquant simplement les termes techniques du web pour les rendre accessibles à
+                tous.
+              </p>
+              <button class="bouton">
+                <a href="https://cledefa.fr/la-minute-jargon-site-web/" class="btn">Voir plus</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="card shadow-sm">
+            <img src="./assets/image/cle_de_fa/accueil coye la foret.png" class="card-img-top" alt="Coye la Forêt" />
+            <div class="card-body">
+              <h5 class="card-title">Site de Coye-la-Forêt</h5>
+              <p class="card-text">
+                Participation à la création et l'amélioration d'un site web local pour la ville de Coye-la-Forêt, en
+                mettant en avant son patrimoine et ses services.
+              </p>
+              <button class="bouton"><a href="https://coyelaforet.com/" class="btn">Voir plus</a></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery-3.6.1.min.js"></script>
+  </body>
+</html>
