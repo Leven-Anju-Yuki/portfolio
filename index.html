@@ -1,134 +1,154 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style accueil.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png" />
-    <!-- Fichier manifest pour les applications web progressives -->
-    <link rel="manifest" href="./manifest.json" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style accueil.css" />
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png" />
+        <!-- Fichier manifest pour les applications web progressives -->
+        <link rel="manifest" href="./manifest.json" />
 
-    <title>Portfolio</title>
+        <title>Portfolio</title>
 
-    <!-- Balises Meta SEO -->
-    <meta
-      name="description"
-      content="Découvrez mon portfolio ,de développeur web, comprenant des projets variés tels que calculatrices, convertisseurs, jeux, alimentaion pour lapin et cours de japonais."
-    />
-    <meta
-      name="keywords"
-      content="portfolio, développement web, projets, calculatrice, convertisseur, jeux, cours de japonais, programmation, alimentation lapin"
-    />
-    <meta name="author" content="Portfolio" />
+        <!-- Balises Meta SEO -->
+        <meta
+            name="description"
+            content="Découvrez mon portfolio ,de développeur web, comprenant des projets variés tels que calculatrices, convertisseurs, jeux, alimentaion pour lapin et cours de japonais."
+        />
+        <meta
+            name="keywords"
+            content="portfolio, développement web, projets, calculatrice, convertisseur, jeux, cours de japonais, programmation, alimentation lapin"
+        />
+        <meta name="author" content="Portfolio" />
 
-    <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
-    <meta property="og:title" content="Portfolio" />
-    <meta
-      property="og:description"
-      content="Explorez mes projets, allant des outils comme des calculatrices et convertisseurs aux jeux et ressources pédagogiques, réalisés en HTML, CSS, php, JavaScript et framework."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://leven-anju-yuki.github.io/portfolio/index.html" />
-    <meta property="og:image" content="https://leven-anju-yuki.github.io/portfolio/assets/image/az-et-moi.jpg" />
-    <meta property="og:site_name" content="Portfolio" />
-  </head>
-  <body class="accueil">
-    <header>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="./index.html"
-          ><img class="portefeuille" src="./assets/image/portefeuille.png" alt=""
-        /></a>
+        <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
+        <meta property="og:title" content="Portfolio" />
+        <meta
+            property="og:description"
+            content="Explorez mes projets, allant des outils comme des calculatrices et convertisseurs aux jeux et ressources pédagogiques, réalisés en HTML, CSS, php, JavaScript et framework."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://leven-anju-yuki.github.io/portfolio/index.html" />
+        <meta
+            property="og:image"
+            content="https://leven-anju-yuki.github.io/portfolio/assets/image/az-et-moi.jpg"
+        />
+        <meta property="og:site_name" content="Portfolio" />
+    </head>
+    <body class="accueil">
+        <header>
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <!-- Brand -->
+                <a class="navbar-brand" href="./index.html"
+                    ><img class="portefeuille" src="./assets/image/portefeuille.png" alt=""
+                /></a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <!-- Toggler/collapsibe Button -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapsibleNavbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Mes projet</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./apropos.html">A propos</a>
-            </li>
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Mes projet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./apropos.html">A propos</a>
+                        </li>
 
-            <center>
-              <button class="btn-install ml-2" id="installButton" style="display: none">Installer</button>
-            </center>
-          </ul>
+                        <center>
+                            <button
+                                class="btn-install ml-2"
+                                id="installButton"
+                                style="display: none"
+                            >
+                                Installer
+                            </button>
+                        </center>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <button class="maj"><a href="./mise a jour.html">mise a jour</a></button>
+        <h1>Mon portfolio</h1>
+        <div class="filters">
+            <button class="all" onclick="filterProjects('all')">Tous</button>
+            <button class="js" onclick="filterProjects('js')">JavaScript</button>
+            <button class="php" onclick="filterProjects('php')">PHP</button>
+            <button class="htmlcss" onclick="filterProjects('html')">HTML/CSS</button>
+            <button class="" onclick="filterProjects('Wordpress')">Wordpress</button>
+            <button class="symfony" onclick="filterProjects('symfony')">Symfony</button>
+            <!-- Ajoutez plus de boutons de filtre selon vos catégories -->
         </div>
-      </nav>
-    </header>
 
-    <button class="maj"><a href="./mise a jour.html">mise a jour</a></button>
-    <h1>Mon portfolio</h1>
-    <div class="filters">
-      <button class="all" onclick="filterProjects('all')">Tous</button>
-      <button class="js" onclick="filterProjects('js')">JavaScript</button>
-      <button class="php" onclick="filterProjects('php')">PHP</button>
-      <button class="htmlcss" onclick="filterProjects('html')">HTML/CSS</button>
-      <button class="" onclick="filterProjects('Wordpress')">Wordpress</button>
-      <button class="symfony" onclick="filterProjects('symfony')">Symfony</button>
-      <!-- Ajoutez plus de boutons de filtre selon vos catégories -->
-    </div>
+        <div id="no-results" class="no-results">Aucun projet trouvé dans cette catégorie.</div>
 
-    <div id="no-results" class="no-results">Aucun projet trouvé dans cette catégorie.</div>
+        <section class="row justify-content-center">
+            <aside class="col-12 col-lg-3 php">
+                <center>
+                    <img
+                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701425376/Dragon/films/dragon%202/montage%20de%20tt.jpg"
+                        alt=""
+                    /><!--a creer une page-->
+                    <h2>projet Dragons</h2>
+                    <a href="projet_dragons.html"
+                        ><button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 php">
+                <center>
+                    <img
+                        src="./assets/image/mangajeux/css accueil arcane.jpeg"
+                        alt=" "
+                    /><!--a créer une page-->
+                    <h2>projet manga jeux</h2>
+                    <a href="projet_manga_jeux.html"
+                        ><button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 symfony">
+                <center>
+                    <img
+                        src="./assets/image/bibliotheque/bibliotheque.png"
+                        alt="image de l'application bibliotheque"
+                    />
+                    <h2>Application bibliotheque</h2>
+                    <a href="bibliotheque.html">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 php">
+                <center>
+                    <img src="./assets/image/magasin/magasin.png" alt="" /><!--a créer une page-->
+                    <h2>Magasin</h2>
+                    <a href="magasin.html"
+                        ><button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/calculatrice.png" alt="" />
+                    <h2>calculatrice en front</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/CalculatriceFront/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
 
-    <section class="row justify-content-center">
-      <aside class="col-12 col-lg-3 php">
-        <center>
-          <img
-            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701425376/Dragon/films/dragon%202/montage%20de%20tt.jpg"
-            alt=""
-          /><!--a creer une page-->
-          <h2>projet Dragons</h2>
-          <a href="projet_dragons.html"
-            ><button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 php">
-        <center>
-          <img src="./assets/image/mangajeux/css accueil arcane.jpeg" alt=" " /><!--a créer une page-->
-          <h2>projet manga jeux</h2>
-          <a href="projet_manga_jeux.html"
-            ><button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 symfony">
-        <center>
-          <img src="./assets/image/bibliotheque/bibliotheque.png" alt="image de l'application bibliotheque" />
-          <h2>Application bibliotheque</h2>
-          <a href="bibliotheque.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 php">
-        <center>
-          <img src="./assets/image/magasin/magasin.png" alt="" /><!--a créer une page-->
-          <h2>Magasin</h2>
-          <a href="magasin.html"
-            ><button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/calculatrice.png" alt="" />
-          <h2>calculatrice en front</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/CalculatriceFront/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-
-      <!-- <aside class="col-12 col-lg-3">
+            <!-- <aside class="col-12 col-lg-3">
         <center>
           <img src="./assets/image/calculatriceAlert.png" alt="" />
           <h2>calculatrice en Alert</h2>
@@ -137,194 +157,225 @@
           >
         </center>
       </aside> -->
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/japonais.png" alt="" />
-          <h2>Cours de japonais</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/cours-japonais/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/convertisseur de devise.png" alt="" />
-          <h2>convertisseur de devise</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/Convertisseur-euro/"
-            ><button class="bouton"><h4>voir plus</h4></button></a
-          >
-          <!-- target="_blank" permet d'ouvrir le lien dans une nouvelles fenetres -->
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/todolist.png" alt="" />
-          <h2>To do list</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/ToDoList/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/formulaire.png" alt="" />
-          <h2>formulaire</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/formulaire/"
-            ><button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/quiz.png" alt="" />
-          <h2>quiz</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/quiz/"
-            ><button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="assets/image/image-accueil/jeux de bulles.png" alt="" />
-          <h2>jeux de bulles</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/jeux-de-bulles/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/generateur.png" alt="" /><!--a recuperer sur github-->
-          <h2>generateur de mot</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/generateur-de-mot/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/shifumi.png" alt="" />
-          <h2>Shifumi</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/shifumi/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="assets/image/image-accueil/age.png" alt="" />
-          <h2>âge et signes astro</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/age/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/TVA.png" alt="" /><!--a recuperer sur github-->
-          <h2>TVA</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/tva/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/pourcentage.png" alt="" /><!--a recuperer sur github-->
-          <h2>Promotion</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/promotion/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/clickergame.png" alt="" />
-          <h2>clikergame</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/clikergame/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 js">
-        <center>
-          <img src="./assets/image/image-accueil/wolf.png" alt="" />
-          <h2>Wolf's Hunt</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/Wolf-s-Hunt/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 html">
-        <center>
-          <img src="./assets/image/image-accueil/alimentation-lapin.png" alt="" />
-          <h2>Alimentation lapin</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/nourriture-lapin/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 html">
-        <center>
-          <img src="./assets/image/image-accueil/convertisseur d'unité.png" alt="" />
-          <h2>convertisseur d'unité</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/convertisseur-unite/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 php">
-        <center>
-          <img
-            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
-            alt=""
-          /><!--a recuperer sur github-->
-          <h2>projet refuge</h2>
-          <a target="_blank" href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3 Wordpress">
-        <center>
-          <img src="./assets/image/image-accueil/cle de fa.png" alt="" />
-          <h2>Clé de Fa</h2>
-          <a href="./cledefa.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3">
-        <center>
-          <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
-          <h2>En travaux</h2>
-          <a target="_blank" href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3">
-        <center>
-          <img
-            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
-            alt=""
-          /><!--a recuperer sur github-->
-          <h2>En travaux</h2>
-          <a target="_blank" href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3">
-        <center>
-          <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
-          <h2>En travaux</h2>
-          <a href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <!-- <aside class="col-12 col-lg-3">
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/japonais.png" alt="" />
+                    <h2>Cours de japonais</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/cours-japonais/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/convertisseur de devise.png" alt="" />
+                    <h2>convertisseur de devise</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/Convertisseur-euro/"
+                        ><button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                    <!-- target="_blank" permet d'ouvrir le lien dans une nouvelles fenetres -->
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/todolist.png" alt="" />
+                    <h2>To do list</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/ToDoList/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/formulaire.png" alt="" />
+                    <h2>formulaire</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/formulaire/"
+                        ><button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/quiz.png" alt="" />
+                    <h2>quiz</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/quiz/"
+                        ><button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="assets/image/image-accueil/jeux de bulles.png" alt="" />
+                    <h2>jeux de bulles</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/jeux-de-bulles/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img
+                        src="./assets/image/image-accueil/generateur.png"
+                        alt=""
+                    /><!--a recuperer sur github-->
+                    <h2>generateur de mot</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/generateur-de-mot/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/shifumi.png" alt="" />
+                    <h2>Shifumi</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/shifumi/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="assets/image/image-accueil/age.png" alt="" />
+                    <h2>âge et signes astro</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/age/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img
+                        src="./assets/image/image-accueil/TVA.png"
+                        alt=""
+                    /><!--a recuperer sur github-->
+                    <h2>TVA</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/tva/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img
+                        src="./assets/image/image-accueil/pourcentage.png"
+                        alt=""
+                    /><!--a recuperer sur github-->
+                    <h2>Promotion</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/promotion/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img
+                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
+                        alt=""
+                    /><!--a recuperer sur github-->
+                    <h2>Visualisateur de découpe de tissu</h2>
+                    <!-- <a target="_blank" href="https://leven-anju-yuki.github.io/Planificateur_de_Decoupe_de_Tissu/"> -->
+                    <a target="_blank" href="./travaux.html">
+                         <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/clickergame.png" alt="" />
+                    <h2>clikergame</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/clikergame/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 js">
+                <center>
+                    <img src="./assets/image/image-accueil/wolf.png" alt="" />
+                    <h2>Wolf's Hunt</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/Wolf-s-Hunt/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 html">
+                <center>
+                    <img src="./assets/image/image-accueil/alimentation-lapin.png" alt="" />
+                    <h2>Alimentation lapin</h2>
+                    <a target="_blank" href="https://leven-anju-yuki.github.io/nourriture-lapin/">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 html">
+                <center>
+                    <img src="./assets/image/image-accueil/convertisseur d'unité.png" alt="" />
+                    <h2>convertisseur d'unité</h2>
+                    <a
+                        target="_blank"
+                        href="https://leven-anju-yuki.github.io/convertisseur-unite/"
+                    >
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 php">
+                <center>
+                    <img
+                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
+                        alt=""
+                    /><!--a recuperer sur github-->
+                    <h2>projet refuge</h2>
+                    <a target="_blank" href="./travaux.html">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3 Wordpress">
+                <center>
+                    <img src="./assets/image/image-accueil/cle de fa.png" alt="" />
+                    <h2>Clé de Fa</h2>
+                    <a href="./cledefa.html">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3">
+                <center>
+                    <img
+                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
+                        alt=""
+                    />
+                    <h2>En travaux</h2>
+                    <a target="_blank" href="./travaux.html">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3">
+                <center>
+                    <img
+                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
+                        alt=""
+                    /><!--a recuperer sur github-->
+                    <h2>En travaux</h2>
+                    <a target="_blank" href="./travaux.html">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <aside class="col-12 col-lg-3">
+                <center>
+                    <img
+                        src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
+                        alt=""
+                    />
+                    <h2>En travaux</h2>
+                    <a href="./travaux.html">
+                        <button class="bouton"><h4>voir plus</h4></button></a
+                    >
+                </center>
+            </aside>
+            <!-- <aside class="col-12 col-lg-3">
         <center>
           <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
           <h2>En travaux</h2>
@@ -354,18 +405,18 @@
           >
         </center>
       </aside> -->
-    </section>
+        </section>
 
-    <footer>
-      <center>
-        <p>© 2021 Portfolio</p>
-      </center>
-    </footer>
+        <footer>
+            <center>
+                <p>© 2021 Portfolio</p>
+            </center>
+        </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="assets/js/filtre.js"></script>
-    <script src="assets/js/installer.js"></script>
-  </body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="assets/js/filtre.js"></script>
+        <script src="assets/js/installer.js"></script>
+    </body>
 </html>
