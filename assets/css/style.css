@@ -211,6 +211,14 @@ div {
   box-shadow: none !important;
 }
 /*=================FIN PARTIE ACCORDÉON=================*/
+/*=================DÉBUT PARTIE CARROUSEL=================*/
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+/*=================FIN PARTIE CARROUSEL=================*/
 
 @media screen and (max-width: 1024px) {
   /* section {
