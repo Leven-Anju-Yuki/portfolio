@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Épaves Historiques</title>
+        <link rel="shortcut icon" type="image/png" href="./assets/image/epave/favicon1.png" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                margin: 0;
+                font-family: "Georgia", serif;
+            }
+
+            /* Header principal */
+            header {
+                background: #f9f9f9; /* bandeau clair */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding: 15px 0;
+                border-bottom: 2px solid #ddd;
+            }
+
+            /* Flèche rouge retour */
+            header a.back-arrow {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                text-decoration: none;
+                color: red;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            /* Titre centré */
+            header h1 {
+                margin: 0;
+                font-size: 28px;
+                color: #222;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            /* Fond parchemin pour la section après le header */
+            body {
+                background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+                    url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding: 50px;
+                min-height: 300px;
+            }
+            .section-title {
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                font-weight: bold;
+                color: #0d6efd;
+            }
+            footer {
+                background: #212529;
+                color: #ccc;
+                padding: 1rem;
+                text-align: center;
+                margin-top: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="./index.html">
+                        <img
+                            class="logo"
+                            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1704188194/Dragon/modifback/backrouge.png"
+                            alt="Logo"
+                            width="50"
+                        />
+                    </a>
+                    <h1>🌊 Gestion des Épaves Historiques (Bateaux, Sous-marins, Avions)</h1>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container my-5">
+            <!-- Introduction -->
+            <section>
+                <h2 class="section-title">📖 Introduction</h2>
+                <p>
+                    Cette application Symfony est un outil de gestion et de visualisation des
+                    <strong>épaves historiques</strong> disparues ou coulées (bateaux, sous-marins,
+                    avions). Elle permet d’enregistrer, consulter et géolocaliser ces épaves, tout
+                    en offrant une visualisation interactive sur une carte.
+                </p>
+            </section>
+
+            <!-- Fonctionnalités -->
+            <section>
+                <h2 class="section-title">⚙️ Fonctionnalités principales</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">✅ Ajouter / modifier / supprimer une épave</li>
+                    <li class="list-group-item">
+                        ✅ Stocker les informations (nom, type, année, pays, cause, description,
+                        image, coordonnées GPS)
+                    </li>
+                    <li class="list-group-item">
+                        ✅ Visualisation des positions sur une carte interactive (Leaflet)
+                    </li>
+                    <li class="list-group-item">
+                        ✅ Fiches détaillées avec contexte historique et images
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Démo visuelle -->
+            <section>
+                <h2 class="section-title">🗺️ Aperçu visuel</h2>
+                <div class="text-center">
+                    <img
+                        src="./assets/image/epave/localisation du titanic.png"
+                        alt="Carte interactive des épaves"
+                        class="img-fluid rounded shadow"
+                    />
+                    <p class="text-muted mt-2">
+                        Exemple de carte interactive affichant les épaves.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Évolutions futures -->
+            <section>
+                <h2 class="section-title">🔮 Futures évolutions</h2>
+                <ul>
+                    <li>
+                        🔎 Filtre par <strong>catégorie</strong> (avion, bateau, sous-marin) et par
+                        <strong>époque</strong>
+                    </li>
+                    <li>
+                        🤖 Intégration d’une <strong>IA</strong> pour enrichir automatiquement la
+                        base de données avec de nouvelles découvertes
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Techno -->
+            <section>
+                <h2 class="section-title">🛠️ Technologies utilisées</h2>
+                <div class="row text-center">
+                    <div class="col-md-3"><span class="badge bg-primary">Symfony 7</span></div>
+                    <div class="col-md-3"><span class="badge bg-dark">PHP 8.2</span></div>
+                    <div class="col-md-3"><span class="badge bg-success">Doctrine ORM</span></div>
+                    <div class="col-md-3">
+                        <span class="badge bg-info text-dark">Leaflet.js</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 - Projet Symfony 7 : Gestion des Épaves Historiques | Réalisé par Florie</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
