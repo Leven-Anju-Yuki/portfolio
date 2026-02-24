@@ -114,9 +114,44 @@
 .diplome-info b {
     color: red;
 }
-
+.nexi {
+    margin-top: -20px !important;
+    width: 30%;
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
 .diplome-info b:hover {
     text-decoration: underline black;
 }
+/* .cadre-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1; /* carré */
+    /* overflow: hidden;
+}  */
 
+/* Image du projet : on veut la voir ENTIEREMENT */
+.cadre-container .logo-competence {
+    width: 100%;
+    height: 150px;margin-top: -5px;
+    border-radius: 7px 7px 0px  0px ;
+    object-fit: contain; /* montre toute l’image */
+    object-position: center;
+    display: block; 
+    /* background: #000; optionnel : pour éviter les trous transparents*/
+}
+
+/* Cadre doré */
+.cadre-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../image/cadre.png");
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+    z-index: 10;
+}
 /*=================FIN PAGE A PROPOS=================*/
