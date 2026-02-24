@@ -1,306 +1,367 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/header.css" /> -->
-    <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png" />
-    <title>A propos</title>
-    <!-- Balises Meta SEO -->
-    <meta
-      name="description"
-      content="Découvrez mon portfolio ,de développeur web, comprenant des projets variés tels que calculatrices, convertisseurs, jeux, alimentaion pour lapin et cours de japonais."
-    />
-    <meta
-      name="keywords"
-      content="portfolio, développement web, projets, calculatrice, convertisseur, jeux, cours de japonais, programmation, alimentation lapin"
-    />
-    <meta name="author" content="Florie Decitre" />
-
-    <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
-    <meta property="og:title" content="Portfolio" />
-    <meta
-      property="og:description"
-      content="Explorez mes projets, allant des outils comme des calculatrices et convertisseurs aux jeux et ressources pédagogiques, réalisés en HTML, CSS, php, JavaScript et framework."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://leven-anju-yuki.github.io/portfolio/index.html" />
-    <meta property="og:image" content="https://leven-anju-yuki.github.io/portfolio/assets/image/az-et-moi.jpg" />
-    <meta property="og:site_name" content="Portfolio" />
-  </head>
-
-  <body class="apropos">
-    <header>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="./index.html"
-          ><img class="portefeuille" src="./assets/image/portefeuille.png" alt=""
-        /></a>
-
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Mes projet</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./apropos.html">A propos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#diplome">Mes diplômes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#competence">Mes compétences</a>
-            </li>
-            <center>
-              <button class="btn-install ml-2" id="installButton" style="display: none">Installer</button>
-            </center>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <br />
-    <h2 id="Apropos">A propos de moi</h2>
-    <section class="sectionazetmoi">
-      <aside>
-        <center>
-          <img
-            class="azetmoi"
-            src="./assets/image/az-et-moi.jpg"
-            alt="Photo de Florie DECITRE et de mon lapin azazel"
-          />
-        </center>
-      </aside>
-      <article>
-        <h2>Florie DECITRE</h2>
-        <h3>Concepteur Développeur d'Application - <span id="age"></span> ans</h3>
-        <p>
-          Passionnée par le développement depuis plusieurs années, je suis titulaire d'un niveau Bac+3 en conception et
-          développement d'applications. Mon parcours m’a permis d’acquérir une solide base en
-          <b>développement web</b>, à la fois en front-end et back-end, avec une expérience sur des frameworks variés
-          comme Symfony, React et Angular.
-        </p>
-        <p>
-          En plus de mes compétences techniques, je m'intéresse beaucoup à l’UX/UI, utilisant des outils comme Figma,
-          Adobe XD, et Photoshop pour créer des interfaces attrayantes et fonctionnelles. Je suis toujours curieuse de
-          découvrir de nouvelles technologies et de relever des défis qui améliorent mes compétences.
-        </p>
-        <p>
-          En tant que développeuse, mon objectif est de créer des solutions intuitives et performantes, en gardant
-          l'utilisateur final au cœur de chaque projet. Je suis véhiculée, ce qui me permet les déplacements pour des
-          projets en équipe ou des collaborations sur site.
-        </p>
-        <p>
-          En dehors de la programmation, j'ai plusieurs centres d'intérêts qui enrichissent ma créativité et mon
-          approche du développement. Voici quelques passions qui me tiennent à cœur :
-        </p>
-        <ul>
-          <li>
-            <strong>Jeux vidéo :</strong> j’aime explorer des univers variés et des genres différents. Les jeux vidéo
-            stimulent ma créativité et renforcent mon esprit stratégique.
-          </li>
-          <li>
-            <strong>Animaux :</strong> passionné par les animaux, j'apprécie leur compagnie et m'intéresse aux projets
-            qui les concernent. Cette passion influence certains de mes projets, notamment pour les applications de
-            suivi d’animaux.
-          </li>
-          <li>
-            <strong>Mangas :</strong> en tant que fan de mangas, j’admire l’art visuel et narratif qui les
-            caractérisent. Cette passion nourrit mon imagination et influence mon approche de la conception visuelle et
-            de l’expérience utilisateur.
-          </li>
-        </ul>
-      </article>
-    </section>
-    <br />
-    <h2 id="diplome">Diplômes</h2>
-    <section class="diplomes-section">
-      <article class="diplome-item">
-        <div class="diplome-date">
-          <span>Sept. 2024</span>
-        </div>
-        <div class="diplome-info">
-          <p>Titre Professionnel Concepteur Développeur d'Application / <b>AFCI</b></p>
-          <p>La Croix St Ouen, France (60)</p>
-        </div>
-      </article>
-
-      <article class="diplome-item">
-        <div class="diplome-date">
-          <span>Juin 2023</span>
-        </div>
-        <div class="diplome-info">
-          <p>Titre Professionnel Développeur WEB/WEB mobile / <b>SJT Fitz-James</b></p>
-          <p>Fitz-James, France (60)</p>
-          <center>
-            <button class="bouton"><a href="./cledefa.html">Mon stage</a></button>
-          </center>
-        </div>
-      </article>
-
-      <article class="diplome-item">
-        <div class="diplome-date">
-          <span>Juin 2021</span>
-        </div>
-        <div class="diplome-info">
-          <p>
-            Bac Général option Science de l'Ingénieur, Numérique et Science informatique, complément math /
-            <b>Lycée Marie Curie</b>
-          </p>
-          <p>Nogent-sur-Oise, France (60)</p>
-        </div>
-      </article>
-    </section>
-
-    <h2 id="competence">Compétences</h2>
-    <section>
-      <article class="articlemax"><h3>Front end</h3></article>
-    </section>
-    <section>
-      <article>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JS</li>
-        </ul>
-      </article>
-      <aside>
-        <img class="logo-competence" src="./assets/image/logo-competence/front/HTML5.png" alt="Logo HTML5" />
-        <img class="logo-competence" src="./assets/image/logo-competence/front/css3.png" alt="Logo CSS3" />
-        <img class="logo-competence" src="./assets/image/logo-competence/front/js.png" alt="Logo JavaScript" />
-      </aside>
-    </section>
-    <section>
-      <article class="articlemax"><h3>Back end</h3></article>
-    </section>
-    <section>
-      <article>
-        <ul>
-          <li>PHP</li>
-          <li>Mysql</li>
-        </ul>
-      </article>
-      <aside>
-        <img class="logo-competence" src="./assets/image/logo-competence/back/php.png" alt="Logo PHP" />
-        <img class="logo-competence" src="./assets/image/logo-competence/back/mysql.png" alt="Logo MySQL" />
-      </aside>
-    </section>
-    <section>
-      <article class="articlemax"><h3>Frameworks</h3></article>
-    </section>
-    <section>
-      <article>
-        <ul>
-          <li>Bootstrap</li>
-          <li>Symfony</li>
-          <li>React</li>
-          <li>Node</li>
-          <li>Angular</li>
-        </ul>
-      </article>
-      <aside>
-        <img
-          class="logo-competence"
-          src="./assets/image/logo-competence/framework/Bootstrap.png"
-          alt="Logo Bootstrap"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/a_propos.css" />
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        <!-- <link rel="stylesheet" href="./assets/css/header.css" /> -->
+        <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png" />
+        <title>A propos</title>
+        <!-- Balises Meta SEO -->
+        <meta
+            name="description"
+            content="Découvrez mon portfolio ,de développeur web, comprenant des projets variés tels que calculatrices, convertisseurs, jeux, alimentaion pour lapin et cours de japonais."
         />
-        <img class="logo-competence" src="./assets/image/logo-competence/framework/synfony.png" alt="Logo Symfony" />
-        <img class="logo-competence" src="./assets/image/logo-competence/framework/react.png" alt="Logo React" />
-        <img class="logo-competence" src="./assets/image/logo-competence/framework/node js.webp" alt="Logo Node.js" />
-        <img class="logo-competence" src="./assets/image/logo-competence/framework/angular.png" alt="Logo Angular" />
-      </aside>
-    </section>
-    <section>
-      <article class="articlemax"><h3>Suite Adobe et autre pour le design</h3></article>
-    </section>
-    <section>
-      <article>
-        <ul>
-          <li>figma</li>
-          <li>Adobe XD</li>
-          <li>Photoshop</li>
-          <li>Canva</li>
-        </ul>
-      </article>
-      <aside>
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/figma.webp" alt="Logo Figma" />
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/Adobe_XD.png" alt="Logo Adobe XD" />
-        <img
-          class="logo-competence"
-          src="./assets/image/logo-competence/autre/Adobe-Photoshop.png"
-          alt="Logo Adobe Photoshop"
+        <meta
+            name="keywords"
+            content="portfolio, développement web, projets, calculatrice, convertisseur, jeux, cours de japonais, programmation, alimentation lapin"
         />
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/canva.webp" alt="Logo Canva" />
-      </aside>
-    </section>
-    <section>
-      <article class="articlemax"><h3>Autres</h3></article>
-    </section>
-    <section>
-      <article>
-        <ul>
-          <li>Vscode</li>
-          <li>Wordpress</li>
-          <li>WIx</li>
-          <li>Trello</li>
-        </ul>
-      </article>
-      <aside>
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/vscode.webp" alt="Logo Vscode" />
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/wordpress.webp" alt="Logo WordPress" />
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/wix.png" alt="Logo Wix" />
-        <img class="logo-competence" src="./assets/image/logo-competence/autre/trello.png" alt="Logo Trello" />
-      </aside>
-    </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/js/calculer_l'age.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="assets/js/installer.js"></script>
-  </body>
-  <style>
-    .diplome-item {
-      border: 2px solid red;
-      padding-top: 20px;
-      height: 300px;
-    }
+        <meta name="author" content="Florie Decitre" />
 
-    .diplome-date {
-      background-color: rgb(233, 178, 77);
-      color: white;
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      font-size: 14px;
-      text-align: center;
-      margin-right: 20px;
-    }
+        <!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
+        <meta property="og:title" content="Portfolio" />
+        <meta
+            property="og:description"
+            content="Explorez mes projets, allant des outils comme des calculatrices et convertisseurs aux jeux et ressources pédagogiques, réalisés en HTML, CSS, php, JavaScript et framework."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://leven-anju-yuki.github.io/portfolio/index.html" />
+        <meta
+            property="og:image"
+            content="https://leven-anju-yuki.github.io/portfolio/assets/image/az-et-moi.jpg"
+        />
+        <meta property="og:site_name" content="Portfolio" />
+    </head>
 
-    .diplome-info {
-      color: #333;
-    }
+    <body class="apropos">
+        <header>
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <!-- Brand -->
+                <a class="navbar-brand" href="./index.html"
+                    ><img class="portefeuille" src="./assets/image/portefeuille.png" alt=""
+                /></a>
 
-    .diplome-info p {
-      margin: 0;
-    }
+                <!-- Toggler/collapsibe Button -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapsibleNavbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    .diplome-info b {
-      color: red;
-    }
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Mes projet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./apropos.html">A propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#diplome">Mes diplômes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#competence">Mes compétences</a>
+                        </li>
+                        <center>
+                            <button
+                                class="btn-install ml-2"
+                                id="installButton"
+                                style="display: none"
+                            >
+                                Installer
+                            </button>
+                        </center>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <br />
+        <h2 id="Apropos">A propos de moi</h2>
+        <section class="sectionazetmoi">
+            <aside>
+                <center>
+                    <img
+                        class="azetmoi"
+                        src="./assets/image/az-et-moi.jpg"
+                        alt="Photo de Florie DECITRE et de mon lapin azazel"
+                    />
+                </center>
+            </aside>
+            <article>
+                <h2>Florie DECITRE</h2>
+                <h3>Concepteur Développeur d'Application - <span id="age"></span> ans</h3>
+                <p>
+                    Passionnée par le développement depuis plusieurs années, je suis titulaire d'un
+                    niveau Bac+3 en conception et développement d'applications. Mon parcours m’a
+                    permis d’acquérir une solide base en
+                    <b>développement web</b>, à la fois en front-end et back-end, avec une
+                    expérience sur des frameworks variés comme Symfony, React et Angular.
+                </p>
+                <p>
+                    En plus de mes compétences techniques, je m'intéresse beaucoup à l’UX/UI,
+                    utilisant des outils comme Figma, Adobe XD, et Photoshop pour créer des
+                    interfaces attrayantes et fonctionnelles. Je suis toujours curieuse de découvrir
+                    de nouvelles technologies et de relever des défis qui améliorent mes
+                    compétences.
+                </p>
+                <p>
+                    En tant que développeuse, mon objectif est de créer des solutions intuitives et
+                    performantes, en gardant l'utilisateur final au cœur de chaque projet. Je suis
+                    véhiculée, ce qui me permet les déplacements pour des projets en équipe ou des
+                    collaborations sur site.
+                </p>
+                <p>
+                    En dehors de la programmation, j'ai plusieurs centres d'intérêts qui
+                    enrichissent ma créativité et mon approche du développement. Voici quelques
+                    passions qui me tiennent à cœur :
+                </p>
+                <ul>
+                    <li>
+                        <strong>Jeux vidéo :</strong> j’aime explorer des univers variés et des
+                        genres différents. Les jeux vidéo stimulent ma créativité et renforcent mon
+                        esprit stratégique.
+                    </li>
+                    <li>
+                        <strong>Animaux :</strong> passionné par les animaux, j'apprécie leur
+                        compagnie et m'intéresse aux projets qui les concernent. Cette passion
+                        influence certains de mes projets, notamment pour les applications de suivi
+                        d’animaux.
+                    </li>
+                    <li>
+                        <strong>Mangas :</strong> en tant que fan de mangas, j’admire l’art visuel
+                        et narratif qui les caractérisent. Cette passion nourrit mon imagination et
+                        influence mon approche de la conception visuelle et de l’expérience
+                        utilisateur.
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <br />
+        <h2 id="diplome">Diplômes</h2>
+        <section class="diplomes-section">
+            <article class="diplome-item">
+                <div class="diplome-date">
+                    <span>Sept. 2027</span>
+                </div>
+                <div class="diplome-info">
+                    <p>Chef de projet data et intelligence artificielle / <b>NEXA</b></p>
+                    <p>Paris, France (75)</p>
+                </div>
+            </article>
+            <article class="diplome-item">
+                <div class="diplome-date">
+                    <span>Sept. 2024</span>
+                </div>
+                <div class="diplome-info">
+                    <p>Titre Professionnel Concepteur Développeur d'Application / <b>AFCI</b></p>
+                    <p>La Croix St Ouen, France (60)</p>
+                </div>
+            </article>
 
-    .diplome-info b:hover {
-      text-decoration: underline black;
-    }
-  </style>
+            <article class="diplome-item">
+                <div class="diplome-date">
+                    <span>Juin 2023</span>
+                </div>
+                <div class="diplome-info">
+                    <p>Titre Professionnel Développeur WEB/WEB mobile / <b>SJT Fitz-James</b></p>
+                    <p>Fitz-James, France (60)</p>
+                    <center>
+                        <button class="bouton"><a href="./cledefa.html">Mon stage</a></button>
+                    </center>
+                </div>
+            </article>
+
+            <article class="diplome-item">
+                <div class="diplome-date">
+                    <span>Juin 2021</span>
+                </div>
+                <div class="diplome-info">
+                    <p>Bac Général/
+                        <b>Lycée Marie Curie</b> Options :</p>
+                    <ul>
+                        <li>Science de l'Ingénieur</li>
+                        <li>Numérique et Science informatique</li>
+                        <li>complément math</li>
+                    </ul>
+                    <p>Nogent-sur-Oise, France (60)</p>
+                </div>
+            </article>
+        </section>
+
+        <h2 id="competence">Compétences</h2>
+        <section>
+            <article class="articlemax"><h3>Front end</h3></article>
+        </section>
+        <section>
+            <article>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+            </article>
+            <aside>
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/front/HTML5.png"
+                    alt="Logo HTML5"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/front/css3.png"
+                    alt="Logo CSS3"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/front/js.png"
+                    alt="Logo JavaScript"
+                />
+            </aside>
+        </section>
+        <section>
+            <article class="articlemax"><h3>Back end</h3></article>
+        </section>
+        <section>
+            <article>
+                <ul>
+                    <li>PHP</li>
+                    <li>Mysql</li>
+                </ul>
+            </article>
+            <aside>
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/back/php.png"
+                    alt="Logo PHP"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/back/mysql.png"
+                    alt="Logo MySQL"
+                />
+            </aside>
+        </section>
+        <section>
+            <article class="articlemax"><h3>Frameworks</h3></article>
+        </section>
+        <section>
+            <article>
+                <ul>
+                    <li>Bootstrap</li>
+                    <li>Symfony</li>
+                    <li>React</li>
+                    <li>Node</li>
+                    <li>Angular</li>
+                </ul>
+            </article>
+            <aside>
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/framework/Bootstrap.png"
+                    alt="Logo Bootstrap"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/framework/synfony.png"
+                    alt="Logo Symfony"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/framework/react.png"
+                    alt="Logo React"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/framework/node js.webp"
+                    alt="Logo Node.js"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/framework/angular.png"
+                    alt="Logo Angular"
+                />
+            </aside>
+        </section>
+        <section>
+            <article class="articlemax"><h3>Suite Adobe et autre pour le design</h3></article>
+        </section>
+        <section>
+            <article>
+                <ul>
+                    <li>figma</li>
+                    <li>Adobe XD</li>
+                    <li>Photoshop</li>
+                    <li>Canva</li>
+                </ul>
+            </article>
+            <aside>
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/figma.webp"
+                    alt="Logo Figma"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/Adobe_XD.png"
+                    alt="Logo Adobe XD"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/Adobe-Photoshop.png"
+                    alt="Logo Adobe Photoshop"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/canva.webp"
+                    alt="Logo Canva"
+                />
+            </aside>
+        </section>
+        <section>
+            <article class="articlemax"><h3>Autres</h3></article>
+        </section>
+        <section>
+            <article>
+                <ul>
+                    <li>Vscode</li>
+                    <li>Wordpress</li>
+                    <li>WIx</li>
+                    <li>Trello</li>
+                </ul>
+            </article>
+            <aside>
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/vscode.webp"
+                    alt="Logo Vscode"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/wordpress.webp"
+                    alt="Logo WordPress"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/wix.png"
+                    alt="Logo Wix"
+                />
+                <img
+                    class="logo-competence"
+                    src="./assets/image/logo-competence/autre/trello.png"
+                    alt="Logo Trello"
+                />
+            </aside>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./assets/js/calculer_l'age.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="assets/js/installer.js"></script>
+    </body>
 </html>
