@@ -43,31 +43,19 @@
 }
 .diplomes-section {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: stretch; /* 🔥 c’est ça la clé */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
-.diplome-item {
-    .diplome-item {
-        flex: 1; /* toutes prennent la même largeur */
-        display: flex;
-        flex-direction: column;
 
-        background: #f8f9fa;
-        border: 2px solid red;
-        border-radius: 15px;
-        padding: 20px;
-    }
-}
 .diplome-info {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.diplome-info {
     flex-grow: 1;
+
 }
 
 .bouton a {
@@ -79,11 +67,23 @@
     text-decoration: none;
     color: black;
 }
-.diplome-item {
+.diplome-item {    height: 300px !important;
+    width: 50%;
+    padding: 0; /* enlève tout espace interne */
+    margin: 0; /* enlève tout espace externe */
+    box-sizing: border-box;
     border: 2px solid red;
-    padding-top: 20px;
-    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+/* 🖥️ PC : 4 par ligne, collés */
+@media (min-width: 992px) {
+    .diplome-item {
+        width: 25%;
+    }
 }
 
 .diplome-date {
@@ -117,7 +117,6 @@
 .nexi {
     margin-top: -20px !important;
     width: 30%;
-    margin-top: 10px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -129,17 +128,18 @@
     width: 100%;
     max-width: 300px;
     aspect-ratio: 1 / 1; /* carré */
-    /* overflow: hidden;
+/* overflow: hidden;
 }  */
 
 /* Image du projet : on veut la voir ENTIEREMENT */
 .cadre-container .logo-competence {
     width: 100%;
-    height: 150px;margin-top: -5px;
-    border-radius: 7px 7px 0px  0px ;
+    height: 150px;
+    margin-top: -5px;
+    border-radius: 7px 7px 0px 0px;
     object-fit: contain; /* montre toute l’image */
     object-position: center;
-    display: block; 
+    display: block;
     /* background: #000; optionnel : pour éviter les trous transparents*/
 }
 
