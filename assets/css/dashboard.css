@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: police;
+    src: url(../font/NotoSerifBalinese-Regular.ttf);
+}
+body {
+    background:
+        linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+        url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
+    min-height: 100vh;
+    color: #f1ede4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    padding: 30px 20px 60px;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #d7cfc0;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#refresh-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 2px solid #e18207;
+    background: linear-gradient(rgba(225, 130, 7, 0.6), rgba(0, 0, 0, 0.8));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px black;
+}
+
+#refresh-btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+#refresh-btn:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+#last-update {
+    font-size: 0.85rem;
+    color: #cfc6b5;
+}
+
+#rate-limit-info {
+    font-size: 0.8rem;
+    color: #b9b0a0;
+}
+
+section.panel {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 2px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+section.panel h2 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #e18207;
+    padding-bottom: 8px;
+}
+
+.panel-desc {
+    font-size: 0.85rem;
+    color: #cfc6b5;
+    margin-bottom: 16px;
+}
+
+/* ===== Tableau catégories ===== */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+
+.category-card .count {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.category-card .label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #d7cfc0;
+}
+
+.category-card.total {
+    border-color: #e18207;
+    background: rgba(225, 130, 7, 0.15);
+}
+
+/* ===== Tableau README / meta ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-shadow: none;
+}
+
+th,
+td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: #d7cfc0;
+    text-align: left;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ok {
+    color: #6fcf6f;
+    font-weight: bold;
+}
+
+.ko {
+    color: #e06666;
+    font-weight: bold;
+}
+
+.pending {
+    color: #999;
+}
+
+.repo-link {
+    color: #f3b65c;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
+}
+
+.error-row {
+    color: #e06666;
+    font-size: 0.8rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.legend {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #b9b0a0;
+}
+
+.no-git-note {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #b9b0a0;
+    border-top: 1px dashed #555;
+    padding-top: 10px;
+}
