@@ -207,3 +207,92 @@ tr:hover td {
     border-top: 1px dashed #555;
     padding-top: 10px;
 }
+/* Grille responsive propre */
+.chart-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur PC */
+}
+
+/* Boîte standard */
+.chart-box {
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Catégories = prend 2 colonnes */
+.chart-box.wide {
+    grid-column: span 2;
+}
+
+/* Taille identique pour tous les camemberts */
+.chart-box canvas {
+    width: 220px !important;
+    height: 220px !important;
+}
+
+/* Légende Catégories */
+.legend-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+/* 📱 Mobile : 1 colonne */
+@media (max-width: 700px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-box.wide {
+        grid-column: span 1;
+    }
+
+    .chart-box canvas {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    #meta-table-container {
+        overflow-x: auto;
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    #meta-table-container table {
+        min-width: 600px;
+    }
+    #meta-table-container table {
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    #meta-table-container td:first-child,
+    #meta-table-container th:first-child {
+        position: sticky;
+        left: 0;
+        background: rgba(30, 30, 30, 0.9);
+        backdrop-filter: blur(4px);
+        z-index: 2;
+        border-right: 2px solid #444;
+    }
+}

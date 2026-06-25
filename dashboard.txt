@@ -81,46 +81,7 @@
                 refuge, Clé de Fa, épave. À cocher manuellement sur Trello.
             </p>
         </section>
-        <!-- ============= PANEL 3 : Camemberts : Catégories & README/Meta ============= -->
-        <section class="panel">
-            <h2>État détaillé README & Meta</h2>
 
-            <div class="chart-grid">
-                <!-- Catégories (2 cases) -->
-                <div class="chart-box wide">
-                    <h3>Répartition des catégories</h3>
-                    <canvas id="chart-categories" class="chart-same-size"></canvas>
-                    <div id="categories-legend" class="legend-grid"></div>
-                </div>
-
-                <!-- README -->
-                <div class="chart-box">
-                    <h3>README</h3>
-                    <canvas id="chart-readme"></canvas>
-                </div>
-
-                <!-- Meta Description -->
-                <div class="chart-box">
-                    <h3>Meta Description</h3>
-                    <canvas id="chart-meta-desc"></canvas>
-                </div>
-
-                <!-- Meta Keywords -->
-                <div class="chart-box">
-                    <h3>Meta Keywords</h3>
-                    <canvas id="chart-meta-key"></canvas>
-                </div>
-
-                <!-- Open Graph -->
-                <div class="chart-box">
-                    <h3>Open Graph</h3>
-                    <canvas id="chart-meta-og"></canvas>
-                </div>
-            </div>
-        </section>
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="./assets/js/dashboard.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     </body>
 </html>

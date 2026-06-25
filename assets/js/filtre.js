@@ -81,65 +81,6 @@ function updateFilterCounts() {
     });
 }
 
-// Crée et insère dynamiquement un petit résumé du nombre de projets par
-// catégorie, juste au-dessus des filtres. Entièrement généré en JS pour ne
-// rien modifier dans le fichier index.html.
-function renderCategorySummary() {
-    let projects = document.querySelectorAll('aside');
-    let filterButtons = document.querySelectorAll('.filters button');
-    let filtersDiv = document.querySelector('.filters');
-
-    if (!filtersDiv) {
-        return;
-    }
-
-    // Construit la liste des catégories (dans l'ordre des boutons, en
-    // excluant le bouton "Tous") avec leur nombre de projets.
-    let counts = [];
-    filterButtons.forEach(btn => {
-        let onclickAttr = btn.getAttribute('onclick') || '';
-        let match = onclickAttr.match(/filterProjects\(['"]([^'"]+)['"]\)/);
-        let category = match ? match[1] : null;
-
-        if (!category || category === 'all') {
-            return;
-        }
-
-        let count = Array.from(projects).filter(project =>
-            project.classList.contains(category)
-        ).length;
-
-        if (count > 0) {
-            // Le label du bouton = son premier nœud texte (avant le span .filter-count)
-            let firstTextNode = Array.from(btn.childNodes).find(
-                node => node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== ''
-            );
-            let label = firstTextNode ? firstTextNode.textContent.trim() : btn.textContent.trim();
-            counts.push({ label, count });
-        }
-    });
-
-    let total = projects.length;
-
-    // Crée (ou réutilise) le conteneur du résumé
-    let summaryDiv = document.getElementById('category-summary');
-    if (!summaryDiv) {
-        summaryDiv = document.createElement('div');
-        summaryDiv.id = 'category-summary';
-        filtersDiv.parentNode.insertBefore(summaryDiv, filtersDiv);
-    }
-
-    let itemsHtml = counts
-        .map(c => `<span class="category-summary-item">${c.label} : ${c.count}</span>`)
-        .join('');
-
-    summaryDiv.innerHTML = `
-        <span class="category-summary-total">Total : ${total} projets</span>
-        ${itemsHtml}
-    `;
-}
-
 // Initialiser : calculer les compteurs / cacher les filtres vides, puis afficher tous les projets
 updateFilterCounts();
-renderCategorySummary();
 filterProjects('all');

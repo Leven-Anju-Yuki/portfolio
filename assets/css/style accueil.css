@@ -128,31 +128,6 @@ section {
 }
 
 /* =================================================== */
-/* ===========  RESUME PAR CATEGORIE  ================= */
-/* =================================================== */
-
-/* Petit bandeau récapitulatif généré en JS (filtre.js), affiché
-   au-dessus des boutons de filtre : nombre total de projets +
-   nombre de projets par catégorie. */
-#category-summary {
-    text-align: center;
-    margin: 10px auto;
-    font-size: 0.9rem;
-    color: white;
-    text-shadow: 1px 1px black;
-}
-
-.category-summary-total {
-    font-weight: bold;
-    margin-right: 15px;
-}
-
-.category-summary-item {
-    margin: 0 8px;
-    white-space: nowrap;
-}
-
-/* =================================================== */
 /* ====================  FILTRES  ===================== */
 /* =================================================== */
 
@@ -330,6 +305,33 @@ aside {
 #scrollUpBtn:active {
     box-shadow: none;
     transform: translate(3px, 3px);
+}
+
+/* =================================================== */
+/* ===============  ACCES DASHBOARD  =================== */
+/* =================================================== */
+
+/* Bouton volontairement discret : pas de bordure ni de fond visible,
+   juste assez opaque pour rester cliquable. Placé dans le footer. */
+#dashboard-lock-btn {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    z-index: 200;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 22px;
+    text-align: center;
+}
+
+#dashboard-lock-btn:hover {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* =================================================== */

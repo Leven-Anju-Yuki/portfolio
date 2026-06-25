@@ -111,13 +111,13 @@
         </div>
 
         <div class="filters">
-            <button class="all" onclick="filterProjects('all')">Tous</button>
-            <button class="js" onclick="filterProjects('js')">JavaScript</button>
-            <button class="php" onclick="filterProjects('php')">PHP</button>
-            <button class="htmlcss" onclick="filterProjects('html')">HTML/CSS</button>
-            <button class="Wordpress" onclick="filterProjects('Wordpress')">Wordpress</button>
-            <button class="symfony" onclick="filterProjects('symfony')">Symfony</button>
-            <button class="autre" onclick="filterProjects('autre')">autre</button>
+            <button class="all" onclick="filterProjects('all')">Tous <span class="filter-count"></span></button>
+            <button class="js" onclick="filterProjects('js')">JavaScript <span class="filter-count"></span></button>
+            <button class="php" onclick="filterProjects('php')">PHP <span class="filter-count"></span></button>
+            <button class="htmlcss" onclick="filterProjects('html')">HTML/CSS <span class="filter-count"></span></button>
+            <button class="Wordpress" onclick="filterProjects('Wordpress')">Wordpress <span class="filter-count"></span></button>
+            <button class="symfony" onclick="filterProjects('symfony')">Symfony <span class="filter-count"></span></button>
+            <button class="autre" onclick="filterProjects('autre')">autre <span class="filter-count"></span></button>
             <!-- Ajoutez plus de boutons de filtre selon vos catégories -->
         </div>
 
@@ -218,15 +218,6 @@
                 </center>
             </aside>
 
-            <!-- SUPPRIMER DES PROJETS PAS INTERESSENT<aside class="col-12 col-lg-3">
-        <center>
-          <img src="./assets/image/calculatriceAlert.png" alt="" />
-          <h2>calculatrice en Alert</h2>
-          <a target="_blank" href="https://leven-anju-yuki.github.io/CalculatriceEnAlert/">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside> -->
             <aside class="col-12 col-lg-3 js">
                 <center>
                     <div class="cadre-container">
@@ -287,33 +278,6 @@
                     >
                 </center>
             </aside>
-            <!-- SUPPRIMER DES PROJETS PAS INTERESSENT<aside class="col-12 col-lg-3 js">
-                <center>
-                    <img src="./assets/image/image-accueil/todolist.png" alt="" />
-                    <h2>To do list</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/ToDoList/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            SUPPRIMER DES PROJETS PAS INTERESSENT<aside class="col-12 col-lg-3 js">
-                <center>
-                    <img src="./assets/image/image-accueil/formulaire.png" alt="" />
-                    <h2>formulaire</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/formulaire/"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside>
-            SUPPRIMER DES PROJETS PAS INTERESSENT<aside class="col-12 col-lg-3 js">
-                <center>
-                    <img src="./assets/image/image-accueil/quiz.png" alt="" />
-                    <h2>quiz</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/quiz/"
-                        ><button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside> -->
             <aside class="col-12 col-lg-3 js">
                 <center>
                     <div class="cadre-container">
@@ -329,22 +293,6 @@
                     >
                 </center>
             </aside>
-            <!-- SUPPRIMER DES PROJETS PAS INTERESSENT<aside class="col-12 col-lg-3 js">
-                <center>
-                    <div class="cadre-container">
-                        <img
-                            class="projet"
-                            src="./assets/image/image-accueil/generateur.png"
-                            alt=""
-                        />
-                    </div>
-                    <!-a recuperer sur github->
-                    <h2>generateur de mot</h2>
-                    <a target="_blank" href="https://leven-anju-yuki.github.io/generateur-de-mot/">
-                        <button class="bouton"><h4>voir plus</h4></button></a
-                    >
-                </center>
-            </aside> -->
             <aside class="col-12 col-lg-3 js">
                 <center>
                     <div class="cadre-container">
@@ -552,42 +500,20 @@
                     >
                 </center>
             </aside>
-            <!-- <aside class="col-12 col-lg-3">
-        <center>
-          <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
-          <h2>En travaux</h2>
-          <a target="_blank" href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3">
-        <center>
-          <img
-            src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif"
-            alt=""
-          /><!-a recuperer sur github->
-          <h2>En travaux</h2>
-          <a target="_blank" href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside>
-      <aside class="col-12 col-lg-3">
-        <center>
-          <img src="https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif" alt="" />
-          <h2>En travaux</h2>
-          <a href="./travaux.html">
-            <button class="bouton"><h4>voir plus</h4></button></a
-          >
-        </center>
-      </aside> -->
         </section>
 
         <footer>
             <center>
                 <p>© 2021 Portfolio</p>
             </center>
+            <button
+                id="dashboard-lock-btn"
+                onclick="openDashboardPrompt()"
+                title=""
+                aria-label="Accès dashboard"
+            >
+                🔒
+            </button>
         </footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -601,5 +527,6 @@
         <script src="assets/js/filtre.js"></script>
         <script src="assets/js/installer.js"></script>
         <script src="assets/js/scroll-up.js"></script>
+        <script src="assets/js/dashboard-access.js"></script>
     </body>
 </html>
