@@ -2,7 +2,7 @@
 // CONFIGURATION
 // =====================================================================
 
-const INDEX_HTML_PATH = "../index.html";
+const INDEX_HTML_PATH = "./index.html";
 const GITHUB_USER = "leven-anju-yuki";
 const BRANCHES = ["main", "master"];
 const README_NAMES = ["readme.md", "README.md", "Readme.md"];
