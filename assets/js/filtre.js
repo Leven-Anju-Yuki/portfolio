@@ -41,5 +41,34 @@ function filterProjects(category) {
     }
 }
 
-// Initialiser avec tous les projets visibles
+// Cache automatiquement les boutons de filtre dont la catégorie ne contient
+// aucun projet (ex: plus aucun projet en "html" pur). Le bouton "Tous" reste
+// toujours visible. Si un projet est ajouté plus tard dans la catégorie,
+// le bouton réapparaîtra automatiquement au prochain chargement de page.
+function hideEmptyFilters() {
+    let projects = document.querySelectorAll('aside');
+    let filterButtons = document.querySelectorAll('.filters button');
+
+    filterButtons.forEach(btn => {
+        // On lit la vraie catégorie depuis l'attribut onclick="filterProjects('xxx')"
+        // plutôt que la classe CSS du bouton, car les deux peuvent différer
+        // (ex: bouton de classe "htmlcss" mais filtre sur la catégorie "html").
+        let onclickAttr = btn.getAttribute('onclick') || '';
+        let match = onclickAttr.match(/filterProjects\(['"]([^'"]+)['"]\)/);
+        let category = match ? match[1] : null;
+
+        if (!category || category === 'all') {
+            return; // le bouton "Tous" reste toujours affiché
+        }
+
+        let hasProjectInCategory = Array.from(projects).some(project =>
+            project.classList.contains(category)
+        );
+
+        btn.style.display = hasProjectInCategory ? '' : 'none';
+    });
+}
+
+// Initialiser : cacher les filtres vides, puis afficher tous les projets
+hideEmptyFilters();
 filterProjects('all');
