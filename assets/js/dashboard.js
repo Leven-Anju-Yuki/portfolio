@@ -51,13 +51,27 @@ async function loadCategoryPanel() {
         .sort((a, b) => b[1] - a[1])
         .forEach(([category, count]) => {
             container.innerHTML += `
-                <div class="category-card">
+                <div class="category-card" data-category="${category}">
                     <span class="count">${count}</span>
                     <span class="label">${category}</span>
                 </div>
             `;
         });
 
+    // Construire la liste des projets par catégorie
+    const projectsByCategory = {};
+    asides.forEach((aside) => {
+        const classes = Array.from(aside.classList).filter(
+            (c) => c !== "col-12" && c !== "col-lg-3",
+        );
+        const category = classes[0] || "sans-categorie";
+        const title = aside.querySelector("h2")?.textContent.trim() || "Projet sans nom";
+
+        if (!projectsByCategory[category]) projectsByCategory[category] = [];
+        projectsByCategory[category].push(title);
+    });
+
+    enableCategoryToggle(projectsByCategory);
     drawCategoryChart(counts);
 }
 
@@ -438,5 +452,44 @@ function drawMetaOgChart(results) {
                 },
             },
         },
+    });
+}
+
+// =====================================================================
+// OUVERTURE / FERMETURE DES LISTES DE PROJETS PAR CATÉGORIE
+// =====================================================================
+function enableCategoryToggle(projectsByCategory) {
+    const cards = document.querySelectorAll(".category-card");
+    const details = document.getElementById("category-details");
+    let openedCategory = null;
+
+    cards.forEach((card) => {
+        card.style.cursor = "pointer";
+
+        card.addEventListener("click", () => {
+            const category = card.dataset.category;
+
+            // Si on reclique sur la même catégorie → fermer
+            if (openedCategory === category) {
+                details.innerHTML = "";
+                openedCategory = null;
+                return;
+            }
+
+            openedCategory = category;
+
+            const items = projectsByCategory[category] || [];
+
+            details.innerHTML = `
+                <div class="panel-like category-details-panel">
+                    <h3>Projets : ${category}</h3>
+                    ${
+                        items.length === 0
+                            ? "<p class='empty'>Aucun projet dans cette catégorie.</p>"
+                            : `<ul>${items.map((p) => `<li>${p}</li>`).join("")}</ul>`
+                    }
+                </div>
+            `;
+        });
     });
 }
