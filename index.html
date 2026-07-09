@@ -111,13 +111,27 @@
         </div>
 
         <div class="filters">
-            <button class="all" onclick="filterProjects('all')">Tous <span class="filter-count"></span></button>
-            <button class="js" onclick="filterProjects('js')">JavaScript <span class="filter-count"></span></button>
-            <button class="php" onclick="filterProjects('php')">PHP <span class="filter-count"></span></button>
-            <button class="htmlcss" onclick="filterProjects('html')">HTML/CSS <span class="filter-count"></span></button>
-            <button class="Wordpress" onclick="filterProjects('Wordpress')">Wordpress <span class="filter-count"></span></button>
-            <button class="symfony" onclick="filterProjects('symfony')">Symfony <span class="filter-count"></span></button>
-            <button class="autre" onclick="filterProjects('autre')">autre <span class="filter-count"></span></button>
+            <button class="all" onclick="filterProjects('all')">
+                Tous <span class="filter-count"></span>
+            </button>
+            <button class="js" onclick="filterProjects('js')">
+                JavaScript <span class="filter-count"></span>
+            </button>
+            <button class="php" onclick="filterProjects('php')">
+                PHP <span class="filter-count"></span>
+            </button>
+            <button class="htmlcss" onclick="filterProjects('html')">
+                HTML/CSS <span class="filter-count"></span>
+            </button>
+            <button class="Wordpress" onclick="filterProjects('Wordpress')">
+                Wordpress <span class="filter-count"></span>
+            </button>
+            <button class="symfony" onclick="filterProjects('symfony')">
+                Symfony <span class="filter-count"></span>
+            </button>
+            <button class="autre" onclick="filterProjects('autre')">
+                autre <span class="filter-count"></span>
+            </button>
             <!-- Ajoutez plus de boutons de filtre selon vos catégories -->
         </div>
 
@@ -171,6 +185,27 @@
                     >
                 </center>
             </aside>
+            <aside class="col-12 col-lg-3 autre">
+                <center>
+                    <div class="cadre-container">
+                        <img
+                            class="projet"
+                            src="assets/image/image-accueil/Concour_Eloquence.png"
+                            alt="Aperçu du concours d'éloquence image généré par IA"
+                        />
+                    </div>
+                    <!--a recuperer sur github-->
+                    <h2>Concours d'Éloquence</h2>
+                    <!-- <a target="_blank" href="./travaux.html">
+                                    <button class="bouton"><h4>voir plus</h4></button></a
+                                > -->
+                    <a href="Projet qui ne sont pas en lien/Concours_Eloquence.html">
+                        <button class="bouton">
+                            <h4>voir plus</h4>
+                        </button></a
+                    >
+                </center>
+            </aside>3
             <aside class="col-12 col-lg-3 autre">
                 <center>
                     <div class="cadre-container">
@@ -249,8 +284,8 @@
                     <div class="cadre-container">
                         <img
                             class="projet"
-                            src="./assets/image/image-accueil/convertisseur de devise.png"
-                            alt=""
+                            src="https://api.microlink.io/?url=https://leven-anju-yuki.github.io/Convertisseur-euro/&screenshot=true&meta=false&embed=screenshot.url"
+                            alt="Aperçu du projet Convertisseur de devise"
                         />
                     </div>
                     <h2>convertisseur de devise</h2>
@@ -519,7 +554,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <!-- Bouton "retour en haut de page" -->
-        <button id="scrollUpBtn" onclick="scrollToTop()" title="Retour en haut" aria-label="Retour en haut de la page">
+        <button
+            id="scrollUpBtn"
+            onclick="scrollToTop()"
+            title="Retour en haut"
+            aria-label="Retour en haut de la page"
+        >
             ↑
         </button>
 
