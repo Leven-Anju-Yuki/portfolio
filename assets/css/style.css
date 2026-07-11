@@ -1,205 +1,480 @@
 :root {
-  --dragon: #ec0000;
-  --fond: rgba(255, 255, 255, 0.7);
+    --dragon: #ec0000;
+    --fond: rgba(255, 255, 255, 0.7);
 }
 /* ===============DEBUT DES PAGES EN GENERAL=============== */
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 
-  /* border: solid 1px red; */
+    /* border: solid 1px red; */
 }
 @font-face {
-  font-family: police;
-  src: url(../font/NotoSerifBalinese-Regular.ttf);
+    font-family: police;
+    src: url(../font/NotoSerifBalinese-Regular.ttf);
 }
 body {
-  background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
-    url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  z-index: -100;
+    background:
+        linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+        url("https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424797/Dragon/image/fond.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
 }
 .jeux {
-  background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
-    url("../image/mangajeux/css\ accueil\ arcane.jpeg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  z-index: -100;
+    background:
+        linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+        url("../image/mangajeux/css\ accueil\ arcane.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: -100;
 }
 .bouton {
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid black;
-  background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.802));
-  box-shadow: 3px 3px black;
-  cursor: pointer;
-  margin: 15px 0;
-  text-shadow: 1px 1px white !important;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: linear-gradient(rgba(225, 130, 7, 0.603), rgba(0, 0, 0, 0.802));
+    box-shadow: 3px 3px black;
+    cursor: pointer;
+    margin: 15px 0;
+    text-shadow: 1px 1px white !important;
 }
 .bouton:active {
-  box-shadow: none;
-  transform: translate(3px, 3px);
+    box-shadow: none;
+    transform: translate(3px, 3px);
 }
 
 h1 {
-  text-align: center;
-  text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
 }
 h2 {
-  font-size: 2em;
-  color: black;
-  text-shadow: 1px 1px white !important;
-  text-transform: uppercase !important;
+    font-size: 2em;
+    color: black;
+    text-shadow: 1px 1px white !important;
+    text-transform: uppercase !important;
 }
 /* Style des sections */
 section {
-  display: flex;
-  /* Utilise Flexbox pour aligner les éléments horizontalement */
-  flex-direction: row;
-  /* Aligne les éléments horizontalement */
-  align-items: center;
-  /* Centre les éléments verticalement */
-  width: 90%;
-  margin: 20px 100px !important;
-  /* margin: auto; */
+    display: flex;
+    /* Utilise Flexbox pour aligner les éléments horizontalement */
+    flex-direction: row;
+    /* Aligne les éléments horizontalement */
+    align-items: center;
+    /* Centre les éléments verticalement */
+    width: 90%;
+    margin: 20px 100px !important;
+    /* margin: auto; */
 }
 
 /* Style des articles */
 article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: stretch;
-  width: 50%;
-  background-color: var(--fond);
-  border-radius: 20px;
-  padding: 10px;
-  margin-right: 10px;
-  box-shadow: 3px 3px 4px 0px var(--dragon);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 50%;
+    background-color: var(--fond);
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    box-shadow: 3px 3px 4px 0px var(--dragon);
 }
 .articlemax {
-  width: 100%;
-  margin: 1% 0 1% 0;
+    width: 100%;
+    margin: 1% 0 1% 0;
 }
 /* Style de la colonne latérale */
 aside {
-  width: 50%;
-  border: none;
-  display: flex;
+    width: 50%;
+    border: none;
+    display: flex;
 }
 section aside img {
-  width: 100%;
-  margin-right: 10px;
-  border-radius: 20px 20px 0 0;
-  border: solid rgba(0, 0, 0, 0.152);
-  box-shadow: 3px 3px 4px 0px var(--dragon);
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 20px 20px 0 0;
+    border: solid rgba(0, 0, 0, 0.152);
+    box-shadow: 3px 3px 4px 0px var(--dragon);
 }
 
 p {
-  padding: 10px;
-  text-align: left;
+    padding: 10px;
+    text-align: left;
 }
 div {
-  display: block;
+    display: block;
 }
 .portefeuille {
-  width: 10%;
-  margin-left: 10px;
+    width: 10%;
+    margin-left: 10px;
 }
 
 /*=================PAGE DRAGONS=================*/
 .image50 {
-  width: 50% !important;
+    width: 50% !important;
 }
 .imageheight {
-  height: 200px;
+    height: 200px;
 }
 /*=================FIN PAGE DRAGONS=================*/
 
 /*=================PARTIE ACCORDÉON=================*/
 .accordion-body {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 .accordion {
-  width: 90%;
-  margin: 20px 100px !important;
+    width: 90%;
+    margin: 20px 100px !important;
 }
 .accordion-item {
-  background-color: transparent !important;
-  border: none !important;
+    background-color: transparent !important;
+    border: none !important;
 }
 .accordion-button:not(.collapsed) {
-  color: red !important;
-  background-color: none;
-  box-shadow: none !important;
+    color: red !important;
+    background-color: none;
+    box-shadow: none !important;
 }
 /*=================FIN PARTIE ACCORDÉON=================*/
 /*=================DÉBUT PARTIE CARROUSEL=================*/
-.carousel-caption{
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 /*=================FIN PARTIE CARROUSEL=================*/
 
 @media screen and (max-width: 1024px) {
-  /* section {
+    /* section {
     /* width: 95%;
     margin-left: 10px !important; 
   } */
-  .azetmoi {
-    width: 90%;
-  }
-  /* .sectionazetmoi {
+    .azetmoi {
+        width: 90%;
+    }
+    /* .sectionazetmoi {
     display: flex;
     width: 96%;
   } */
-  .sectionazetmoi article {
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
+    .sectionazetmoi article {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
 
-  .sectionazetmoi aside {
-    width: 50%;
-  }
+    .sectionazetmoi aside {
+        width: 50%;
+    }
 
-  section {
-    display: block;
-    margin: 0 !important;
-    /* border: black solid 1px; */
-  }
-  .accordion {
-    width: 90%;
-    margin: 5px 25px !important;
-  }
-  .er {
-    margin-left: 20px;
-  }
-  article {
-    width: 100%;
-    margin: 10px 0;
-  }
-  aside {
-    width: 100%;
-    margin-left: 5%;
-  }
-  .apropos h3 {
-    margin: 10px 0px 0px 20px;
-  }
-  .magasin div aside {
-    display: block;
-  }
-  .magasin div aside img {
-    width: 75%;
-  }
-  .jeux {
-    background: linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
-      url("../image/mangajeux/css\ accueil\ arcane\ tel.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-  }
+    section {
+        display: block;
+        margin: 0 !important;
+        /* border: black solid 1px; */
+    }
+    .accordion {
+        width: 90%;
+        margin: 5px 25px !important;
+    }
+    .er {
+        margin-left: 20px;
+    }
+    article {
+        width: 100%;
+        margin: 10px 0;
+    }
+    aside {
+        width: 100%;
+        margin-left: 5%;
+    }
+    .apropos h3 {
+        margin: 10px 0px 0px 20px;
+    }
+    .magasin div aside {
+        display: block;
+    }
+    .magasin div aside img {
+        width: 75%;
+    }
+    .jeux {
+        background:
+            linear-gradient(rgba(246, 212, 149, 0.457), rgba(0, 0, 0, 0.428)),
+            url("../image/mangajeux/css\ accueil\ arcane\ tel.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
+/* ==========================================================
+   PAGE CONCOURS D'ELOQUENCE
+   ========================================================== */
+
+.eloquence{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#fff;
+}
+
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
+
+.eloquence .main{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:50px;
+    max-width:1700px;
+    margin:auto;
+    padding:40px 30px;
+    align-items:start;
+}
+
+/* ==========================================================
+   TEXTE
+   ========================================================== */
+
+.eloquence article{
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+.eloquence article p{
+    margin-bottom:18px;
+}
+
+/* ==========================================================
+   COLONNE VIDEO
+   ========================================================== */
+
+.eloquence aside{
+    position:sticky;
+    top:20px;
+}
+
+/* ==========================================================
+   CAROUSEL
+   ========================================================== */
+
+.eloquence .carousel{
+    width:100%;
+}
+
+.eloquence .video-container{
+    width:100%;
+    aspect-ratio:16/9;
+    min-height:520px;
+    background:#000;
+    border-radius:12px 12px 0 0;
+    overflow:hidden;
+}
+
+.eloquence .video-container video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* ==========================================================
+   LEGENDE
+   ========================================================== */
+
+.eloquence .caption-box{
+    background:#fff;
+    padding:18px;
+    text-align:center;
+    border:1px solid #ddd;
+    border-top:none;
+    border-radius:0 0 12px 12px;
+}
+
+.eloquence .caption-box h5{
+    font-size:1.05rem;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.eloquence .caption-box p{
+    margin:0;
+    font-size:.95rem;
+    line-height:1.5;
+}
+
+/* ==========================================================
+   CONTROLES
+   ========================================================== */
+
+.eloquence .carousel-control-prev,
+.eloquence .carousel-control-next{
+    width:8%;
+}
+
+/* ==========================================================
+   TEMOIGNAGES
+   ========================================================== */
+
+.eloquence .testimonials{
+    background:#f5f5f5;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.eloquence .testimonials h2{
+    margin-bottom:40px;
+}
+
+.eloquence .testimonial-card{
+    max-width:650px;
+    margin:auto;
+}
+
+.eloquence .testimonial-card img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.eloquence .testimonial-card p{
+    font-style:italic;
+    line-height:1.7;
+}
+
+/* ==========================================================
+   IMAGES
+   ========================================================== */
+
+.eloquence img{
+    max-width:100%;
+    height:auto;
+}
+
+.eloquence a img{
+    cursor:pointer;
+    transition:transform .25s ease;
+}
+
+.eloquence a img:hover{
+    transform:scale(1.05);
+}
+
+/* ==========================================================
+   GRANDS ECRANS
+   ========================================================== */
+
+@media (min-width:1800px){
+
+    .eloquence .main{
+        max-width:1850px;
+    }
+
+    .eloquence .video-container{
+        min-height:620px;
+    }
+
+}
+
+/* ==========================================================
+   ORDINATEURS PORTABLES
+   ========================================================== */
+
+@media (max-width:1200px){
+
+    .eloquence .main{
+        grid-template-columns:1.2fr 1fr;
+        gap:35px;
+    }
+
+    .eloquence .video-container{
+        min-height:420px;
+    }
+
+}
+
+/* ==========================================================
+   TABLETTES
+   ========================================================== */
+
+@media (max-width:992px){
+
+    .eloquence .main{
+        grid-template-columns:1fr;
+        gap:30px;
+        padding:30px 20px;
+    }
+
+    .eloquence article{
+        order:1;
+        font-size:1rem;
+    }
+
+    .eloquence aside{
+        order:2;
+        position:static;
+    }
+
+    .eloquence .video-container{
+        min-height:auto;
+        aspect-ratio:16/9;
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:768px){
+
+    .eloquence .main{
+        padding:20px 15px;
+    }
+
+    .eloquence article{
+        font-size:.98rem;
+        line-height:1.7;
+    }
+
+    .eloquence .caption-box{
+        padding:14px;
+    }
+
+    .eloquence .caption-box h5{
+        font-size:1rem;
+    }
+
+    .eloquence .caption-box p{
+        font-size:.9rem;
+    }
+
+    .eloquence .testimonial-card img{
+        width:80px;
+        height:80px;
+    }
+
+}
+
+/* ==========================================================
+   PETITS TELEPHONES
+   ========================================================== */
+
+@media (max-width:480px){
+
+    .eloquence .main{
+        padding:15px;
+    }
+
+    .eloquence article{
+        font-size:.95rem;
+    }
+
+    .eloquence .video-container{
+        border-radius:10px 10px 0 0;
+    }
+
+    .eloquence .caption-box{
+        border-radius:0 0 10px 10px;
+    }
+
 }
