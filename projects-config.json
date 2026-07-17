@@ -1,6 +1,6 @@
 {
   "githubUser": "leven-anju-yuki",
-  "generatedAt": "2026-07-17T12:32:46.833Z",
+  "generatedAt": "2026-07-17T13:18:30.784Z",
   "projects": [
     {
       "id": "projet-dragons",
@@ -659,7 +659,7 @@
       "autoCategoryLabel": "JavaScript",
       "categoryOverride": "",
       "readmeMarkdown": "# 🧵 Tissu Planner – Scanner de tickets\n\n📸 Une application web pour **scanner des tickets de tissu**,  \n📊 **organiser ses tenues**,  \n💰 **calculer automatiquement les coûts**,  \n📱 et l’utiliser facilement sur **téléphone** grâce à une PWA.\n\n---\n\n## ✨ Fonctionnalités\n\n- 📸 Scan de tickets (OCR avec Tesseract.js)\n- ✍️ Pré-remplissage automatique des champs\n- 🧾 Gestion de plusieurs tenues dans un seul tableau\n- 💰 Calcul automatique du prix total\n- 🖨️ Impression propre (A4 paysage)\n- 📱 Installable sur téléphone (PWA)\n- 🌐 Fonctionne hors ligne\n\n---\n\n## 🧱 Structure du projet\n\nSccanner Ticket/\n\n├── index.html\n├── manifest.json\n├── sw.js\n├── assets/\n│ ├── css/\n│ ├── js/\n│ └── icons/\n└── README.md\n\n---\n\n## 🚀 Installation en local\n\n```bash\ngit clone https://github.com/ton-repo/tissu-planner.git\ncd tissu-planner\n```\n- ➡️ Ouvre index.html via un serveur local\n(ex : Live Server sur VS Code)\n\n## 📱 Installation sur téléphone\n- Ouvre l’app dans Chrome\n\n- Clique sur Installer l’application\n\n- L’app s’ajoute à l’écran d’accueil 🎉\n\n## 🛠️ Technologies utilisées\n- HTML / CSS / JavaScript\n\n- 📸 Tesseract.js (OCR)\n\n- 📱 Progressive Web App (PWA)\n\n- 🧾 Google Sheets (à venir)\n\n💜 Projet personnel\nApplication créée pour simplifier la gestion des achats de tissu et mercerie\net éviter la saisie manuelle longue et répétitive ✂️🧵",
-      "readmeSnapshotAt": "2026-07-17T12:32:46.839Z",
+      "readmeSnapshotAt": "2026-07-17T13:18:31.094Z",
       "readmeAvailable": true
     },
     {
@@ -870,7 +870,7 @@
     {
       "id": "projet-qui-ne-sont-pas-en-lien-mise-a-jour",
       "repository": "",
-      "title": "Mise a jour",
+      "title": "mise a jour",
       "visible": false,
       "categoryOverride": "autre",
       "category": "autre",
@@ -891,55 +891,10 @@
       "readmePath": ""
     },
     {
-      "id": "portfolio",
-      "repository": "portfolio",
-      "title": "portfolio",
-      "visible": false,
-      "autoCategory": "html",
-      "autoCategoryLabel": "HTML",
-      "categoryOverride": "",
-      "category": "html",
-      "categoryLabel": "HTML",
-      "categories": [
-        "html"
-      ],
-      "destination": "readme",
-      "localPage": "",
-      "publicUrl": "",
-      "image": "",
-      "imageMode": "github",
-      "description": "",
-      "languages": [
-        "HTML",
-        "JavaScript",
-        "CSS",
-        "Python",
-        "Shell",
-        "Batchfile"
-      ],
-      "languageBytes": {
-        "HTML": 95956,
-        "JavaScript": 92114,
-        "CSS": 40001,
-        "Python": 2040,
-        "Shell": 80,
-        "Batchfile": 59
-      },
-      "primaryLanguage": "HTML",
-      "topics": [],
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
-      "private": false,
-      "fork": false,
-      "framework": ""
-    },
-    {
       "id": "automatisation-suivi-qualite",
       "repository": "automatisation-suivi-qualite",
       "title": "automatisation suivi qualite",
-      "visible": true,
+      "visible": false,
       "autoCategory": "jupyter-notebook",
       "autoCategoryLabel": "Jupyter Notebook",
       "categoryOverride": "",
@@ -966,15 +921,13 @@
       "readmePath": "",
       "private": true,
       "fork": false,
-      "framework": "",
-      "readmeAvailable": false,
-      "readmeMarkdown": ""
+      "framework": ""
     },
     {
       "id": "projet_reattribution_structures",
       "repository": "Projet_Reattribution_Structures",
       "title": "Projet Reattribution Structures",
-      "visible": true,
+      "visible": false,
       "autoCategory": "jupyter-notebook",
       "autoCategoryLabel": "Jupyter Notebook",
       "categoryOverride": "",
@@ -1003,9 +956,54 @@
       "readmePath": "README.md",
       "private": true,
       "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "portfolio",
+      "repository": "portfolio",
+      "title": "portfolio",
+      "visible": true,
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryOverride": "",
+      "category": "html",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS",
+        "Python",
+        "Shell",
+        "Batchfile"
+      ],
+      "languageBytes": {
+        "HTML": 98895,
+        "JavaScript": 94380,
+        "CSS": 40748,
+        "Python": 2040,
+        "Shell": 80,
+        "Batchfile": 59
+      },
+      "primaryLanguage": "HTML",
+      "topics": [],
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "private": false,
+      "fork": false,
       "framework": "",
-      "readmeMarkdown": "# README — Réattribution intelligente des structures\n\n## Objectif du projet\n\nCe projet sert à corriger automatiquement les structures associées aux offres touristiques à partir de leur zone.\n\nLe notebook est sécurisé : il affiche d'abord les corrections proposées, puis il demande une validation avant de créer les fichiers.\n\nIl crée deux fichiers après validation :\n\n1. un fichier Excel complet dans le dossier `resultats` ;\n2. un fichier CSV de réimport dans le dossier `resultats/reimport`.\n\nAprès validation, le fichier source qui a servi au traitement est déplacé automatiquement dans `archives_sources` pour éviter qu’il soit retraité par erreur.\n\nLe CSV est fait pour être réimporté directement : il ne contient que l'identifiant de l'offre et la structure corrigée.\n\n---\n\n## Dossier conseillé\n\nCréer un dossier principal nommé :\n\n```text\nProjet_Reattribution_Structures\n```\n\nOrganisation conseillée :\n\n```text\nProjet_Reattribution_Structures\n│\n├── Reattribution_intelligente_structures.ipynb\n├── fichier_a_traiter.csv\n│\n├── resultats\n│   ├── fichier_resultat.xlsx\n│   └── reimport\n│       └── fichier_reimport_structures_corrigees.csv\n│\n└── archives_sources\n    └── fichiers_sources_deja_utilises.csv\n```\n\n## À quoi servent les dossiers ?\n\n| Élément | Utilité |\n|---|---|\n| `Reattribution_intelligente_structures_V7_archives_reimport.ipynb` | Le notebook à lancer |\n| `fichier_a_traiter.csv` | Le fichier CSV à corriger |\n| `resultats` | Dossier créé automatiquement avec le fichier Excel final |\n| `archives_sources` | Dossier pour ranger les anciens fichiers et le fichier source utilisé après validation |\n\n\n---\n\n## Règle importante avant de lancer le notebook\n\nDans le dossier principal, il ne doit y avoir **qu’un seul fichier CSV à traiter**.\n\nFormats acceptés :\n\n```text\n.csv\n.xlsx\n.xlsm\n.xls\n```\n\nSi plusieurs fichiers sources sont dans le dossier principal, le notebook s’arrête pour éviter de traiter le mauvais fichier.\n\nLes anciens fichiers doivent être déplacés dans :\n\n```text\narchives_sources\n```\n\n---\n\n## Utilisation dans Google Colab\n\n### Étape 1 — Ouvrir le notebook\n\nImporter :\n\n```text\nReattribution_intelligente_structures.ipynb\n```\n\n### Étape 2 — Ajouter le fichier à traiter\n\nDans le panneau de fichiers à gauche, importer le fichier Excel ou CSV à corriger.\n\nLe fichier doit être placé au même niveau que le notebook.\n\n### Étape 3 — Lancer les cellules\n\nCliquer sur :\n\n```text\nExécution > Tout exécuter\n```\n\nou lancer les cellules dans l’ordre.\n\n### Étape 4 — Vérifier l’aperçu\n\nAvant de créer les fichiers, le notebook affiche un aperçu des corrections proposées.\n\nIl montre notamment :\n\n- la zone ;\n- la structure avant ;\n- la structure après ;\n- le score de confiance ;\n- l’action à faire.\n\n### Étape 5 — Valider\n\nLe notebook pose une question :\n\n```text\nValides-tu la création de l'Excel et du CSV de réimport ? Écris oui pour valider :\n```\n\nPour créer les fichiers, écrire exactement :\n\n```text\noui\n```\n\nSi autre chose est écrit, aucun fichier n’est créé et rien n’est téléchargé.\n\n### Étape 6 — Télécharger les fichiers\n\nAprès validation, Colab télécharge automatiquement :\n\n- le fichier Excel complet ;\n- le CSV de réimport, s’il y a des corrections certaines.\n\n---\n\n## Utilisation dans VS Code\n\n### Étape 1 — Créer le dossier du projet\n\nCréer :\n\n```text\nProjet_Reattribution_Structures\n```\n\n### Étape 2 — Placer les fichiers\n\nMettre dans ce dossier :\n\n```text\nReattribution_intelligente_structures_V7_archives_reimport.ipynb\n```\n\net le fichier Excel ou CSV à traiter.\n\nAttention : garder un seul fichier source dans le dossier principal.\n\n### Étape 3 — Ouvrir le dossier dans VS Code\n\nDans VS Code :\n\n```text\nFichier > Ouvrir un dossier\n```\n\nChoisir :\n\n```text\nProjet_Reattribution_Structures\n```\n\n### Étape 4 — Lancer les cellules\n\nOuvrir le notebook et lancer les cellules dans l’ordre.\n\n### Étape 5 — Valider ou refuser\n\nQuand l’aperçu apparaît, vérifier les corrections.\n\nÉcrire :\n\n```text\noui\n```\n\npour créer les fichiers.\n\n### Étape 6 — Récupérer les fichiers\n\nLes fichiers se trouvent ici :\n\n| Fichier | Emplacement |\n|---|---|\n| Excel complet | `resultats` |\n| CSV de réimport | `resultats/reimport` |\n| Fichier source utilisé | `archives_sources` |\n\n---\n\n## Feuille importante dans l’Excel : `A corriger`\n\nLa feuille **A corriger** regroupe dans un seul tableau :\n\n- les corrections certaines ;\n- les lignes douteuses à vérifier.\n\nLes lignes déjà correctes ne sont pas ajoutées dans cette feuille.\n\nColonnes importantes :\n\n| Colonne | Signification |\n|---|---|\n| `Zone` | Zone de l’offre |\n| `Structure avant` | Structure présente dans le fichier d’origine |\n| `Structure après` ou `Structure proposée` | Structure proposée par le notebook |\n| `Score de confiance` | Niveau de confiance 1 = 100% |\n| `Méthode` | Raison de la correction |\n| `Action` | Indique s’il faut corriger ou vérifier |\n\nValeurs possibles dans `Action` :\n\n| Valeur | Signification |\n|---|---|\n| `À corriger` | Correction considérée fiable |\n| `Doute - à vérifier` | Vérification manuelle nécessaire |\n\n---\n\n## CSV de réimport\n\nLe CSV est créé uniquement après validation.\n\nIl est rangé automatiquement dans :\n\n```text\nresultats/reimport\n```\n\nLe fichier source utilisé, lui, est déplacé dans :\n\n```text\narchives_sources\n```\n\nIl contient uniquement les corrections certaines, pas les doutes.\n\nColonnes du CSV :\n\n| Colonne | Contenu |\n|---|---|\n| `Identifiant` | Identifiant de l’offre |\n| `Structure` | Structure corrigée à réimporter |\n\nLe séparateur utilisé est le point-virgule :\n\n```text\n;\n```\n\nL’encodage est :\n\n```text\nutf-8-sig\n```\n\nCela permet une ouverture propre dans Excel.\n\n---\n\n## Règles actuellement intégrées\n\n| Zone | Structure attendue |\n|---|---|\n| CC du Pays du Clermontois | Oise Tourisme |\n| Liancourtois | Oise Tourisme |\n| Clermontois | Oise Tourisme |\n| CC de la Plaine d'Estrées | Compiègne - Pierrefonds Tourisme |\n| CC des Lisières de l'Oise | Compiègne - Pierrefonds Tourisme |\n| CC Senlis Sud Oise | Chantilly-Senlis Tourisme |\n| CC de l'Aire Cantilienne | Chantilly-Senlis Tourisme |\n| CC des Deux Vallées | Destination Nord-Compiégnois |\n| CC du Pays des Sources | Destination Nord-Compiégnois |\n| CC de l'Oise Picarde | Communauté de communes de l'Oise Picarde |\n| CC Thelloise | Communauté de communes Thelloise |\n\n---\n\n## Cas particulier : structures trop générales\n\nCes structures sont considérées comme trop générales :\n\n```text\nOise Tourisme\nHauts-de-France Tourisme\n```\n\nQuand une offre est rattachée à une structure trop générale, le notebook utilise la zone pour retrouver la bonne structure locale.\n\nException :\n\n```text\nCC du Pays du Clermontois\nLiancourtois\nClermontois\n```\n\nCes zones restent rattachées à :\n\n```text\nOise Tourisme\n```\n\n---\n\n## Colonnes supprimées dans les feuilles de données\n\nPour simplifier le fichier final, les colonnes suivantes sont retirées des feuilles de données :\n\n```text\nNom bordereau\nOrganisme créatrice de l'offre\nVille\nAdresse\nDescription\nOuv Accueil\nTarifs\nMoyen Com\nMoyen Com Résa\nPhotos\nGDF\nTrace GPX\nFichier pdf\n```\n\n---\n\n## Erreurs fréquentes\n\n### Plusieurs fichiers sources trouvés\n\nCause : plusieurs fichiers Excel ou CSV sont dans le dossier principal.\n\nSolution :\n\n- garder uniquement le fichier à traiter dans le dossier principal ;\n- déplacer les autres fichiers dans `archives_sources`.\n\n### Aucun fichier créé\n\nCause possible : la validation n’a pas été confirmée.\n\nSolution :\n\n- relancer les cellules ;\n- à la question de validation, écrire exactement `oui`.\n\n### Aucun CSV créé\n\nCauses possibles :\n\n- il n’y a aucune correction certaine ;\n- seules des lignes douteuses ont été détectées ;\n- la colonne identifiant n’a pas été trouvée.\n\nDans ce cas, vérifier la feuille **A corriger** dans l’Excel.\n\n---\n\n## Bonne pratique avant chaque traitement\n\n1. Fermer les anciens fichiers Excel ouverts.\n2. Mettre un seul fichier à traiter dans le dossier principal.\n3. Déplacer les anciens fichiers dans `archives_sources`.\n4. Lancer toutes les cellules du notebook.\n5. Vérifier l’aperçu.\n6. Écrire `oui` si les corrections sont bonnes.\n7. Récupérer l’Excel dans `resultats`.\n8. Récupérer le CSV dans `resultats/reimport`.\n9. Vérifier que le fichier source utilisé a bien été rangé dans `archives_sources`.\n10. Réimporter le CSV si besoin.\n\n---\n\n## Résumé très simple\n\n1. Mettre le fichier à traiter à côté du notebook.\n2. Ranger les anciens fichiers dans `archives_sources`.\n3. Lancer le notebook.\n4. Regarder l’aperçu.\n5. Écrire `oui` pour valider.\n6. Récupérer l’Excel dans `resultats`.\n7. Récupérer le CSV dans `resultats/reimport`.\n8. Le fichier source utilisé est rangé dans `archives_sources`.\n9. Réimporter le CSV si besoin.\n",
-      "readmeSnapshotAt": "2026-07-17T12:32:47.101Z",
+      "readmeMarkdown": "# 🌐 Portfolio dynamique de Florie\n\nCe portfolio présente mes projets de développement, de data, d’intelligence artificielle et mes compétences acquises hors code.\n\nLes cartes de l’index sont générées à partir de `projects-config.json`. Le dashboard permet de récupérer les dépôts GitHub publics et privés, de choisir les projets visibles, leur catégorie, leur image et la destination du bouton **Voir plus**.\n\n## Fonctionnement général\n\nLe portfolio utilise plusieurs sources :\n\n- les dépôts GitHub publics ;\n- les dépôts GitHub privés accessibles temporairement avec un token ;\n- les pages de présentation locales placées dans `Projet_qui_ne_sont_pas_en_lien/` ;\n- les images placées dans `assets/image/image-accueil/` ;\n- le fichier final `projects-config.json` utilisé par l’index.\n\nLe dashboard fusionne une page locale avec un dépôt GitHub lorsque leurs noms correspondent. Cela évite de créer deux cartes pour le même projet.\n\nUne page locale sans dépôt GitHub correspondant reste disponible comme projet indépendant.\n\n## Structure principale actuelle\n\n```text\nportfolio/\n│\n├── admin/\n│   └── dashboard.html\n│\n├── assets/\n│   ├── css/\n│   │   ├── a_propos.css\n│   │   ├── bootstrap.min.css\n│   │   ├── bunny-click.css\n│   │   ├── dashboard.css\n│   │   ├── header.css\n│   │   ├── local-project-header.css\n│   │   ├── readme.css\n│   │   ├── style accueil.css\n│   │   └── style.css\n│   │\n│   ├── font/\n│   │\n│   ├── image/\n│   │   ├── image-accueil/\n│   │   ├── logo-competence/\n│   │   ├── bibliotheque/\n│   │   ├── cle_de_fa/\n│   │   ├── dragon/\n│   │   ├── epave/\n│   │   ├── magasin/\n│   │   ├── mangajeux/\n│   │   └── pot_au_lapin/\n│   │\n│   └── js/\n│       ├── bunny-click.js\n│       ├── calculer_l'age.js\n│       ├── dashboard-access.js\n│       ├── dashboard.js\n│       ├── filtre.js\n│       ├── installer.js\n│       ├── portfolio-common.js\n│       ├── portfolio-index.js\n│       ├── portfolio-manager.js\n│       ├── readme-viewer.js\n│       └── scroll-up.js\n│\n├── data/\n│   ├── images-accueil.json\n│   └── pages-locales.json\n│\n├── docs/\n│   ├── AJOUTER-UNE-PAGE-LOCALE.txt\n│   ├── INSTRUCTIONS_TOKEN_GITHUB.txt\n│   ├── MODE-EMPLOI-PROJETS.txt\n│   ├── Guide_des_pages_et_fichiers_du_portfolio.docx\n│\n├── outils/\n│   ├── lancer_portfolio.bat\n│   ├── lancer_portfolio.sh\n│   └── mettre_a_jour_pages_locales.py\n│\n├── Projet_qui_ne_sont_pas_en_lien/\n│   ├── bibliotheque.html\n│   ├── cledefa.html\n│   ├── Concours_Eloquence.html\n│   ├── epave.html\n│   ├── magasin.html\n│   ├── mise a jour.html\n│   ├── pot_au_lapin.html\n│   ├── projet_dragons.html\n│   ├── projet_manga_jeux.html\n│   └── refuge.html\n│\n├── apropos.html\n├── index.html\n├── manifest.json\n├── projects-config.json\n├── readme.html\n├── readme.md\n└── sw.js\n```\n\n## Rôle des dossiers principaux\n\n### `admin/`\n\nContient le dashboard privé du portfolio.\n\nL’accès se fait avec un code comparé à une empreinte SHA-256. Le vrai code n’est pas écrit en clair dans le JavaScript.\n\nCette protection reste côté navigateur : elle évite l’accès facile au dashboard, mais ne remplace pas une authentification serveur.\n\n### `assets/`\n\nContient tous les fichiers visuels et techniques du site :\n\n- CSS ;\n- JavaScript ;\n- images ;\n- logos ;\n- polices.\n\nLes images proposées dans le dashboard viennent de :\n\n```text\nassets/image/image-accueil/\n```\n\n### `data/`\n\nContient les manifestes générés automatiquement :\n\n- `pages-locales.json` : liste des pages HTML locales ;\n- `images-accueil.json` : liste des images disponibles pour les cartes.\n\nCes fichiers sont nécessaires sur GitHub Pages, car un site statique ne peut pas toujours lister directement le contenu d’un dossier.\n\n### `docs/`\n\nContient les notices et modes d’emploi pour éviter de surcharger la racine du projet.\n\n### `outils/`\n\nContient les scripts pratiques :\n\n- lancement du serveur local au bon emplacement ;\n- mise à jour de la liste des pages locales ;\n- mise à jour de la liste des images disponibles.\n\n### `Projet_qui_ne_sont_pas_en_lien/`\n\nContient les pages HTML servant à présenter les projets qui ne peuvent pas être publiés directement, par exemple les projets PHP, Symfony, WordPress ou les expériences hors code.\n\nSi une page correspond à un dépôt GitHub, elle est associée au dépôt et n’apparaît pas en double.\n\nSi elle ne correspond à aucun dépôt, elle peut être ajoutée comme projet local indépendant.\n\n## Utilisation du dashboard\n\n1. Lancer le portfolio avec :\n\n   ```text\n   outils/lancer_portfolio.bat\n   ```\n\n   ou :\n\n   ```bash\n   ./outils/lancer_portfolio.sh\n   ```\n\n2. Ouvrir :\n\n   ```text\n   http://localhost:8000/admin/dashboard.html\n   ```\n\n3. Renseigner temporairement un token GitHub si les dépôts privés doivent être récupérés.\n\n4. Cliquer sur **Actualiser GitHub**.\n\n5. Utiliser la barre de recherche pour retrouver un projet par son titre ou le nom de son dépôt.\n\n6. Choisir pour chaque projet :\n\n   - s’il doit être affiché ;\n   - sa catégorie ;\n   - la destination du bouton **Voir plus** ;\n   - la page locale ;\n   - le README à afficher localement ;\n   - l’image de la carte.\n\n7. Cliquer sur **Enregistrer pour tester**.\n\n8. Vérifier le résultat dans `index.html`.\n\n9. Cliquer sur **Télécharger projects-config.json**.\n\n10. Remplacer le fichier présent à la racine avant de publier sur GitHub Pages.\n\n## Token GitHub\n\nLe token sert uniquement à récupérer les dépôts privés et leur contenu pendant l’utilisation du dashboard.\n\nIl n’est jamais exporté dans `projects-config.json`.\n\nSi le token est invalide ou expiré, le dashboard le retire et continue avec les dépôts publics.\n\n## Fusion des projets\n\nLe dashboard compare :\n\n- le titre du projet ;\n- le nom du dépôt ;\n- le nom du fichier HTML local ;\n- les mots importants présents dans ces noms.\n\nExemples de projets fusionnés :\n\n- Projet Dragons avec le dépôt Dragon ;\n- Projet Manga Jeux avec MangaGame ;\n- Application bibliothèque avec le dépôt Symfony des livres ;\n- Projet épave avec le dépôt Symfony des épaves ;\n- Numérisation des tickets de tissus avec Scanner-de-ticket ;\n- Automatisation suivi qualité avec son dépôt GitHub.\n\nLa fusion conserve la page locale et l’image choisie, puis ajoute les langages, le framework et les informations GitHub.\n\n## Catégories\n\nLa catégorie est proposée automatiquement à partir du langage principal ou du framework détecté.\n\nExemples :\n\n- Symfony est détecté via `composer.json` ;\n- WordPress peut être choisi manuellement ;\n- Python et Jupyter Notebook peuvent être rangés dans Data & IA ;\n- la catégorie peut toujours être modifiée dans le dashboard.\n\n## README locaux\n\nLe dashboard peut récupérer le README d’un dépôt et enregistrer son contenu dans `projects-config.json`.\n\nLe visiteur ouvre ensuite `readme.html` avec le style du portfolio, sans accéder directement au compte GitHub.\n\nPour un dépôt privé, il faut vérifier que le README ne contient aucune information confidentielle avant de le publier.\n\n## Ajouter une nouvelle page locale\n\n1. Ajouter le fichier HTML dans :\n\n   ```text\n   Projet_qui_ne_sont_pas_en_lien/\n   ```\n\n2. Lancer :\n\n   ```bash\n   python outils/mettre_a_jour_pages_locales.py\n   ```\n\n3. Ouvrir le dashboard.\n\n4. Cliquer sur **Actualiser GitHub**.\n\n5. Si aucun dépôt ne correspond à cette page, elle sera proposée comme projet local indépendant.\n\n## Ajouter une nouvelle image de carte\n\n1. Ajouter l’image dans :\n\n   ```text\n   assets/image/image-accueil/\n   ```\n\n2. Lancer :\n\n   ```bash\n   python outils/mettre_a_jour_pages_locales.py\n   ```\n\n3. L’image apparaîtra dans le menu déroulant du dashboard.\n\n## Recherche dans le dashboard\n\nUne barre de recherche permet de filtrer les lignes du tableau avec :\n\n- le titre visible du projet ;\n- le nom du dépôt GitHub.\n\nCette recherche ne relance pas GitHub et ne modifie pas les choix enregistrés.\n\n## Effet visuel\n\nUn petit effet de lapins apparaît lors des clics sur les pages du portfolio.\n\nLes fichiers concernés sont :\n\n```text\nassets/css/bunny-click.css\nassets/js/bunny-click.js\n```\n\n## Compétences présentées\n\nLe portfolio met notamment en avant :\n\n- HTML ;\n- CSS ;\n- JavaScript ;\n- PHP ;\n- Symfony ;\n- WordPress ;\n- Python ;\n- Jupyter Notebook ;\n- Pandas ;\n- NumPy ;\n- Matplotlib ;\n- Scikit-learn ;\n- UX/UI et outils de design.\n\n## Autrice\n\n**Florie Decitre**  \nÉtudiante en première année de Mastère Data et Intelligence Artificielle, en alternance chez Oise Tourisme.\n",
+      "readmeSnapshotAt": "2026-07-17T13:18:31.314Z",
       "readmeAvailable": true
     },
     {

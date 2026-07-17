@@ -33,7 +33,6 @@ portfolio/
 │   │   ├── bunny-click.css
 │   │   ├── dashboard.css
 │   │   ├── header.css
-│   │   ├── local-project-header.css
 │   │   ├── readme.css
 │   │   ├── style accueil.css
 │   │   └── style.css
