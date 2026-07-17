@@ -1,0 +1,18 @@
+GESTION AUTOMATIQUE DES PROJETS
+
+1. Lance le site avec un serveur local : python -m http.server 8000
+2. Ouvre http://localhost:8000/dashboard.html
+3. Pour les dépôts privés, crée un token GitHub finement limité en lecture seule des métadonnées des dépôts, colle-le dans le champ temporaire puis clique Actualiser GitHub.
+4. Le token reste seulement dans sessionStorage et n'est jamais placé dans projects-config.json.
+5. Coche les projets, choisis la destination et l'image.
+6. Enregistrer pour tester puis recharge index.html.
+7. Télécharger projects-config.json, remplace le fichier à la racine et pousse sur GitHub.
+
+IMPORTANT : pour un dépôt privé, ne choisis pas GitHub/README comme destination publique. Utilise une page locale ou un lien public volontaire.
+
+
+CATÉGORIES AUTOMATIQUES
+Chaque langage détecté par GitHub crée automatiquement un filtre. Un même projet peut apparaître dans plusieurs catégories.
+
+
+V9 : Pour une page locale ou un README, utilise désormais les menus déroulants. Aucun lien GitHub ne doit être saisi pour afficher un README local.

@@ -1,3 +1,9 @@
+/* =====================================================================
+   NOTES PERSONNELLES
+   Ce fichier contient les styles de : dashboard.
+   Je garde ces commentaires pour retrouver rapidement le rôle du fichier.
+   ===================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -360,4 +366,139 @@ tr:hover td {
         z-index: 2;
         border-right: 2px solid #444;
     }
+}
+
+/* Gestion des projets GitHub, ajoutée sans remplacer le design existant */
+.pm-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}.pm-toolbar input[type=password]{min-width:300px;padding:8px;border-radius:8px;border:1px solid #777}.pm-toolbar button{padding:8px 12px;border:2px solid #e18207;border-radius:9px;background:linear-gradient(rgba(225,130,7,.6),rgba(0,0,0,.8));color:#fff;cursor:pointer}.pm-table-wrap{overflow-x:auto}.pm-table{min-width:1500px}.pm-table input,.pm-table select{width:100%;padding:6px;border-radius:6px;border:1px solid #777}.pm-table td{vertical-align:top}.pm-table small{color:#cfc6b5}.pm-chip{display:inline-block;margin:2px;padding:3px 7px;border-radius:999px;background:rgba(225,130,7,.2);border:1px solid #e18207;font-size:.75rem}.pm-languages,.pm-topics{min-width:130px}.pm-table button{padding:4px 8px;border-radius:6px;border:1px solid #e18207;background:#302719;color:white}
+
+/* Lisibilité du gestionnaire de projets sur le fond sombre */
+#portfolio-manager-panel,
+#portfolio-manager-panel p,
+#portfolio-manager-panel label,
+#portfolio-manager-panel td,
+#portfolio-manager-panel th,
+#portfolio-manager-panel small,
+#portfolio-manager-panel strong {
+    color: #f5f1e8 !important;
+}
+
+#portfolio-manager-panel .panel-desc,
+#portfolio-manager-panel .pending {
+    color: #ddd3c1 !important;
+}
+
+#portfolio-manager-panel input:not([type="checkbox"]),
+#portfolio-manager-panel select,
+#portfolio-manager-panel option {
+    background: #fffaf0 !important;
+    color: #171717 !important;
+    text-shadow: none !important;
+}
+
+#portfolio-manager-panel input::placeholder {
+    color: #6b6b6b !important;
+    opacity: 1;
+}
+
+#portfolio-manager-panel input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: #e18207;
+}
+
+#portfolio-manager-panel button:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+#portfolio-manager-panel .ok {
+    color: #8ee58e !important;
+}
+
+#portfolio-manager-panel .error-row {
+    color: #ff9a9a !important;
+}
+
+/* Correctifs gestionnaire automatique */
+.pm-table { min-width: 1280px; }
+.pm-table th, .pm-table td { color: #f5f1e8 !important; }
+.pm-table input, .pm-table select { background: #fff !important; color: #111 !important; text-shadow: none !important; }
+.pm-table option { color: #111; background: #fff; }
+.pm-languages { min-width: 170px; display: flex; flex-wrap: wrap; gap: 4px; }
+.pm-chip { color: #fff !important; background: rgba(225,130,7,.28); }
+.pm-empty { color: #cfc6b5; font-size: .8rem; font-style: italic; }
+#pm-status, #pm-message { color: #fff; }
+
+/* Catégories basées sur le langage principal GitHub */
+.category-card:not(.total) { border-width: 3px; }
+.pm-chip { border: 2px solid #e18207; }
+
+
+/* ===== Gestionnaire de projets V9 ===== */
+section.panel.pm-panel-wide {
+    max-width: min(1760px, 98vw);
+    width: calc(100% - 20px);
+}
+.pm-table-wrap {
+    overflow-x: visible;
+}
+.pm-table {
+    min-width: 0 !important;
+    width: 100%;
+    table-layout: fixed;
+}
+.pm-table th:nth-child(1), .pm-table td:nth-child(1) { width: 5%; }
+.pm-table th:nth-child(2), .pm-table td:nth-child(2) { width: 15%; }
+.pm-table th:nth-child(3), .pm-table td:nth-child(3) { width: 13%; }
+.pm-table th:nth-child(4), .pm-table td:nth-child(4) { width: 15%; }
+.pm-table th:nth-child(5), .pm-table td:nth-child(5) { width: 10%; }
+.pm-table th:nth-child(6), .pm-table td:nth-child(6) { width: 10%; }
+.pm-table th:nth-child(7), .pm-table td:nth-child(7) { width: 18%; }
+.pm-table th:nth-child(8), .pm-table td:nth-child(8) { width: 14%; }
+.pm-table td, .pm-table th { overflow-wrap: anywhere; }
+.pm-destination-settings .pm-setting { display: none; }
+.pm-destination-settings[data-active="local"] .pm-setting-local,
+.pm-destination-settings[data-active="demo"] .pm-setting-demo,
+.pm-destination-settings[data-active="readme"] .pm-setting-readme,
+.pm-destination-settings[data-active="github"] .pm-setting-github { display: grid; gap: 5px; }
+.pm-setting > span { font-size: .75rem; color: #f3b65c; font-weight: bold; }
+.pm-setting small { color: #f5f1e8 !important; line-height: 1.35; }
+.pm-table select, .pm-table input { min-width: 0; }
+@media (max-width: 1150px) {
+    .pm-table-wrap { overflow-x: auto; }
+    .pm-table { min-width: 1150px !important; }
+}
+
+/* Le dashboard reste invisible pendant la vérification du code. */
+body.dashboard-auth-pending {
+    visibility: hidden;
+}
+
+/* Le menu d'image fonctionne comme celui des pages locales : un seul réglage utile reste visible. */
+.pm-image-settings .pm-image-setting {
+    display: none;
+    margin-top: 6px;
+}
+.pm-image-settings[data-active="asset"] .pm-image-setting-asset,
+.pm-image-settings[data-active="legacy"] .pm-image-setting-legacy,
+.pm-image-settings[data-active="screenshot"] .pm-image-setting-screenshot,
+.pm-image-settings[data-active="github"] .pm-image-setting-github {
+    display: block;
+}
+.pm-image-setting span {
+    display: block;
+    margin-bottom: 4px;
+    color: #f3b65c;
+    font-size: 0.78rem;
+    font-weight: bold;
+}
+.pm-image-setting select {
+    width: 100%;
+    min-width: 230px;
+}
+.pm-image-setting small {
+    display: block;
+    max-width: 260px;
+    color: #e8dfcf;
+    overflow-wrap: anywhere;
 }

@@ -1,3 +1,10 @@
+// =====================================================================
+// NOTES PERSONNELLES
+// Calcule mon âge automatiquement à partir de ma date de naissance.
+// Notes simples pour comprendre rapidement le rôle du fichier lors d’une future reprise.
+// =====================================================================
+
+// Calcule l’âge actuel à partir de la date de naissance.
 function calculerAge(dateNaissance) {
     const maintenant = new Date();
     const naissance = new Date(dateNaissance);

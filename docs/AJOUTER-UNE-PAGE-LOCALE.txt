@@ -1,0 +1,9 @@
+AJOUTER UNE PAGE LOCALE
+
+1. Déposer le fichier .html dans Projet_qui_ne_sont_pas_en_lien.
+2. Lancer depuis la racine : python outils/mettre_a_jour_pages_locales.py
+3. Lancer le site avec outils/lancer_portfolio.bat ou .sh.
+4. Ouvrir le dashboard : la page est ajoutée comme projet local décoché.
+5. Choisir sa catégorie, son image, cocher « Afficher », puis enregistrer.
+
+Le script évite d'écrire le chemin à la main et empêche les erreurs liées aux espaces.

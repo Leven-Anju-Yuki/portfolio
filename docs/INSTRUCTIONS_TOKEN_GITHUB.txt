@@ -1,0 +1,25 @@
+TOKEN GITHUB POUR LIRE LES DEPOTS PRIVES
+
+1. Sur GitHub, ouvre ta photo de profil puis Settings.
+2. Va dans Developer settings.
+3. Ouvre Personal access tokens puis Fine-grained tokens.
+4. Clique sur Generate new token.
+5. Donne-lui un nom, par exemple : Portfolio dashboard.
+6. Choisis une expiration courte, par exemple 7 ou 30 jours.
+7. Dans Repository access, sélectionne les dépôts privés que le dashboard doit lire,
+   ou tous tes dépôts si tu en as besoin.
+8. Dans Repository permissions, mets Contents sur Read-only.
+   Les métadonnées sont accessibles en lecture automatiquement.
+9. Génère le token et copie-le immédiatement.
+10. Colle-le dans le champ du dashboard puis clique sur Actualiser GitHub.
+
+Le token est conservé uniquement dans sessionStorage : il disparaît quand la session
+du navigateur est fermée ou quand tu cliques sur Retirer le token. Il n'est jamais
+inclus dans projects-config.json.
+
+IMPORTANT
+- Ne publie jamais ce token dans GitHub, dans un fichier JS, dans une capture ou dans un commit.
+- Pour que les choix soient visibles par tout le monde, télécharge projects-config.json,
+  remplace celui du portfolio, puis pousse ce seul fichier sur GitHub.
+- Les projets cochés ne sont pas supprimés lors d'une actualisation GitHub : les réglages
+  enregistrés sont conservés, même si le token n'est plus présent.

@@ -1,86 +1,74 @@
-// Catégorie actuellement sélectionnée (mise à jour à chaque clic sur un filtre)
+// =====================================================================
+// NOTES PERSONNELLES
+// Gère les filtres, la recherche et les compteurs de projets.
+// Notes simples pour comprendre rapidement le rôle du fichier lors d’une future reprise.
+// =====================================================================
+
 let currentCategory = 'all';
 
+// Retourne uniquement les cartes de projets de la grille principale.
+function getProjectCards() {
+    return Array.from(document.querySelectorAll('section.row.justify-content-center > aside'));
+}
+
+// Lit le nom lisible de la catégorie enregistré sur une carte.
+function categoryLabel(category, cards = []) {
+    const card = cards.find(item => item.dataset.category === category);
+    return card?.dataset.categoryLabel || (typeof languageLabelFromSlug === 'function'
+        ? languageLabelFromSlug(category)
+        : category.replaceAll('-', ' ').replace(/\b\w/g, c => c.toUpperCase()));
+}
+
+// Recrée les boutons de filtre selon les catégories réellement présentes.
+function rebuildLanguageFilters() {
+    const container = document.querySelector('.filters');
+    if (!container) return;
+
+    const projects = getProjectCards();
+    const counts = new Map();
+    projects.forEach(project => {
+        const category = project.dataset.category || project.dataset.categories || 'autre';
+        counts.set(category, (counts.get(category) || 0) + 1);
+    });
+
+    const buttons = [`<button class="all" data-category="all" onclick="filterProjects('all')">Tous <span class="filter-count">(${projects.length})</span></button>`];
+    [...counts.entries()].sort((a,b) => categoryLabel(a[0], projects).localeCompare(categoryLabel(b[0], projects), 'fr')).forEach(([category,count]) => {
+        const color = typeof languageColor === 'function' ? languageColor(category) : '#e18207';
+        buttons.push(`<button class="language-filter" style="--language-color:${color}" data-category="${category}" onclick="filterProjects('${category}')">${categoryLabel(category, projects)} <span class="filter-count">(${count})</span></button>`);
+    });
+    container.innerHTML = buttons.join('');
+}
+
+// Affiche les cartes qui correspondent au filtre et au texte recherché.
 function filterProjects(category) {
     currentCategory = category;
-
-    let projects = document.querySelectorAll('aside');
-    let noResults = document.getElementById('no-results');
-    let searchInput = document.getElementById('search-input');
-    let searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    const projects = getProjectCards();
+    const noResults = document.getElementById('no-results');
+    const searchInput = document.getElementById('search-input');
+    const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : '';
     let hasVisibleProjects = false;
 
-    // Met en surbrillance le bouton de filtre actif (optionnel mais pratique)
-    document.querySelectorAll('.filters button').forEach(btn => {
-        btn.classList.remove('active');
+    document.querySelectorAll('.filters button').forEach(button => {
+        button.classList.toggle('active', button.dataset.category === category);
     });
-    let activeBtn = document.querySelector(`.filters button.${category}`);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
 
     projects.forEach(project => {
-        let matchesCategory = category === 'all' || project.classList.contains(category);
-
-        let titleEl = project.querySelector('h2');
-        let title = titleEl ? titleEl.textContent.trim().toLowerCase() : '';
-        let matchesSearch = searchTerm === '' || title.includes(searchTerm);
-
-        if (matchesCategory && matchesSearch) {
-            project.classList.remove('hidden');
-            hasVisibleProjects = true;
-        } else {
-            project.classList.add('hidden');
-        }
+        const projectCategory = project.dataset.category || project.dataset.categories || 'autre';
+        const matchesCategory = category === 'all' || projectCategory === category;
+        const title = project.querySelector('h2')?.textContent.trim().toLowerCase() || '';
+        const matchesSearch = searchTerm === '' || title.includes(searchTerm);
+        const visible = matchesCategory && matchesSearch;
+        project.classList.toggle('hidden', !visible);
+        if (visible) hasVisibleProjects = true;
     });
 
-    if (hasVisibleProjects) {
-        noResults.style.display = 'none';
-    } else {
-        noResults.style.display = 'block';
-    }
+    if (noResults) noResults.style.display = hasVisibleProjects ? 'none' : 'block';
 }
 
-// Cache automatiquement les boutons de filtre dont la catégorie ne contient
-// aucun projet (ex: plus aucun projet en "html" pur), et affiche à côté de
-// chaque bouton le nombre de projets de cette catégorie (ex: "JavaScript (12)").
-// Le bouton "Tous" reste toujours visible et affiche le total des projets.
-function updateFilterCounts() {
-    let projects = document.querySelectorAll('aside');
-    let filterButtons = document.querySelectorAll('.filters button');
+// Met à jour le nombre affiché dans chaque bouton de filtre.
+function updateFilterCounts() { rebuildLanguageFilters(); }
 
-    filterButtons.forEach(btn => {
-        // On lit la vraie catégorie depuis l'attribut onclick="filterProjects('xxx')"
-        // plutôt que la classe CSS du bouton, car les deux peuvent différer
-        // (ex: bouton de classe "htmlcss" mais filtre sur la catégorie "html").
-        let onclickAttr = btn.getAttribute('onclick') || '';
-        let match = onclickAttr.match(/filterProjects\(['"]([^'"]+)['"]\)/);
-        let category = match ? match[1] : null;
-
-        if (!category) {
-            return;
-        }
-
-        let count = category === 'all'
-            ? projects.length
-            : Array.from(projects).filter(project => project.classList.contains(category)).length;
-
-        // Met à jour le compteur affiché dans le bouton (span ajouté dans le HTML)
-        let countSpan = btn.querySelector('.filter-count');
-        if (countSpan) {
-            countSpan.textContent = `(${count})`;
-        }
-
-        if (category === 'all') {
-            return; // le bouton "Tous" reste toujours affiché, même si count = 0
-        }
-
-        // Cache le bouton si la catégorie est vide (et il réapparaîtra tout
-        // seul si un projet est ajouté dans cette catégorie plus tard)
-        btn.style.display = count > 0 ? '' : 'none';
-    });
-}
-
-// Initialiser : calculer les compteurs / cacher les filtres vides, puis afficher tous les projets
-updateFilterCounts();
-filterProjects('all');
+document.addEventListener('DOMContentLoaded', () => {
+    rebuildLanguageFilters();
+    filterProjects('all');
+});

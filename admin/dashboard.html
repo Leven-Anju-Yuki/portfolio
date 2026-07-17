@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<base href="../">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="./assets/css/dashboard.css" rel="stylesheet"/>
+<link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="./assets/css/header.css" rel="stylesheet"/>
+<link href="./assets/image/portefeuille.png" rel="shortcut icon" type="image/png"/>
+<title>Dashboard - Portfolio</title>
+<!-- Balises Meta SEO -->
+<meta content="Découvrez mon portfolio ,de développeur web, comprenant des projets variés tels que calculatrices, convertisseurs, jeux, alimentaion pour lapin et cours de japonais." name="description"/>
+<meta content="portfolio, développement web, projets, calculatrice, convertisseur, jeux, cours de japonais, programmation, alimentation lapin" name="keywords"/>
+<meta content="Florie Decitre" name="author"/>
+<!-- Balises Meta Open Graph (OG) pour les réseaux sociaux -->
+<meta content="Portfolio" property="og:title"/>
+<meta content="Explorez mes projets, allant des outils comme des calculatrices et convertisseurs aux jeux et ressources pédagogiques, réalisés en HTML, CSS, php, JavaScript et framework." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://leven-anju-yuki.github.io/portfolio/index.html" property="og:url"/>
+<meta content="https://leven-anju-yuki.github.io/portfolio/assets/image/az-et-moi.jpg" property="og:image"/>
+<meta content="Portfolio" property="og:site_name"/>
+<link rel="stylesheet" href="./assets/css/bunny-click.css"/>
+<script defer src="./assets/js/dashboard-access.js"></script>
+</head>
+<body class="dashboard-auth-pending" data-protected-dashboard="true">
+<header>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<!-- Brand -->
+<a class="navbar-brand" href="./index.html"><img alt="" class="portefeuille" src="./assets/image/portefeuille.png"/></a>
+<!-- Toggler/collapsibe Button -->
+<button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Navbar links -->
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="./index.html">Mes projet</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="./apropos.html">A propos</a>
+</li>
+<center>
+<button class="btn-install ml-2" id="installButton" style="display: none">
+                                Installer
+                            </button>
+</center>
+</ul>
+</div>
+</nav>
+</header>
+<h1>Dashboard du portfolio</h1>
+<p class="subtitle">
+            Suivi du nombre de projets par catégorie et de l'état README / meta sur GitHub
+        </p>
+<div class="top-bar">
+<button id="refresh-btn" onclick="refreshAll()">Actualiser</button>
+<span id="last-update">Jamais actualisé</span>
+<span id="rate-limit-info"></span>
+</div>
+<!-- ============= PANEL 1 : Projets par catégorie ============= -->
+<section class="panel pm-panel-wide" id="portfolio-manager-panel"><h2>Sélection des projets du portfolio</h2><p class="panel-desc">Connexion temporaire GitHub pour lire aussi les dépôts privés. La catégorie est proposée automatiquement, mais tu peux la modifier. Les pages locales ne sont plus affichées comme projets séparés : elles servent uniquement de destination. Pour « Page créée », choisis la page HTML dans la liste. Pour « README local », choisis le fichier README détecté dans le dépôt : son contenu est copié dans projects-config.json et affiché sur une page locale : les visiteurs n’accèdent pas à ton compte GitHub. Ne publie que les informations que tu acceptes de rendre visibles.</p><div class="pm-toolbar"><input id="pm-token" placeholder="Token GitHub temporaire (pour les privés)" type="password"/><label><input id="pm-starred" type="checkbox"/> Inclure mes favoris</label><button id="pm-refresh-btn" onclick="portfolioRefresh()" type="button">Actualiser GitHub</button><button id="pm-forget-token" onclick="pmForgetToken()" type="button">Retirer le token</button><button onclick="pmSave()" type="button">Enregistrer pour tester</button><button onclick="pmExport()" type="button">Télécharger projects-config.json</button><button onclick="pmAll(true)" type="button">Tout cocher</button><button onclick="pmAll(false)" type="button">Tout décocher</button></div><p class="pending" id="pm-status"></p><p class="ok" id="pm-message"></p><div class="pm-table-wrap"><table class="pm-table"><thead><tr><th>Afficher</th><th>Projet</th><th>Dépôt</th><th>Langages utilisés</th><th>Catégorie (modifiable)</th><th>Voir plus vers</th><th>Destination choisie</th><th>Image</th></tr></thead><tbody id="pm-body"></tbody></table></div></section><section class="panel">
+<h2>Projets par catégorie</h2>
+<p class="panel-desc">
+                Calculé à partir des projets cochés dans le panneau supérieur. Chaque projet est classé une seule fois selon son framework (Symfony/WordPress), sinon selon son langage GitHub majoritaire.
+            </p>
+<div class="category-grid" id="category-grid">
+<p class="pending">Chargement...</p>
+</div>
+</section>
+<section id="category-details"></section>
+<!-- ============= PANEL 2 : README / meta GitHub ============= -->
+<section class="panel">
+<h2>État README &amp; balises meta (GitHub, en direct)</h2>
+<p class="panel-desc">
+                Vérifie en direct, à chaque actualisation, si chaque repo GitHub a un
+                <code>readme.md</code> et des balises meta (description, keywords, Open Graph) dans
+                son <code>index.html</code>.
+            </p>
+<div id="meta-table-container">
+<p class="pending">Chargement des données GitHub...</p>
+</div>
+<p class="legend">
+                ✓ = présent    ✕ = absent    Cliquer sur "Actualiser" relance la
+                vérification en direct sur GitHub.
+            </p>
+<p class="no-git-note">
+                Les projets sans dépôt Git (présentations orales, stages Wordpress, projets
+                PHP/Symfony nécessitant un vrai serveur) ne peuvent pas être vérifiés
+                automatiquement ici : Dragons, manga jeux, bibliothèque, Pot au lapin, Magasin,
+                refuge, Clé de Fa, épave. À cocher manuellement sur Trello.
+            </p>
+</section>
+<!-- ============= PANEL 3 : Camemberts : Catégories & README/Meta ============= -->
+<section class="panel">
+<h2>État détaillé README &amp; Meta</h2>
+<div class="chart-grid">
+<!-- Catégories (2 cases) -->
+<div class="chart-box wide">
+<h3>Répartition des catégories</h3>
+<canvas class="chart-same-size" id="chart-categories"></canvas>
+<div class="legend-grid" id="categories-legend"></div>
+</div>
+<!-- README -->
+<div class="chart-box">
+<h3>README</h3>
+<canvas id="chart-readme"></canvas>
+</div>
+<!-- Meta Description -->
+<div class="chart-box">
+<h3>Meta Description</h3>
+<canvas id="chart-meta-desc"></canvas>
+</div>
+<!-- Meta Keywords -->
+<div class="chart-box">
+<h3>Meta Keywords</h3>
+<canvas id="chart-meta-key"></canvas>
+</div>
+<!-- Open Graph -->
+<div class="chart-box">
+<h3>Open Graph</h3>
+<canvas id="chart-meta-og"></canvas>
+</div>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script src="./assets/js/portfolio-common.js?v=18"></script>
+<script src="./assets/js/portfolio-manager.js?v=18"></script>
+<script src="./assets/js/dashboard.js?v=18"></script>
+<script src="./assets/js/bunny-click.js?v=18"></script>
+</body>
+</html>

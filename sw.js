@@ -1,31 +1,40 @@
-// Lors de l'événement 'install', le service worker s'exécute pour la première fois.
-self.addEventListener("install", function (event) {
-    // `event.waitUntil()` attend la fin d'une opération asynchrone (ici l'ouverture d'un cache et l'ajout des ressources).
-    event.waitUntil(
-        // Ouvre le cache nommé "v1" (version 1 du cache). Si ce cache n'existe pas encore, il est créé.
-        caches.open("v1").then(function (cache) {
-            // Ajoute les fichiers spécifiés au cache pour qu'ils puissent être utilisés hors ligne.
-            return cache.addAll([
-                "/",                   // La racine du site (page d'accueil).
-                "/index.html",         // La page principale.
-                "/styles.css",         // Le fichier CSS pour le style.
-                "/manifest.json",      // Le fichier manifest qui configure la PWA.
-                "/icon-192x192.png",   // L'icône en 192x192 pixels (utilisée pour les petites résolutions).
-                "/icon-512x512.png",   // L'icône en 512x512 pixels (pour les résolutions plus grandes).
-            ]);
-        })
-    );
-});
+// NOTES PERSONNELLES : ce service worker gère le cache de la version installable du portfolio.
+// Je change son nom de cache lorsque je veux forcer le navigateur à reprendre les nouveaux fichiers.
 
-// Lors de l'événement 'fetch', chaque fois qu'une ressource est demandée (par exemple, lors de la navigation), le service worker intervient.
-self.addEventListener("fetch", function (event) {
-    // `event.respondWith()` intercepte la requête réseau et permet de définir une réponse personnalisée (ici, le cache).
-    event.respondWith(
-        // Vérifie si la requête est déjà présente dans le cache.
-        caches.match(event.request).then(function (response) {
-            // Si elle est dans le cache, elle est renvoyée directement (hors ligne).
-            // Sinon, la requête est transmise au réseau via `fetch()`.
-            return response || fetch(event.request);
-        })
-    );
+const CACHE_NAME = "portfolio-v18";
+const ASSETS = [
+    "./",
+    "./index.html",
+  "./readme.html",
+    "./dashboard.html",
+    "./manifest.json",
+    "./assets/css/style accueil.css",
+    "./assets/css/dashboard.css",
+    "./assets/image/portefeuille.png"
+];
+self.addEventListener("install", event => {
+    event.waitUntil(caches.open(CACHE_NAME).then(cache => Promise.allSettled(ASSETS.map(asset => cache.add(asset)))));
+    self.skipWaiting();
+});
+self.addEventListener("activate", event => {
+    event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))));
+    self.clients.claim();
+});
+self.addEventListener("fetch", event => {
+    if (event.request.method !== "GET") return;
+
+    const url = new URL(event.request.url);
+
+    // Les fichiers du dashboard changent souvent pendant le développement.
+    // On les récupère toujours sur le réseau pour éviter de mélanger deux versions.
+    if (url.pathname.includes("/admin/") || url.pathname.includes("/assets/js/portfolio-")) {
+        event.respondWith(fetch(event.request, { cache: "no-store" }));
+        return;
+    }
+
+    event.respondWith(fetch(event.request).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        return response;
+    }).catch(() => caches.match(event.request)));
 });

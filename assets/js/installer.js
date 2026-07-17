@@ -1,3 +1,9 @@
+// =====================================================================
+// NOTES PERSONNELLES
+// Gère l'installation du portfolio comme application web.
+// Notes simples pour comprendre rapidement le rôle du fichier lors d’une future reprise.
+// =====================================================================
+
 // Vérifier si le navigateur supporte les Service Workers
 if ("serviceWorker" in navigator) {
     // Enregistrer le Service Worker

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="28" fill="#ffffff"/>
+  <rect x="12" y="12" width="276" height="276" rx="22" fill="#f7f7f7" stroke="#d8d8d8"/>
+  <ellipse cx="150" cy="150" rx="78" ry="48" fill="none" stroke="#F37626" stroke-width="18"/>
+  <circle cx="92" cy="106" r="11" fill="#9E9E9E"/>
+  <circle cx="209" cy="193" r="11" fill="#9E9E9E"/>
+  <circle cx="213" cy="99" r="6" fill="#9E9E9E"/>
+  <circle cx="88" cy="201" r="6" fill="#9E9E9E"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#4C4C4C">Jupyter</text>
+  <text x="150" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#F37626">Notebook</text>
+</svg>
