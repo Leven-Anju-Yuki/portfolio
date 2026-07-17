@@ -1,10 +1,10 @@
 {
   "githubUser": "leven-anju-yuki",
-  "generatedAt": null,
+  "generatedAt": "2026-07-17T12:32:46.833Z",
   "projects": [
     {
       "id": "projet-dragons",
-      "repository": "Dragons",
+      "repository": "Dragon",
       "title": "projet Dragons",
       "visible": true,
       "category": "php",
@@ -15,16 +15,40 @@
       "imageMode": "legacy",
       "description": "",
       "languages": [
-        "PHP"
+        "PHP",
+        "Hack",
+        "CSS",
+        "JavaScript",
+        "HTML",
+        "Dockerfile"
       ],
       "topics": [],
-      "private": false,
+      "private": true,
       "fork": false,
       "primaryLanguage": "PHP",
       "categoryLabel": "PHP",
       "categories": [
         "php"
-      ]
+      ],
+      "framework": "",
+      "languageBytes": {
+        "PHP": 573474,
+        "Hack": 138513,
+        "CSS": 43087,
+        "JavaScript": 36003,
+        "HTML": 29737,
+        "Dockerfile": 374
+      },
+      "readmeFiles": [
+        "README.md",
+        "assets/font/Exo_2/README.txt",
+        "assets/font/Raleway/README.txt",
+        "assets/font/Space_Grotesk/README.txt"
+      ],
+      "readmePath": "README.md",
+      "autoCategory": "php",
+      "autoCategoryLabel": "PHP",
+      "categoryOverride": ""
     },
     {
       "id": "projet-manga-jeux",
@@ -39,16 +63,38 @@
       "imageMode": "legacy",
       "description": "",
       "languages": [
-        "PHP"
+        "PHP",
+        "Hack",
+        "CSS",
+        "JavaScript"
       ],
       "topics": [],
-      "private": false,
+      "private": true,
       "fork": false,
       "primaryLanguage": "PHP",
       "categoryLabel": "PHP",
       "categories": [
         "php"
-      ]
+      ],
+      "framework": "",
+      "languageBytes": {
+        "PHP": 365556,
+        "Hack": 107093,
+        "CSS": 46780,
+        "JavaScript": 10048
+      },
+      "readmeFiles": [
+        "assets/font/beast-tamer/sono/README.txt",
+        "assets/font/bofuri/Josefin_Sans/README.txt",
+        "assets/font/dungeons/Alkatra/README.txt",
+        "assets/font/strike-the-blood/playfair-Display/README.txt",
+        "assets/font/tokyo-ghoul/rubik/README.txt",
+        "assets/font/zelda/EB-Garamond/README.txt"
+      ],
+      "readmePath": "assets/font/beast-tamer/sono/README.txt",
+      "autoCategory": "php",
+      "autoCategoryLabel": "PHP",
+      "categoryOverride": ""
     },
     {
       "id": "application-bibliotheque",
@@ -63,18 +109,33 @@
       "imageMode": "legacy",
       "description": "",
       "languages": [
+        "Twig",
         "PHP",
-        "Twig"
+        "CSS",
+        "JavaScript"
       ],
       "topics": [],
       "private": false,
       "fork": false,
-      "primaryLanguage": "PHP",
+      "primaryLanguage": "Twig",
       "categoryLabel": "Symfony",
       "categories": [
         "symfony"
       ],
-      "framework": "Symfony"
+      "framework": "Symfony",
+      "languageBytes": {
+        "Twig": 17369,
+        "PHP": 16977,
+        "CSS": 2902,
+        "JavaScript": 25
+      },
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "autoCategory": "symfony",
+      "autoCategoryLabel": "Symfony",
+      "categoryOverride": ""
     },
     {
       "id": "concours-d-eloquence",
@@ -91,28 +152,17 @@
       "languages": [],
       "topics": [],
       "private": false,
-      "fork": false
-    },
-    {
-      "id": "pot-au-lapin",
-      "repository": "",
-      "title": "Pot au lapin",
-      "visible": true,
-      "category": "autre",
-      "destination": "local",
-      "localPage": "Projet_qui_ne_sont_pas_en_lien/pot_au_lapin.html",
-      "publicUrl": "",
-      "image": "./assets/image/image-accueil/pot_au_lapin.png",
-      "imageMode": "legacy",
-      "description": "",
-      "languages": [],
-      "topics": [],
-      "private": false,
-      "fork": false
+      "fork": false,
+      "categoryOverride": "",
+      "categoryLabel": "Autre",
+      "categories": [
+        "autre"
+      ],
+      "readmePath": ""
     },
     {
       "id": "magasin",
-      "repository": "",
+      "repository": "magasin",
       "title": "Magasin",
       "visible": true,
       "category": "php",
@@ -122,273 +172,612 @@
       "image": "./assets/image/magasin/magasin.png",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "PHP",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "PHP": 6528,
+        "CSS": 2567
+      },
+      "primaryLanguage": "PHP",
+      "readmeFiles": [],
+      "readmePath": "",
+      "autoCategory": "php",
+      "autoCategoryLabel": "PHP",
+      "categoryLabel": "PHP",
+      "categories": [
+        "php"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "calculatrice-en-front",
       "repository": "CalculatriceFront",
       "title": "calculatrice en front",
       "visible": true,
-      "category": "js",
+      "category": "html",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/CalculatriceFront/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/CalculatriceFront/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 18050,
+        "JavaScript": 10452,
+        "CSS": 7483
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "cours-de-croate",
       "repository": "cours_croate",
       "title": "Cours de croate",
       "visible": true,
-      "category": "js",
+      "category": "html",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/cours_croate/",
       "image": "./assets/image/image-accueil/croate.png",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 109917,
+        "JavaScript": 17319,
+        "CSS": 6461
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "cours-de-japonais",
       "repository": "cours-japonais",
       "title": "Cours de japonais",
       "visible": true,
-      "category": "js",
+      "category": "html",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/cours-japonais/",
       "image": "./assets/image/image-accueil/japonais.png",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 198088,
+        "JavaScript": 33223,
+        "CSS": 9719
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "convertisseur-de-devise",
       "repository": "Convertisseur-euro",
       "title": "convertisseur de devise",
       "visible": true,
-      "category": "js",
+      "category": "html",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/Convertisseur-euro/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/Convertisseur-euro/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
-      "description": "",
-      "languages": [],
+      "description": "Convertisseur",
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 7536,
+        "JavaScript": 5206,
+        "CSS": 5032
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "convertisseur-d-unite",
       "repository": "convertisseur-unite",
       "title": "convertisseur d'unité",
       "visible": true,
-      "category": "js",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/convertisseur-unite/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/convertisseur-unite/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 12501,
+        "HTML": 5763,
+        "CSS": 2500
+      },
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "jeux-de-bulles",
       "repository": "jeux-de-bulles",
       "title": "jeux de bulles",
       "visible": true,
-      "category": "js",
+      "category": "css",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/jeux-de-bulles/",
       "image": "assets/image/image-accueil/jeux de bulles.png",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "CSS": 872,
+        "JavaScript": 795,
+        "HTML": 471
+      },
+      "primaryLanguage": "CSS",
+      "readmeFiles": [],
+      "readmePath": "",
+      "autoCategory": "css",
+      "autoCategoryLabel": "CSS",
+      "categoryLabel": "CSS",
+      "categories": [
+        "css"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "shifumi",
       "repository": "shifumi",
       "title": "Shifumi",
       "visible": true,
-      "category": "js",
+      "category": "html",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/shifumi/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/shifumi/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 9479,
+        "JavaScript": 8917,
+        "CSS": 3151
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [],
+      "readmePath": "",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "age-et-signes-astro",
       "repository": "age",
       "title": "âge et signes astro",
       "visible": true,
-      "category": "js",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/age/",
       "image": "assets/image/image-accueil/age.png",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 9588,
+        "HTML": 4986,
+        "CSS": 3689
+      },
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "tva",
       "repository": "tva",
       "title": "TVA",
       "visible": true,
-      "category": "js",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/tva/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/tva/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 6342,
+        "HTML": 4392,
+        "CSS": 3430
+      },
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "promotion",
       "repository": "promotion",
       "title": "Promotion",
       "visible": true,
-      "category": "js",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/promotion/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/promotion/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 5451,
+        "HTML": 3608,
+        "CSS": 1221
+      },
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "visualisateur-de-decoupe-de-tissu",
       "repository": "Planificateur_de_Decoupe_de_Tissu",
       "title": "Visualisateur de découpe de tissu",
       "visible": true,
-      "category": "js",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/Planificateur_de_Decoupe_de_Tissu/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/Planificateur_de_Decoupe_de_Tissu/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 56806,
+        "CSS": 6145,
+        "HTML": 5586
+      },
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "numerisation-des-tickets-de-tissus",
       "repository": "Scanner-de-ticket",
       "title": "Numérisation des tickets de tissus",
       "visible": true,
-      "category": "jupyter-notebook",
-      "destination": "local",
-      "localPage": "./Projet_qui_ne_sont_pas_en_lien/mise a jour.html",
+      "category": "javascript",
+      "destination": "readme",
+      "localPage": "",
       "publicUrl": "",
       "image": "https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif",
       "imageMode": "legacy",
       "description": "",
       "languages": [
-        "Jupyter Notebook",
-        "Python"
+        "JavaScript",
+        "HTML",
+        "CSS"
       ],
       "topics": [],
       "private": false,
       "fork": false,
-      "primaryLanguage": "Jupyter Notebook",
-      "categoryLabel": "Jupyter Notebook",
+      "primaryLanguage": "JavaScript",
+      "categoryLabel": "JavaScript",
       "categories": [
-        "jupyter-notebook"
-      ]
+        "javascript"
+      ],
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 6795,
+        "HTML": 3283,
+        "CSS": 1913
+      },
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "readmeMarkdown": "# 🧵 Tissu Planner – Scanner de tickets\n\n📸 Une application web pour **scanner des tickets de tissu**,  \n📊 **organiser ses tenues**,  \n💰 **calculer automatiquement les coûts**,  \n📱 et l’utiliser facilement sur **téléphone** grâce à une PWA.\n\n---\n\n## ✨ Fonctionnalités\n\n- 📸 Scan de tickets (OCR avec Tesseract.js)\n- ✍️ Pré-remplissage automatique des champs\n- 🧾 Gestion de plusieurs tenues dans un seul tableau\n- 💰 Calcul automatique du prix total\n- 🖨️ Impression propre (A4 paysage)\n- 📱 Installable sur téléphone (PWA)\n- 🌐 Fonctionne hors ligne\n\n---\n\n## 🧱 Structure du projet\n\nSccanner Ticket/\n\n├── index.html\n├── manifest.json\n├── sw.js\n├── assets/\n│ ├── css/\n│ ├── js/\n│ └── icons/\n└── README.md\n\n---\n\n## 🚀 Installation en local\n\n```bash\ngit clone https://github.com/ton-repo/tissu-planner.git\ncd tissu-planner\n```\n- ➡️ Ouvre index.html via un serveur local\n(ex : Live Server sur VS Code)\n\n## 📱 Installation sur téléphone\n- Ouvre l’app dans Chrome\n\n- Clique sur Installer l’application\n\n- L’app s’ajoute à l’écran d’accueil 🎉\n\n## 🛠️ Technologies utilisées\n- HTML / CSS / JavaScript\n\n- 📸 Tesseract.js (OCR)\n\n- 📱 Progressive Web App (PWA)\n\n- 🧾 Google Sheets (à venir)\n\n💜 Projet personnel\nApplication créée pour simplifier la gestion des achats de tissu et mercerie\net éviter la saisie manuelle longue et répétitive ✂️🧵",
+      "readmeSnapshotAt": "2026-07-17T12:32:46.839Z",
+      "readmeAvailable": true
     },
     {
       "id": "clikergame",
       "repository": "clikergame",
       "title": "clikergame",
       "visible": true,
-      "category": "js",
+      "category": "html",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/clikergame/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/clikergame/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 111248,
+        "JavaScript": 20821,
+        "CSS": 6060
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "wolf-s-hunt",
       "repository": "Wolf-s-Hunt",
       "title": "Wolf's Hunt",
       "visible": true,
-      "category": "js",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
       "publicUrl": "https://leven-anju-yuki.github.io/Wolf-s-Hunt/",
       "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/Wolf-s-Hunt/&screenshot=true&meta=false&embed=screenshot.url",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "JavaScript": 75470,
+        "HTML": 45649,
+        "CSS": 6512
+      },
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "alimentation-lapin",
       "repository": "nourriture-lapin",
-      "title": "Alimentation lapin",
+      "title": "Pot au lapin",
       "visible": true,
-      "category": "js",
-      "destination": "demo",
-      "localPage": "",
+      "category": "html",
+      "destination": "local",
+      "localPage": "Projet_qui_ne_sont_pas_en_lien/pot_au_lapin.html",
       "publicUrl": "https://leven-anju-yuki.github.io/nourriture-lapin/",
-      "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/nourriture-lapin/nourriture&screenshot=true&meta=false&embed=screenshot.url",
+      "image": "./assets/image/image-accueil/pot_au_lapin.png",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
-      "fork": false
+      "fork": false,
+      "framework": "",
+      "languageBytes": {
+        "HTML": 67893,
+        "JavaScript": 6689,
+        "CSS": 6217
+      },
+      "primaryLanguage": "HTML",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "categoryOverride": ""
     },
     {
       "id": "projet-refuge",
@@ -410,7 +799,8 @@
       "categoryLabel": "PHP",
       "categories": [
         "php"
-      ]
+      ],
+      "readmePath": ""
     },
     {
       "id": "cle-de-fa",
@@ -432,11 +822,12 @@
       "categoryLabel": "WordPress",
       "categories": [
         "wordpress"
-      ]
+      ],
+      "readmePath": ""
     },
     {
       "id": "projet-epave",
-      "repository": "",
+      "repository": "appli_pour_les_epaves_symfo",
       "title": "Projet épave",
       "visible": true,
       "category": "symfony",
@@ -446,7 +837,12 @@
       "image": "https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif",
       "imageMode": "legacy",
       "description": "",
-      "languages": [],
+      "languages": [
+        "PHP",
+        "Twig",
+        "JavaScript",
+        "CSS"
+      ],
       "topics": [],
       "private": false,
       "fork": false,
@@ -454,7 +850,674 @@
       "categoryLabel": "Symfony",
       "categories": [
         "symfony"
-      ]
+      ],
+      "languageBytes": {
+        "PHP": 35865,
+        "Twig": 26097,
+        "JavaScript": 3438,
+        "CSS": 3090
+      },
+      "primaryLanguage": "PHP",
+      "readmeFiles": [
+        "README.md",
+        "node_modules/leaflet/README.md"
+      ],
+      "readmePath": "README.md",
+      "autoCategory": "symfony",
+      "autoCategoryLabel": "Symfony",
+      "categoryOverride": ""
+    },
+    {
+      "id": "projet-qui-ne-sont-pas-en-lien-mise-a-jour",
+      "repository": "",
+      "title": "Mise a jour",
+      "visible": false,
+      "categoryOverride": "autre",
+      "category": "autre",
+      "categoryLabel": "Autre",
+      "categories": [
+        "autre"
+      ],
+      "destination": "local",
+      "localPage": "Projet_qui_ne_sont_pas_en_lien/mise a jour.html",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "asset",
+      "description": "Page locale ajoutée depuis le dossier de présentations.",
+      "languages": [],
+      "readmeFiles": [],
+      "private": false,
+      "fork": false,
+      "readmePath": ""
+    },
+    {
+      "id": "portfolio",
+      "repository": "portfolio",
+      "title": "portfolio",
+      "visible": false,
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryOverride": "",
+      "category": "html",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "HTML",
+        "JavaScript",
+        "CSS",
+        "Python",
+        "Shell",
+        "Batchfile"
+      ],
+      "languageBytes": {
+        "HTML": 95956,
+        "JavaScript": 92114,
+        "CSS": 40001,
+        "Python": 2040,
+        "Shell": 80,
+        "Batchfile": 59
+      },
+      "primaryLanguage": "HTML",
+      "topics": [],
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "automatisation-suivi-qualite",
+      "repository": "automatisation-suivi-qualite",
+      "title": "automatisation suivi qualite",
+      "visible": true,
+      "autoCategory": "jupyter-notebook",
+      "autoCategoryLabel": "Jupyter Notebook",
+      "categoryOverride": "",
+      "category": "jupyter-notebook",
+      "categoryLabel": "Jupyter Notebook",
+      "categories": [
+        "jupyter-notebook"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "languageBytes": {
+        "Jupyter Notebook": 488646
+      },
+      "primaryLanguage": "Jupyter Notebook",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": true,
+      "fork": false,
+      "framework": "",
+      "readmeAvailable": false,
+      "readmeMarkdown": ""
+    },
+    {
+      "id": "projet_reattribution_structures",
+      "repository": "Projet_Reattribution_Structures",
+      "title": "Projet Reattribution Structures",
+      "visible": true,
+      "autoCategory": "jupyter-notebook",
+      "autoCategoryLabel": "Jupyter Notebook",
+      "categoryOverride": "",
+      "category": "jupyter-notebook",
+      "categoryLabel": "Jupyter Notebook",
+      "categories": [
+        "jupyter-notebook"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "Jupyter Notebook"
+      ],
+      "languageBytes": {
+        "Jupyter Notebook": 64393
+      },
+      "primaryLanguage": "Jupyter Notebook",
+      "topics": [],
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "private": true,
+      "fork": false,
+      "framework": "",
+      "readmeMarkdown": "# README — Réattribution intelligente des structures\n\n## Objectif du projet\n\nCe projet sert à corriger automatiquement les structures associées aux offres touristiques à partir de leur zone.\n\nLe notebook est sécurisé : il affiche d'abord les corrections proposées, puis il demande une validation avant de créer les fichiers.\n\nIl crée deux fichiers après validation :\n\n1. un fichier Excel complet dans le dossier `resultats` ;\n2. un fichier CSV de réimport dans le dossier `resultats/reimport`.\n\nAprès validation, le fichier source qui a servi au traitement est déplacé automatiquement dans `archives_sources` pour éviter qu’il soit retraité par erreur.\n\nLe CSV est fait pour être réimporté directement : il ne contient que l'identifiant de l'offre et la structure corrigée.\n\n---\n\n## Dossier conseillé\n\nCréer un dossier principal nommé :\n\n```text\nProjet_Reattribution_Structures\n```\n\nOrganisation conseillée :\n\n```text\nProjet_Reattribution_Structures\n│\n├── Reattribution_intelligente_structures.ipynb\n├── fichier_a_traiter.csv\n│\n├── resultats\n│   ├── fichier_resultat.xlsx\n│   └── reimport\n│       └── fichier_reimport_structures_corrigees.csv\n│\n└── archives_sources\n    └── fichiers_sources_deja_utilises.csv\n```\n\n## À quoi servent les dossiers ?\n\n| Élément | Utilité |\n|---|---|\n| `Reattribution_intelligente_structures_V7_archives_reimport.ipynb` | Le notebook à lancer |\n| `fichier_a_traiter.csv` | Le fichier CSV à corriger |\n| `resultats` | Dossier créé automatiquement avec le fichier Excel final |\n| `archives_sources` | Dossier pour ranger les anciens fichiers et le fichier source utilisé après validation |\n\n\n---\n\n## Règle importante avant de lancer le notebook\n\nDans le dossier principal, il ne doit y avoir **qu’un seul fichier CSV à traiter**.\n\nFormats acceptés :\n\n```text\n.csv\n.xlsx\n.xlsm\n.xls\n```\n\nSi plusieurs fichiers sources sont dans le dossier principal, le notebook s’arrête pour éviter de traiter le mauvais fichier.\n\nLes anciens fichiers doivent être déplacés dans :\n\n```text\narchives_sources\n```\n\n---\n\n## Utilisation dans Google Colab\n\n### Étape 1 — Ouvrir le notebook\n\nImporter :\n\n```text\nReattribution_intelligente_structures.ipynb\n```\n\n### Étape 2 — Ajouter le fichier à traiter\n\nDans le panneau de fichiers à gauche, importer le fichier Excel ou CSV à corriger.\n\nLe fichier doit être placé au même niveau que le notebook.\n\n### Étape 3 — Lancer les cellules\n\nCliquer sur :\n\n```text\nExécution > Tout exécuter\n```\n\nou lancer les cellules dans l’ordre.\n\n### Étape 4 — Vérifier l’aperçu\n\nAvant de créer les fichiers, le notebook affiche un aperçu des corrections proposées.\n\nIl montre notamment :\n\n- la zone ;\n- la structure avant ;\n- la structure après ;\n- le score de confiance ;\n- l’action à faire.\n\n### Étape 5 — Valider\n\nLe notebook pose une question :\n\n```text\nValides-tu la création de l'Excel et du CSV de réimport ? Écris oui pour valider :\n```\n\nPour créer les fichiers, écrire exactement :\n\n```text\noui\n```\n\nSi autre chose est écrit, aucun fichier n’est créé et rien n’est téléchargé.\n\n### Étape 6 — Télécharger les fichiers\n\nAprès validation, Colab télécharge automatiquement :\n\n- le fichier Excel complet ;\n- le CSV de réimport, s’il y a des corrections certaines.\n\n---\n\n## Utilisation dans VS Code\n\n### Étape 1 — Créer le dossier du projet\n\nCréer :\n\n```text\nProjet_Reattribution_Structures\n```\n\n### Étape 2 — Placer les fichiers\n\nMettre dans ce dossier :\n\n```text\nReattribution_intelligente_structures_V7_archives_reimport.ipynb\n```\n\net le fichier Excel ou CSV à traiter.\n\nAttention : garder un seul fichier source dans le dossier principal.\n\n### Étape 3 — Ouvrir le dossier dans VS Code\n\nDans VS Code :\n\n```text\nFichier > Ouvrir un dossier\n```\n\nChoisir :\n\n```text\nProjet_Reattribution_Structures\n```\n\n### Étape 4 — Lancer les cellules\n\nOuvrir le notebook et lancer les cellules dans l’ordre.\n\n### Étape 5 — Valider ou refuser\n\nQuand l’aperçu apparaît, vérifier les corrections.\n\nÉcrire :\n\n```text\noui\n```\n\npour créer les fichiers.\n\n### Étape 6 — Récupérer les fichiers\n\nLes fichiers se trouvent ici :\n\n| Fichier | Emplacement |\n|---|---|\n| Excel complet | `resultats` |\n| CSV de réimport | `resultats/reimport` |\n| Fichier source utilisé | `archives_sources` |\n\n---\n\n## Feuille importante dans l’Excel : `A corriger`\n\nLa feuille **A corriger** regroupe dans un seul tableau :\n\n- les corrections certaines ;\n- les lignes douteuses à vérifier.\n\nLes lignes déjà correctes ne sont pas ajoutées dans cette feuille.\n\nColonnes importantes :\n\n| Colonne | Signification |\n|---|---|\n| `Zone` | Zone de l’offre |\n| `Structure avant` | Structure présente dans le fichier d’origine |\n| `Structure après` ou `Structure proposée` | Structure proposée par le notebook |\n| `Score de confiance` | Niveau de confiance 1 = 100% |\n| `Méthode` | Raison de la correction |\n| `Action` | Indique s’il faut corriger ou vérifier |\n\nValeurs possibles dans `Action` :\n\n| Valeur | Signification |\n|---|---|\n| `À corriger` | Correction considérée fiable |\n| `Doute - à vérifier` | Vérification manuelle nécessaire |\n\n---\n\n## CSV de réimport\n\nLe CSV est créé uniquement après validation.\n\nIl est rangé automatiquement dans :\n\n```text\nresultats/reimport\n```\n\nLe fichier source utilisé, lui, est déplacé dans :\n\n```text\narchives_sources\n```\n\nIl contient uniquement les corrections certaines, pas les doutes.\n\nColonnes du CSV :\n\n| Colonne | Contenu |\n|---|---|\n| `Identifiant` | Identifiant de l’offre |\n| `Structure` | Structure corrigée à réimporter |\n\nLe séparateur utilisé est le point-virgule :\n\n```text\n;\n```\n\nL’encodage est :\n\n```text\nutf-8-sig\n```\n\nCela permet une ouverture propre dans Excel.\n\n---\n\n## Règles actuellement intégrées\n\n| Zone | Structure attendue |\n|---|---|\n| CC du Pays du Clermontois | Oise Tourisme |\n| Liancourtois | Oise Tourisme |\n| Clermontois | Oise Tourisme |\n| CC de la Plaine d'Estrées | Compiègne - Pierrefonds Tourisme |\n| CC des Lisières de l'Oise | Compiègne - Pierrefonds Tourisme |\n| CC Senlis Sud Oise | Chantilly-Senlis Tourisme |\n| CC de l'Aire Cantilienne | Chantilly-Senlis Tourisme |\n| CC des Deux Vallées | Destination Nord-Compiégnois |\n| CC du Pays des Sources | Destination Nord-Compiégnois |\n| CC de l'Oise Picarde | Communauté de communes de l'Oise Picarde |\n| CC Thelloise | Communauté de communes Thelloise |\n\n---\n\n## Cas particulier : structures trop générales\n\nCes structures sont considérées comme trop générales :\n\n```text\nOise Tourisme\nHauts-de-France Tourisme\n```\n\nQuand une offre est rattachée à une structure trop générale, le notebook utilise la zone pour retrouver la bonne structure locale.\n\nException :\n\n```text\nCC du Pays du Clermontois\nLiancourtois\nClermontois\n```\n\nCes zones restent rattachées à :\n\n```text\nOise Tourisme\n```\n\n---\n\n## Colonnes supprimées dans les feuilles de données\n\nPour simplifier le fichier final, les colonnes suivantes sont retirées des feuilles de données :\n\n```text\nNom bordereau\nOrganisme créatrice de l'offre\nVille\nAdresse\nDescription\nOuv Accueil\nTarifs\nMoyen Com\nMoyen Com Résa\nPhotos\nGDF\nTrace GPX\nFichier pdf\n```\n\n---\n\n## Erreurs fréquentes\n\n### Plusieurs fichiers sources trouvés\n\nCause : plusieurs fichiers Excel ou CSV sont dans le dossier principal.\n\nSolution :\n\n- garder uniquement le fichier à traiter dans le dossier principal ;\n- déplacer les autres fichiers dans `archives_sources`.\n\n### Aucun fichier créé\n\nCause possible : la validation n’a pas été confirmée.\n\nSolution :\n\n- relancer les cellules ;\n- à la question de validation, écrire exactement `oui`.\n\n### Aucun CSV créé\n\nCauses possibles :\n\n- il n’y a aucune correction certaine ;\n- seules des lignes douteuses ont été détectées ;\n- la colonne identifiant n’a pas été trouvée.\n\nDans ce cas, vérifier la feuille **A corriger** dans l’Excel.\n\n---\n\n## Bonne pratique avant chaque traitement\n\n1. Fermer les anciens fichiers Excel ouverts.\n2. Mettre un seul fichier à traiter dans le dossier principal.\n3. Déplacer les anciens fichiers dans `archives_sources`.\n4. Lancer toutes les cellules du notebook.\n5. Vérifier l’aperçu.\n6. Écrire `oui` si les corrections sont bonnes.\n7. Récupérer l’Excel dans `resultats`.\n8. Récupérer le CSV dans `resultats/reimport`.\n9. Vérifier que le fichier source utilisé a bien été rangé dans `archives_sources`.\n10. Réimporter le CSV si besoin.\n\n---\n\n## Résumé très simple\n\n1. Mettre le fichier à traiter à côté du notebook.\n2. Ranger les anciens fichiers dans `archives_sources`.\n3. Lancer le notebook.\n4. Regarder l’aperçu.\n5. Écrire `oui` pour valider.\n6. Récupérer l’Excel dans `resultats`.\n7. Récupérer le CSV dans `resultats/reimport`.\n8. Le fichier source utilisé est rangé dans `archives_sources`.\n9. Réimporter le CSV si besoin.\n",
+      "readmeSnapshotAt": "2026-07-17T12:32:47.101Z",
+      "readmeAvailable": true
+    },
+    {
+      "id": "police",
+      "repository": "police",
+      "title": "police",
+      "visible": false,
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryOverride": "",
+      "category": "html",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "HTML",
+        "CSS"
+      ],
+      "languageBytes": {
+        "HTML": 18124,
+        "CSS": 5393
+      },
+      "primaryLanguage": "HTML",
+      "topics": [],
+      "readmeFiles": [
+        "assets/font/dragon/Exo_2/README.txt",
+        "assets/font/dragon/playfair-Display/README.txt",
+        "assets/font/dragon/Raleway/README.txt",
+        "assets/font/dragon/Smooch_Sans/README.txt",
+        "assets/font/dragon/Space_Grotesk/README.txt",
+        "assets/font/dragon/Teko/README.txt",
+        "assets/font/manga-game/beast-tamer/sono/README.txt",
+        "assets/font/manga-game/bofuri/Josefin_Sans/README.txt",
+        "assets/font/manga-game/dungeons/Alkatra/README.txt",
+        "assets/font/manga-game/strike-the-blood/playfair-Display/README.txt",
+        "assets/font/manga-game/tokyo-ghoul/rubik/README.txt",
+        "assets/font/manga-game/zelda/EB-Garamond/README.txt"
+      ],
+      "readmePath": "assets/font/dragon/Exo_2/README.txt",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "todolist",
+      "repository": "ToDoList",
+      "title": "ToDoList",
+      "visible": false,
+      "autoCategory": "css",
+      "autoCategoryLabel": "CSS",
+      "categoryOverride": "",
+      "category": "css",
+      "categoryLabel": "CSS",
+      "categories": [
+        "css"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "languageBytes": {
+        "CSS": 1486,
+        "JavaScript": 1026,
+        "HTML": 670
+      },
+      "primaryLanguage": "CSS",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "cour-commandes",
+      "repository": "cour-commandes",
+      "title": "cour commandes",
+      "visible": false,
+      "autoCategory": "autre",
+      "autoCategoryLabel": "Autre",
+      "categoryOverride": "",
+      "category": "autre",
+      "categoryLabel": "Autre",
+      "categories": [
+        "autre"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [],
+      "languageBytes": {},
+      "primaryLanguage": "",
+      "topics": [],
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "le_back_de_dragon",
+      "repository": "le_back_de_dragon",
+      "title": "le back de dragon",
+      "visible": false,
+      "autoCategory": "symfony",
+      "autoCategoryLabel": "Symfony",
+      "categoryOverride": "",
+      "category": "symfony",
+      "categoryLabel": "Symfony",
+      "categories": [
+        "symfony"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "PHP",
+        "Twig"
+      ],
+      "languageBytes": {
+        "PHP": 1575,
+        "Twig": 582
+      },
+      "primaryLanguage": "PHP",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": "Symfony"
+    },
+    {
+      "id": "nodejs-starter",
+      "repository": "NodeJs-Starter",
+      "title": "NodeJs Starter",
+      "visible": false,
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "category": "javascript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "JavaScript"
+      ],
+      "languageBytes": {
+        "JavaScript": 748
+      },
+      "primaryLanguage": "JavaScript",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "formulairecrud",
+      "repository": "formulairecrud",
+      "title": "formulairecrud",
+      "visible": false,
+      "autoCategory": "php",
+      "autoCategoryLabel": "PHP",
+      "categoryOverride": "",
+      "category": "php",
+      "categoryLabel": "PHP",
+      "categories": [
+        "php"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "PHP",
+        "CSS"
+      ],
+      "languageBytes": {
+        "PHP": 20382,
+        "CSS": 5071
+      },
+      "primaryLanguage": "PHP",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "calculatriceenalert",
+      "repository": "CalculatriceEnAlert",
+      "title": "CalculatriceEnAlert",
+      "visible": false,
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "category": "javascript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "languageBytes": {
+        "JavaScript": 2609,
+        "CSS": 1088,
+        "HTML": 450
+      },
+      "primaryLanguage": "JavaScript",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "bank",
+      "repository": "bank",
+      "title": "bank",
+      "visible": false,
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "category": "javascript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "languageBytes": {
+        "JavaScript": 20152,
+        "HTML": 5766,
+        "CSS": 2058
+      },
+      "primaryLanguage": "JavaScript",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "cercle-qui-suit-la-souris",
+      "repository": "cercle-qui-suit-la-souris",
+      "title": "cercle qui suit la souris",
+      "visible": false,
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "category": "javascript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "languageBytes": {
+        "JavaScript": 436,
+        "HTML": 372,
+        "CSS": 161
+      },
+      "primaryLanguage": "JavaScript",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "formulaire",
+      "repository": "formulaire",
+      "title": "formulaire",
+      "visible": false,
+      "autoCategory": "css",
+      "autoCategoryLabel": "CSS",
+      "categoryOverride": "",
+      "category": "css",
+      "categoryLabel": "CSS",
+      "categories": [
+        "css"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "CSS",
+        "HTML",
+        "JavaScript"
+      ],
+      "languageBytes": {
+        "CSS": 925,
+        "HTML": 820,
+        "JavaScript": 608
+      },
+      "primaryLanguage": "CSS",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "quiz",
+      "repository": "quiz",
+      "title": "quiz",
+      "visible": false,
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "category": "javascript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "JavaScript",
+        "CSS",
+        "HTML"
+      ],
+      "languageBytes": {
+        "JavaScript": 3035,
+        "CSS": 1139,
+        "HTML": 603
+      },
+      "primaryLanguage": "JavaScript",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "livre",
+      "repository": "livre",
+      "title": "livre",
+      "visible": false,
+      "autoCategory": "css",
+      "autoCategoryLabel": "CSS",
+      "categoryOverride": "",
+      "category": "css",
+      "categoryLabel": "CSS",
+      "categories": [
+        "css"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "CSS",
+        "HTML",
+        "JavaScript"
+      ],
+      "languageBytes": {
+        "CSS": 2034,
+        "HTML": 1294,
+        "JavaScript": 1000
+      },
+      "primaryLanguage": "CSS",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "generateur-de-mot",
+      "repository": "generateur-de-mot",
+      "title": "generateur de mot",
+      "visible": false,
+      "autoCategory": "css",
+      "autoCategoryLabel": "CSS",
+      "categoryOverride": "",
+      "category": "css",
+      "categoryLabel": "CSS",
+      "categories": [
+        "css"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "",
+      "languages": [
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "languageBytes": {
+        "CSS": 729,
+        "JavaScript": 575,
+        "HTML": 533
+      },
+      "primaryLanguage": "CSS",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
+    },
+    {
+      "id": "exercice-html-css_blog",
+      "repository": "exercice-html-css_blog",
+      "title": "exercice html css blog",
+      "visible": false,
+      "autoCategory": "html",
+      "autoCategoryLabel": "HTML",
+      "categoryOverride": "",
+      "category": "html",
+      "categoryLabel": "HTML",
+      "categories": [
+        "html"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "",
+      "imageMode": "github",
+      "description": "Création d'une page Web responsive en équipe",
+      "languages": [
+        "HTML"
+      ],
+      "languageBytes": {
+        "HTML": 247
+      },
+      "primaryLanguage": "HTML",
+      "topics": [],
+      "readmeFiles": [],
+      "readmePath": "",
+      "private": false,
+      "fork": false,
+      "framework": ""
     }
   ]
 }
