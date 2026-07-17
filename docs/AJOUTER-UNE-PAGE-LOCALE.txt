@@ -1,9 +1,292 @@
-AJOUTER UNE PAGE LOCALE
+AJOUTER UNE PAGE LOCALE AU PORTFOLIO
 
-1. Déposer le fichier .html dans Projet_qui_ne_sont_pas_en_lien.
-2. Lancer depuis la racine : python outils/mettre_a_jour_pages_locales.py
-3. Lancer le site avec outils/lancer_portfolio.bat ou .sh.
-4. Ouvrir le dashboard : la page est ajoutée comme projet local décoché.
-5. Choisir sa catégorie, son image, cocher « Afficher », puis enregistrer.
+À QUOI SERT LE SCRIPT DE MISE À JOUR ?
 
-Le script évite d'écrire le chemin à la main et empêche les erreurs liées aux espaces.
+Le script utilisé est :
+
+outils/mettre_a_jour_pages_locales.py
+
+Il sert à analyser automatiquement deux dossiers du portfolio :
+
+1. Projet_qui_ne_sont_pas_en_lien
+2. assets/image/image-accueil
+
+À partir de leur contenu, il met à jour les fichiers suivants :
+
+data/pages-locales.json
+data/images-accueil.json
+
+Ces deux fichiers JSON sont ensuite lus par le dashboard.
+
+Grâce à ce script :
+
+- les nouvelles pages HTML apparaissent dans le menu « Page créée » ;
+- les nouvelles images apparaissent dans le menu « Image image-accueil » ;
+- tu n’as pas besoin d’écrire les chemins à la main ;
+- tu évites les erreurs de frappe ;
+- le dashboard sait quelles pages et quelles images existent réellement.
+
+Le script ne modifie pas le contenu de tes pages HTML.
+Il ne supprime pas tes projets.
+Il met uniquement à jour les listes utilisées par le dashboard.
+
+
+============================================================
+1. AVANT DE LANCER LE SCRIPT
+============================================================
+
+Vérifie que ton dossier ressemble à ceci :
+
+portfolio
+│
+├── outils
+│   └── mettre_a_jour_pages_locales.py
+│
+├── Projet_qui_ne_sont_pas_en_lien
+│   └── nouvelle_page.html
+│
+├── assets
+│   └── image
+│       └── image-accueil
+│           └── nouvelle_image.png
+│
+└── data
+    ├── pages-locales.json
+    └── images-accueil.json
+
+La nouvelle page HTML doit être placée dans :
+
+Projet_qui_ne_sont_pas_en_lien
+
+La nouvelle image de carte doit être placée dans :
+
+assets/image/image-accueil
+
+
+============================================================
+2. MÉTHODE SIMPLE SUR WINDOWS
+============================================================
+
+Étape 1 — Ouvrir le dossier du portfolio
+
+Dans l’Explorateur de fichiers, ouvre le dossier principal du portfolio.
+
+C’est le dossier qui contient notamment :
+
+index.html
+apropos.html
+admin
+assets
+data
+outils
+Projet_qui_ne_sont_pas_en_lien
+
+
+Étape 2 — Ouvrir un terminal dans ce dossier
+
+Clique dans la barre d’adresse de l’Explorateur de fichiers.
+
+Écris :
+
+cmd
+
+Puis appuie sur Entrée.
+
+Une fenêtre de terminal doit s’ouvrir directement dans le dossier du portfolio.
+
+
+Étape 3 — Lancer le script
+
+Dans le terminal, écris :
+
+python outils/mettre_a_jour_pages_locales.py
+
+Puis appuie sur Entrée.
+
+Selon ton installation de Python, la commande peut aussi être :
+
+py outils/mettre_a_jour_pages_locales.py
+
+Utilise une seule des deux commandes.
+
+
+Étape 4 — Vérifier le résultat
+
+Le terminal doit indiquer que les listes ont été mises à jour.
+
+Ensuite, vérifie que ces deux fichiers ont été modifiés :
+
+data/pages-locales.json
+data/images-accueil.json
+
+
+============================================================
+3. MÉTHODE AVEC VS CODE
+============================================================
+
+Étape 1 — Ouvrir le bon dossier
+
+Dans VS Code :
+
+Fichier > Ouvrir un dossier
+
+Choisis le dossier principal du portfolio.
+
+
+Étape 2 — Ouvrir le terminal intégré
+
+Dans le menu de VS Code :
+
+Terminal > Nouveau terminal
+
+Le chemin affiché dans le terminal doit correspondre au dossier du portfolio.
+
+
+Étape 3 — Lancer la commande
+
+Écris :
+
+python outils/mettre_a_jour_pages_locales.py
+
+ou, si Python utilise le lanceur Windows :
+
+py outils/mettre_a_jour_pages_locales.py
+
+
+============================================================
+4. COMMENT SAVOIR SI LE TERMINAL EST AU BON ENDROIT ?
+============================================================
+
+Avant de lancer le script, le terminal doit être placé dans le dossier qui contient le dossier « outils ».
+
+Par exemple :
+
+C:\Users\Florie\Documents\portfolio>
+
+La commande suivante doit fonctionner :
+
+dir
+
+Tu dois voir notamment :
+
+admin
+assets
+data
+outils
+Projet_qui_ne_sont_pas_en_lien
+index.html
+
+Si tu ne vois pas ces éléments, tu n’es pas dans le bon dossier.
+
+
+============================================================
+5. ERREURS FRÉQUENTES
+============================================================
+
+ERREUR : python n’est pas reconnu
+
+Essaie :
+
+py outils/mettre_a_jour_pages_locales.py
+
+Si cela ne fonctionne pas non plus, Python n’est probablement pas installé ou n’est pas ajouté au PATH.
+
+
+ERREUR : impossible d’ouvrir le fichier
+
+Exemple :
+
+python: can't open file 'outils/mettre_a_jour_pages_locales.py'
+
+Cela signifie généralement que le terminal n’est pas ouvert à la racine du portfolio.
+
+Retourne dans le bon dossier avant de relancer la commande.
+
+
+ERREUR : la page n’apparaît pas dans le dashboard
+
+Vérifie les points suivants :
+
+- le fichier se termine bien par .html ;
+- le fichier est placé directement dans Projet_qui_ne_sont_pas_en_lien ;
+- le script a été relancé après l’ajout du fichier ;
+- data/pages-locales.json contient bien la nouvelle page ;
+- le dashboard a été rechargé avec Ctrl + F5.
+
+
+ERREUR : l’image n’apparaît pas dans le menu
+
+Vérifie les points suivants :
+
+- l’image est dans assets/image/image-accueil ;
+- son format est courant : .png, .jpg, .jpeg, .webp ou .gif ;
+- le script a été relancé ;
+- data/images-accueil.json contient bien l’image ;
+- le dashboard a été actualisé.
+
+
+============================================================
+6. APRÈS LA MISE À JOUR
+============================================================
+
+Lance ensuite le portfolio avec :
+
+outils/lancer_portfolio.bat
+
+ou, dans un terminal :
+
+python -m http.server 8000
+
+Puis ouvre :
+
+http://localhost:8000
+
+
+Dans le dashboard :
+
+1. ouvre admin/dashboard.html ;
+2. entre le mot de passe ;
+3. clique sur « Actualiser GitHub » si nécessaire ;
+4. retrouve ton projet avec la barre de recherche ;
+5. choisis « Page créée » ;
+6. sélectionne la page HTML dans le menu ;
+7. choisis l’image dans le menu « Image image-accueil » ;
+8. choisis la catégorie ;
+9. coche « Afficher » ;
+10. clique sur « Enregistrer pour tester ».
+
+
+============================================================
+7. POUR PUBLIER LES MODIFICATIONS
+============================================================
+
+Après les tests :
+
+1. clique sur « Télécharger projects-config.json » ;
+2. remplace le fichier projects-config.json à la racine du portfolio ;
+3. vérifie que les fichiers suivants sont aussi à jour :
+
+data/pages-locales.json
+data/images-accueil.json
+
+4. envoie les changements sur GitHub.
+
+Le portfolio public utilisera ensuite les nouvelles pages, images et réglages.
+
+
+============================================================
+8. RÉSUMÉ RAPIDE
+============================================================
+
+Pour ajouter une nouvelle page :
+
+1. placer le fichier HTML dans Projet_qui_ne_sont_pas_en_lien ;
+2. ajouter l’image dans assets/image/image-accueil ;
+3. ouvrir un terminal à la racine du portfolio ;
+4. lancer :
+
+python outils/mettre_a_jour_pages_locales.py
+
+5. ouvrir le dashboard ;
+6. choisir la page et l’image dans les menus ;
+7. enregistrer puis publier projects-config.json.

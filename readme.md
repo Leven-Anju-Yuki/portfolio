@@ -1,125 +1,325 @@
 # 🌐 Portfolio dynamique de Florie
 
-Ce portfolio présente mes projets de développement et mes compétences acquises hors code. Les cartes sont alimentées par GitHub et pilotées depuis un dashboard privé, tout en conservant mes pages locales et mes images historiques.
+Ce portfolio présente mes projets de développement, de data, d’intelligence artificielle et mes compétences acquises hors code.
 
-## Fonctionnement actuel
+Les cartes de l’index sont générées à partir de `projects-config.json`. Le dashboard permet de récupérer les dépôts GitHub publics et privés, de choisir les projets visibles, leur catégorie, leur image et la destination du bouton **Voir plus**.
 
-- récupération des dépôts GitHub publics et privés avec un token temporaire ;
-- fusion des dépôts avec les anciennes cartes locales afin d’éviter les doublons ;
-- conservation des images et des pages de présentation présentes dans `Projet_qui_ne_sont_pas_en_lien/` ;
-- sélection des projets visibles depuis `dashboard.html` ;
-- catégorie proposée à partir du langage principal ou du framework détecté ;
-- possibilité de corriger manuellement la catégorie projet par projet ;
-- détection spécifique de Symfony et WordPress ;
-- affichage d’un tag coloré pour chaque langage GitHub détecté ;
-- destination configurable du bouton **Voir plus** : page locale, lien public, README local ou dépôt GitHub ;
-- copie d’un README choisi dans `projects-config.json`, puis affichage dans `readme.html` sans donner accès au compte GitHub ;
-- graphiques et tableau README/meta mis à jour à partir de la sélection du dashboard.
+## Fonctionnement général
 
-## Mise à jour des projets
+Le portfolio utilise plusieurs sources :
 
-1. Lancer le site depuis un serveur local, par exemple :
-   ```bash
-   python -m http.server 8000
-   ```
-2. Ouvrir `http://localhost:8000/dashboard.html`.
-3. Saisir temporairement un token GitHub autorisé à lire les dépôts privés.
-4. Cliquer sur **Actualiser GitHub**.
-5. Choisir les projets visibles, leur catégorie, leur destination et leur image.
-6. Cliquer sur **Enregistrer pour tester** pour tester dans le navigateur.
-7. Cliquer sur **Télécharger projects-config.json**, remplacer le fichier à la racine, puis publier le dépôt.
+- les dépôts GitHub publics ;
+- les dépôts GitHub privés accessibles temporairement avec un token ;
+- les pages de présentation locales placées dans `Projet_qui_ne_sont_pas_en_lien/` ;
+- les images placées dans `assets/image/image-accueil/` ;
+- le fichier final `projects-config.json` utilisé par l’index.
 
-Le token reste dans la session du navigateur et n’est jamais exporté dans la configuration.
+Le dashboard fusionne une page locale avec un dépôt GitHub lorsque leurs noms correspondent. Cela évite de créer deux cartes pour le même projet.
 
-## Catégories particulières
+Une page locale sans dépôt GitHub correspondant reste disponible comme projet indépendant.
 
-- **Clé de Fa** : WordPress ;
-- **Projet refuge** : PHP ;
-- les projets Symfony sont détectés via `composer.json` ;
-- les catégories peuvent toujours être corrigées manuellement dans le dashboard.
-
-## Pages de présentation
-
-Toutes les pages du dossier `Projet_qui_ne_sont_pas_en_lien/` utilisent désormais le même en-tête que les pages README : bouton de retour et carte de titre harmonisée.
-
-## Structure principale
+## Structure principale actuelle
 
 ```text
 portfolio/
+│
+├── admin/
+│   └── dashboard.html
+│
 ├── assets/
 │   ├── css/
+│   │   ├── a_propos.css
+│   │   ├── bootstrap.min.css
+│   │   ├── bunny-click.css
+│   │   ├── dashboard.css
+│   │   ├── header.css
+│   │   ├── local-project-header.css
+│   │   ├── readme.css
+│   │   ├── style accueil.css
+│   │   └── style.css
+│   │
+│   ├── font/
+│   │
 │   ├── image/
+│   │   ├── image-accueil/
+│   │   ├── logo-competence/
+│   │   ├── bibliotheque/
+│   │   ├── cle_de_fa/
+│   │   ├── dragon/
+│   │   ├── epave/
+│   │   ├── magasin/
+│   │   ├── mangajeux/
+│   │   └── pot_au_lapin/
+│   │
 │   └── js/
+│       ├── bunny-click.js
+│       ├── calculer_l'age.js
+│       ├── dashboard-access.js
+│       ├── dashboard.js
+│       ├── filtre.js
+│       ├── installer.js
+│       ├── portfolio-common.js
+│       ├── portfolio-index.js
+│       ├── portfolio-manager.js
+│       ├── readme-viewer.js
+│       └── scroll-up.js
+│
+├── data/
+│   ├── images-accueil.json
+│   └── pages-locales.json
+│
+├── docs/
+│   ├── AJOUTER-UNE-PAGE-LOCALE.txt
+│   ├── INSTRUCTIONS_TOKEN_GITHUB.txt
+│   ├── MODE-EMPLOI-PROJETS.txt
+│   ├── Guide_des_pages_et_fichiers_du_portfolio.docx
+│
+├── outils/
+│   ├── lancer_portfolio.bat
+│   ├── lancer_portfolio.sh
+│   └── mettre_a_jour_pages_locales.py
+│
 ├── Projet_qui_ne_sont_pas_en_lien/
-├── dashboard.html
+│   ├── bibliotheque.html
+│   ├── cledefa.html
+│   ├── Concours_Eloquence.html
+│   ├── epave.html
+│   ├── magasin.html
+│   ├── mise a jour.html
+│   ├── pot_au_lapin.html
+│   ├── projet_dragons.html
+│   ├── projet_manga_jeux.html
+│   └── refuge.html
+│
+├── apropos.html
 ├── index.html
-├── readme.html
-├── projects-config.json
 ├── manifest.json
+├── projects-config.json
+├── readme.html
+├── readme.md
 └── sw.js
 ```
 
-## Technologies
+## Rôle des dossiers principaux
 
-HTML, CSS, JavaScript, PHP, Symfony, WordPress, Bootstrap et les autres langages détectés dans les dépôts GitHub.
+### `admin/`
 
-## Autrice
+Contient le dashboard privé du portfolio.
 
-**Florie Decitre** — développeuse web et conceptrice d’applications.
+L’accès se fait avec un code comparé à une empreinte SHA-256. Le vrai code n’est pas écrit en clair dans le JavaScript.
 
-## Mise à jour finale
+Cette protection reste côté navigateur : elle évite l’accès facile au dashboard, mais ne remplace pas une authentification serveur.
 
-- Ajout de la section **Data & IA** dans la page **À propos** avec : Python, Jupyter Notebook, Pandas, NumPy, Matplotlib et Scikit-learn.
-- Les logos affichés dans cette section sont **Python** et **Jupyter Notebook**.
-- Ajout d'un effet visuel avec de petits **lapins** qui apparaissent au clic sur les pages du portfolio.
+### `assets/`
 
-## Organisation et accès au dashboard
+Contient tous les fichiers visuels et techniques du site :
 
-- Le dashboard est rangé dans `admin/dashboard.html` afin de garder la racine propre.
-- Les notices sont rangées dans le dossier `docs/`.
-- L'accès utilise une empreinte SHA-256 : le code n'est plus écrit en clair dans le JavaScript.
-- La vérification est également exécutée lorsqu'une personne essaie d'ouvrir directement l'adresse du dashboard.
-- Cette protection reste une protection côté navigateur : elle est adaptée à un portfolio, mais ne remplace pas une authentification côté serveur.
+- CSS ;
+- JavaScript ;
+- images ;
+- logos ;
+- polices.
 
-## Commentaires du code
+Les images proposées dans le dashboard viennent de :
 
-Les fichiers JavaScript et CSS personnalisés contiennent maintenant des commentaires simples servant de notes de travail. Les bibliothèques externes minifiées, comme Bootstrap et jQuery, n'ont pas été modifiées.
+```text
+assets/image/image-accueil/
+```
 
+### `data/`
+
+Contient les manifestes générés automatiquement :
+
+- `pages-locales.json` : liste des pages HTML locales ;
+- `images-accueil.json` : liste des images disponibles pour les cartes.
+
+Ces fichiers sont nécessaires sur GitHub Pages, car un site statique ne peut pas toujours lister directement le contenu d’un dossier.
+
+### `docs/`
+
+Contient les notices et modes d’emploi pour éviter de surcharger la racine du projet.
+
+### `outils/`
+
+Contient les scripts pratiques :
+
+- lancement du serveur local au bon emplacement ;
+- mise à jour de la liste des pages locales ;
+- mise à jour de la liste des images disponibles.
+
+### `Projet_qui_ne_sont_pas_en_lien/`
+
+Contient les pages HTML servant à présenter les projets qui ne peuvent pas être publiés directement, par exemple les projets PHP, Symfony, WordPress ou les expériences hors code.
+
+Si une page correspond à un dépôt GitHub, elle est associée au dépôt et n’apparaît pas en double.
+
+Si elle ne correspond à aucun dépôt, elle peut être ajoutée comme projet local indépendant.
+
+## Utilisation du dashboard
+
+1. Lancer le portfolio avec :
+
+   ```text
+   outils/lancer_portfolio.bat
+   ```
+
+   ou :
+
+   ```bash
+   ./outils/lancer_portfolio.sh
+   ```
+
+2. Ouvrir :
+
+   ```text
+   http://localhost:8000/admin/dashboard.html
+   ```
+
+3. Renseigner temporairement un token GitHub si les dépôts privés doivent être récupérés.
+
+4. Cliquer sur **Actualiser GitHub**.
+
+5. Utiliser la barre de recherche pour retrouver un projet par son titre ou le nom de son dépôt.
+
+6. Choisir pour chaque projet :
+
+   - s’il doit être affiché ;
+   - sa catégorie ;
+   - la destination du bouton **Voir plus** ;
+   - la page locale ;
+   - le README à afficher localement ;
+   - l’image de la carte.
+
+7. Cliquer sur **Enregistrer pour tester**.
+
+8. Vérifier le résultat dans `index.html`.
+
+9. Cliquer sur **Télécharger projects-config.json**.
+
+10. Remplacer le fichier présent à la racine avant de publier sur GitHub Pages.
+
+## Token GitHub
+
+Le token sert uniquement à récupérer les dépôts privés et leur contenu pendant l’utilisation du dashboard.
+
+Il n’est jamais exporté dans `projects-config.json`.
+
+Si le token est invalide ou expiré, le dashboard le retire et continue avec les dépôts publics.
+
+## Fusion des projets
+
+Le dashboard compare :
+
+- le titre du projet ;
+- le nom du dépôt ;
+- le nom du fichier HTML local ;
+- les mots importants présents dans ces noms.
+
+Exemples de projets fusionnés :
+
+- Projet Dragons avec le dépôt Dragon ;
+- Projet Manga Jeux avec MangaGame ;
+- Application bibliothèque avec le dépôt Symfony des livres ;
+- Projet épave avec le dépôt Symfony des épaves ;
+- Numérisation des tickets de tissus avec Scanner-de-ticket ;
+- Automatisation suivi qualité avec son dépôt GitHub.
+
+La fusion conserve la page locale et l’image choisie, puis ajoute les langages, le framework et les informations GitHub.
+
+## Catégories
+
+La catégorie est proposée automatiquement à partir du langage principal ou du framework détecté.
+
+Exemples :
+
+- Symfony est détecté via `composer.json` ;
+- WordPress peut être choisi manuellement ;
+- Python et Jupyter Notebook peuvent être rangés dans Data & IA ;
+- la catégorie peut toujours être modifiée dans le dashboard.
+
+## README locaux
+
+Le dashboard peut récupérer le README d’un dépôt et enregistrer son contenu dans `projects-config.json`.
+
+Le visiteur ouvre ensuite `readme.html` avec le style du portfolio, sans accéder directement au compte GitHub.
+
+Pour un dépôt privé, il faut vérifier que le README ne contient aucune information confidentielle avant de le publier.
 
 ## Ajouter une nouvelle page locale
 
-1. Ajouter le fichier HTML dans `Projet_qui_ne_sont_pas_en_lien/`.
-2. Lancer `python outils/mettre_a_jour_pages_locales.py`.
-3. Ouvrir le dashboard et cliquer sur **Actualiser GitHub**.
-4. La nouvelle page apparaît comme projet local décoché ; il suffit de la configurer, la cocher et enregistrer.
+1. Ajouter le fichier HTML dans :
 
-En local avec `python -m http.server`, le dashboard essaie aussi de lire directement le dossier. Le petit manifeste JSON reste nécessaire pour GitHub Pages, qui ne fournit pas toujours la liste des fichiers d’un dossier.
+   ```text
+   Projet_qui_ne_sont_pas_en_lien/
+   ```
 
-## Lancer le portfolio au bon endroit
+2. Lancer :
 
-Utiliser `outils/lancer_portfolio.bat` sous Windows ou `outils/lancer_portfolio.sh` sous Linux/macOS. Cela évite d’obtenir une simple page « Directory listing for / » depuis le mauvais dossier.
+   ```bash
+   python outils/mettre_a_jour_pages_locales.py
+   ```
 
+3. Ouvrir le dashboard.
 
-## Images des cartes
+4. Cliquer sur **Actualiser GitHub**.
 
-Les images proposées dans le dashboard viennent automatiquement du dossier `assets/image/image-accueil/`. Le champ libre a été remplacé par un menu déroulant pour éviter les erreurs de chemin. Après l’ajout d’une image, lance `python outils/mettre_a_jour_pages_locales.py` avant de publier afin de mettre à jour le manifeste utilisé sur GitHub Pages.
+5. Si aucun dépôt ne correspond à cette page, elle sera proposée comme projet local indépendant.
 
+## Ajouter une nouvelle image de carte
 
-## Suppression des doublons de pages locales
+1. Ajouter l’image dans :
 
-Les fichiers du dossier `Projet_qui_ne_sont_pas_en_lien/` ne créent plus de lignes séparées dans le dashboard. Ils sont uniquement proposés dans le menu **Page créée** afin d’être associés au dépôt GitHub correspondant. Cela évite les doublons et les erreurs de sélection.
+   ```text
+   assets/image/image-accueil/
+   ```
 
-## Pages locales sans dépôt GitHub
+2. Lancer :
 
-Les pages placées dans `Projet_qui_ne_sont_pas_en_lien/` sont comparées aux dépôts GitHub :
+   ```bash
+   python outils/mettre_a_jour_pages_locales.py
+   ```
 
-- si une page correspond à un dépôt, les deux sont fusionnés et une seule ligne apparaît dans le dashboard ;
-- si aucune correspondance GitHub n'est trouvée, la page reste proposée comme projet local indépendant ;
-- les nouvelles pages locales sont décochées par défaut afin de choisir manuellement si elles doivent apparaître dans l'index.
+3. L’image apparaîtra dans le menu déroulant du dashboard.
 
+## Recherche dans le dashboard
 
-## Correction V18
+Une barre de recherche permet de filtrer les lignes du tableau avec :
 
-- Correction du mélange de versions en cache entre `portfolio-common.js` et `portfolio-manager.js`.
-- Les scripts du dashboard sont maintenant rechargés avec un numéro de version et ne sont plus servis depuis un ancien cache.
-- Une sécurité empêche le dashboard de devenir entièrement vide si une fonction manque temporairement.
+- le titre visible du projet ;
+- le nom du dépôt GitHub.
+
+Cette recherche ne relance pas GitHub et ne modifie pas les choix enregistrés.
+
+## Effet visuel
+
+Un petit effet de lapins apparaît lors des clics sur les pages du portfolio.
+
+Les fichiers concernés sont :
+
+```text
+assets/css/bunny-click.css
+assets/js/bunny-click.js
+```
+
+## Compétences présentées
+
+Le portfolio met notamment en avant :
+
+- HTML ;
+- CSS ;
+- JavaScript ;
+- PHP ;
+- Symfony ;
+- WordPress ;
+- Python ;
+- Jupyter Notebook ;
+- Pandas ;
+- NumPy ;
+- Matplotlib ;
+- Scikit-learn ;
+- UX/UI et outils de design.
+
+## Autrice
+
+**Florie Decitre**  
+Étudiante en première année de Mastère Data et Intelligence Artificielle, en alternance chez Oise Tourisme.

@@ -61,7 +61,24 @@
 <span id="rate-limit-info"></span>
 </div>
 <!-- ============= PANEL 1 : Projets par catégorie ============= -->
-<section class="panel pm-panel-wide" id="portfolio-manager-panel"><h2>Sélection des projets du portfolio</h2><p class="panel-desc">Connexion temporaire GitHub pour lire aussi les dépôts privés. La catégorie est proposée automatiquement, mais tu peux la modifier. Les pages locales ne sont plus affichées comme projets séparés : elles servent uniquement de destination. Pour « Page créée », choisis la page HTML dans la liste. Pour « README local », choisis le fichier README détecté dans le dépôt : son contenu est copié dans projects-config.json et affiché sur une page locale : les visiteurs n’accèdent pas à ton compte GitHub. Ne publie que les informations que tu acceptes de rendre visibles.</p><div class="pm-toolbar"><input id="pm-token" placeholder="Token GitHub temporaire (pour les privés)" type="password"/><label><input id="pm-starred" type="checkbox"/> Inclure mes favoris</label><button id="pm-refresh-btn" onclick="portfolioRefresh()" type="button">Actualiser GitHub</button><button id="pm-forget-token" onclick="pmForgetToken()" type="button">Retirer le token</button><button onclick="pmSave()" type="button">Enregistrer pour tester</button><button onclick="pmExport()" type="button">Télécharger projects-config.json</button><button onclick="pmAll(true)" type="button">Tout cocher</button><button onclick="pmAll(false)" type="button">Tout décocher</button></div><p class="pending" id="pm-status"></p><p class="ok" id="pm-message"></p><div class="pm-table-wrap"><table class="pm-table"><thead><tr><th>Afficher</th><th>Projet</th><th>Dépôt</th><th>Langages utilisés</th><th>Catégorie (modifiable)</th><th>Voir plus vers</th><th>Destination choisie</th><th>Image</th></tr></thead><tbody id="pm-body"></tbody></table></div></section><section class="panel">
+<section class="panel pm-panel-wide" id="portfolio-manager-panel"><h2>Sélection des projets du portfolio</h2><p class="panel-desc">Connexion temporaire GitHub pour lire aussi les dépôts privés. La catégorie est proposée automatiquement, mais tu peux la modifier. Les pages locales ne sont plus affichées comme projets séparés : elles servent uniquement de destination. Pour « Page créée », choisis la page HTML dans la liste. Pour « README local », choisis le fichier README détecté dans le dépôt : son contenu est copié dans projects-config.json et affiché sur une page locale : les visiteurs n’accèdent pas à ton compte GitHub. Ne publie que les informations que tu acceptes de rendre visibles.</p><div class="pm-toolbar"><input id="pm-token" placeholder="Token GitHub temporaire (pour les privés)" type="password"/><label><input id="pm-starred" type="checkbox"/> Inclure mes favoris</label><button id="pm-refresh-btn" onclick="portfolioRefresh()" type="button">Actualiser GitHub</button><button id="pm-forget-token" onclick="pmForgetToken()" type="button">Retirer le token</button><button onclick="pmSave()" type="button">Enregistrer pour tester</button><button onclick="pmExport()" type="button">Télécharger projects-config.json</button><button onclick="pmAll(true)" type="button">Tout cocher</button><button onclick="pmAll(false)" type="button">Tout décocher</button></div><p class="pending" id="pm-status"></p><p class="ok" id="pm-message"></p>
+<div class="search-bar pm-search-bar">
+    <span class="search-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </span>
+    <input
+        type="text"
+        id="pm-search-input"
+        placeholder="Rechercher un projet par nom..."
+        oninput="filterDashboardProjects()"
+        aria-label="Rechercher un projet dans le dashboard"
+    />
+</div>
+<p id="pm-search-empty" class="error-row" style="display:none;">Aucun projet trouvé.</p>
+<div class="pm-table-wrap"><table class="pm-table"><thead><tr><th>Afficher</th><th>Projet</th><th>Dépôt</th><th>Langages utilisés</th><th>Catégorie (modifiable)</th><th>Voir plus vers</th><th>Destination choisie</th><th>Image</th></tr></thead><tbody id="pm-body"></tbody></table></div></section><section class="panel">
 <h2>Projets par catégorie</h2>
 <p class="panel-desc">
                 Calculé à partir des projets cochés dans le panneau supérieur. Chaque projet est classé une seule fois selon son framework (Symfony/WordPress), sinon selon son langage GitHub majoritaire.
@@ -127,9 +144,9 @@
 </section>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-<script src="./assets/js/portfolio-common.js?v=18"></script>
-<script src="./assets/js/portfolio-manager.js?v=18"></script>
-<script src="./assets/js/dashboard.js?v=18"></script>
+<script src="./assets/js/portfolio-common.js?v=20"></script>
+<script src="./assets/js/portfolio-manager.js?v=20"></script>
+<script src="./assets/js/dashboard.js?v=20"></script>
 <script src="./assets/js/bunny-click.js?v=18"></script>
 </body>
 </html>

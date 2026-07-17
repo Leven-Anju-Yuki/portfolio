@@ -226,18 +226,34 @@ async function portfolioRefresh(keepCurrentChoices = true) {
         if (enteredToken) sessionStorage.setItem(PORTFOLIO_TOKEN_KEY, enteredToken);
 
         const starred = document.getElementById("pm-starred")?.checked === true;
-        pmRepos = await fetchRepositories(token, starred);
+
+        // On essaie d'abord avec le token pour récupérer les dépôts privés.
+        // Si GitHub répond 401, le token n'est plus valable : on le retire et on continue avec les dépôts publics.
+        let activeToken = token;
+        try {
+            pmRepos = await fetchRepositories(activeToken, starred);
+        } catch (error) {
+            if (error?.status !== 401 || !activeToken) throw error;
+
+            sessionStorage.removeItem(PORTFOLIO_TOKEN_KEY);
+            if (tokenInput) tokenInput.value = "";
+            activeToken = "";
+
+            status.className = "pending";
+            status.textContent = "Token GitHub invalide ou expiré. Chargement des dépôts publics…";
+            pmRepos = await fetchRepositories("", starred);
+        }
 
         status.textContent = `Dépôts trouvés : ${pmRepos.length}. Lecture des langages…`;
-        const languagesByRepo = await loadLanguagesInBatches(pmRepos, token, (done, total) => {
+        const languagesByRepo = await loadLanguagesInBatches(pmRepos, activeToken, (done, total) => {
             status.textContent = `Lecture des langages : ${done}/${total}…`;
         });
         status.textContent = "Détection de Symfony et WordPress…";
-        const frameworksByRepo = await loadFrameworksInBatches(pmRepos, token, (done, total) => {
+        const frameworksByRepo = await loadFrameworksInBatches(pmRepos, activeToken, (done, total) => {
             status.textContent = `Détection des frameworks : ${done}/${total}…`;
         });
         status.textContent = "Recherche des fichiers README…";
-        const readmeFilesByRepo = await loadReadmeFilesInBatches(pmRepos, token, (done, total) => {
+        const readmeFilesByRepo = await loadReadmeFilesInBatches(pmRepos, activeToken, (done, total) => {
             status.textContent = `Recherche des README : ${done}/${total}…`;
         });
 
@@ -321,9 +337,9 @@ async function portfolioRefresh(keepCurrentChoices = true) {
         const privateCount = pmRepos.filter(repo => repo.private).length;
         status.className = "ok";
         status.textContent = `${pmRepos.length} dépôt(s) récupéré(s), dont ${privateCount} privé(s). Tous les langages et frameworks ont été vérifiés.`;
-        if (!token) {
+        if (!activeToken) {
             status.className = "pending";
-            status.textContent += " Ajoute un token temporaire pour charger les dépôts privés.";
+            status.textContent += " Les dépôts publics sont chargés. Ajoute un nouveau token pour récupérer aussi les dépôts privés.";
         }
     } catch (error) {
         console.error(error);
@@ -413,6 +429,27 @@ function pmCategoryChoices(project) {
     return options.join("");
 }
 
+// Filtre les lignes du tableau avec la même idée que la recherche de l'index.
+// On compare le texte saisi avec le titre du projet et le nom de son dépôt GitHub.
+function filterDashboardProjects() {
+    const searchInput = document.getElementById("pm-search-input");
+    const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : "";
+    const rows = document.querySelectorAll("#pm-body tr[data-pm]");
+    const emptyMessage = document.getElementById("pm-search-empty");
+    let hasVisibleProject = false;
+
+    rows.forEach(row => {
+        const projectName = row.querySelector("td:nth-child(2)")?.textContent.toLowerCase() || "";
+        const repositoryName = row.querySelector("td:nth-child(3)")?.textContent.toLowerCase() || "";
+        const matchesSearch = searchTerm === "" || projectName.includes(searchTerm) || repositoryName.includes(searchTerm);
+
+        row.style.display = matchesSearch ? "" : "none";
+        if (matchesSearch) hasVisibleProject = true;
+    });
+
+    if (emptyMessage) emptyMessage.style.display = hasVisibleProject || rows.length === 0 ? "none" : "block";
+}
+
 // Dessine une ligne du dashboard pour chaque projet connu.
 function renderPM() {
     const repoMap = new Map(pmRepos.map(repo => [repo.name.toLowerCase(), repo]));
@@ -461,6 +498,9 @@ function renderPM() {
             </td>
         </tr>`;
     }).join("");
+
+    // Réapplique la recherche après une actualisation GitHub pour conserver le filtre saisi.
+    filterDashboardProjects();
 }
 
 // Récupère toutes les valeurs saisies dans le tableau et les remet dans la configuration.

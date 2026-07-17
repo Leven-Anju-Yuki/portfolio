@@ -502,3 +502,40 @@ body.dashboard-auth-pending {
     color: #e8dfcf;
     overflow-wrap: anywhere;
 }
+
+
+/* Recherche dans le tableau des projets : même présentation que la recherche de l'index. */
+.pm-search-bar {
+    position: relative;
+    width: min(460px, 100%);
+    margin: 18px 0;
+}
+
+.pm-search-bar .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    color: #666;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pm-search-bar input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px 10px 38px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background: #fff;
+    color: #111;
+    text-shadow: none;
+}
+
+.pm-search-bar input:focus {
+    outline: none;
+    border-color: #e18207;
+    box-shadow: 0 0 0 2px rgba(225, 130, 7, 0.25);
+}

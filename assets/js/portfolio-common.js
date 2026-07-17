@@ -211,10 +211,23 @@ function consolidateMergedProjects(config) {
 
 // Effectue une requête GitHub et ajoute le token seulement lorsqu’il existe.
 async function githubFetch(url, token = "") {
-  const headers = { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
+  const headers = {
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28"
+  };
+
+  // Le token n'est ajouté que pour lire les dépôts privés.
   if (token) headers.Authorization = `Bearer ${token}`;
+
   const response = await fetch(url, { headers });
-  if (!response.ok) throw new Error(`GitHub ${response.status} : ${response.statusText}`);
+
+  // On garde le numéro HTTP dans l'erreur pour pouvoir réagir proprement à un token invalide.
+  if (!response.ok) {
+    const error = new Error(`GitHub ${response.status} : ${response.statusText}`);
+    error.status = response.status;
+    throw error;
+  }
+
   return response.json();
 }
 // Parcourt toutes les pages de résultats de l’API GitHub.

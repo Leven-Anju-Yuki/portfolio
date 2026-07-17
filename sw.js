@@ -1,7 +1,7 @@
 // NOTES PERSONNELLES : ce service worker gère le cache de la version installable du portfolio.
 // Je change son nom de cache lorsque je veux forcer le navigateur à reprendre les nouveaux fichiers.
 
-const CACHE_NAME = "portfolio-v18";
+const CACHE_NAME = "portfolio-v20";
 const ASSETS = [
     "./",
     "./index.html",
