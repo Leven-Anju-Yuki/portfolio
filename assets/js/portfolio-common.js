@@ -7,7 +7,7 @@
 // Le dashboard est dans /admin tandis que l'index est à la racine.
 // La balise <base> du dashboard permet à ce chemin de fonctionner dans les deux pages.
 const PORTFOLIO_CONFIG_URL = "./projects-config.json";
-const PORTFOLIO_DRAFT_KEY = "portfolio-projects-draft-v7";
+const PORTFOLIO_DRAFT_KEY = "portfolio-projects-draft-v22";
 const PORTFOLIO_TOKEN_KEY = "portfolio-github-token-session";
 const PORTFOLIO_GITHUB_USER = "leven-anju-yuki";
 
@@ -21,6 +21,66 @@ const PROJECT_MERGE_RULES = [
   { targetId: "magasin", repositories: ["magasin", "projet-magasin", "magasin-en-ligne", "boutique-lapin", "e-commerce-lapin"] },
   { targetId: "automatisation-m-moire", preferredTitle: "Automatisation suivi qualité", repositories: ["automatisation-m-moire", "automatisation-memoire", "automatisation-mémoire", "automatisation-suivi-qualite", "automatisation-suivi-qualité", "suivi-qualite", "suivi-qualité", "automatisation-qualite"] }
 ];
+
+// Certains projets partagent un mot commun mais représentent des travaux différents.
+// Cette liste empêche leur fusion automatique par erreur.
+const PROJECTS_THAT_MUST_STAY_SEPARATE = [
+  {
+    repository: "nourriture-lapin",
+    localIds: ["pot-au-lapin", "pot_au_lapin", "pot-au-lapin-html"]
+  }
+];
+
+// Répare les anciennes configurations dans lesquelles Pot au lapin avait été fusionné
+// par erreur avec le site Alimentation lapin.
+function ensureKnownDistinctProjects(config) {
+  if (!config || !Array.isArray(config.projects)) return config;
+
+  const foodProject = config.projects.find(project =>
+    normalizeProjectKey(project.repository) === "nourriture-lapin" || project.id === "alimentation-lapin"
+  );
+
+  if (foodProject) {
+    foodProject.id = "alimentation-lapin";
+    foodProject.repository = "nourriture-lapin";
+    foodProject.title = "Alimentation lapin";
+    foodProject.destination = "demo";
+    foodProject.localPage = "";
+    foodProject.publicUrl = foodProject.publicUrl || "https://leven-anju-yuki.github.io/nourriture-lapin/";
+    foodProject.image = "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/nourriture-lapin/&screenshot=true&meta=false&embed=screenshot.url";
+    foodProject.imageMode = "legacy";
+    foodProject.categoryOverride = "";
+  }
+
+  const potExists = config.projects.some(project => project.id === "pot-au-lapin");
+  if (!potExists) {
+    config.projects.push({
+      id: "pot-au-lapin",
+      repository: "",
+      title: "Pot au lapin",
+      visible: true,
+      category: "autre",
+      categoryOverride: "autre",
+      categoryLabel: "Autre",
+      categories: ["autre"],
+      destination: "local",
+      localPage: "Projet_qui_ne_sont_pas_en_lien/pot_au_lapin.html",
+      publicUrl: "",
+      image: "./assets/image/image-accueil/pot_au_lapin.png",
+      imageMode: "legacy",
+      description: "Projet de présentation autour d'une péniche, du bien-être animal et des lapins.",
+      languages: [],
+      topics: [],
+      private: false,
+      fork: false,
+      readmePath: ""
+    });
+  }
+
+  return config;
+}
+
+window.ensureKnownDistinctProjects = ensureKnownDistinctProjects;
 
 // Transforme un titre ou un nom de dépôt en identifiant comparable.
 function normalizeProjectKey(value) {
@@ -61,6 +121,15 @@ function meaningfulProjectTokens(value) {
 // Un mot important commun suffit lorsque ce mot est précis : épave, dragons, refuge, bibliothèque…
 function projectNameSimilarity(repositoryName, localProject) {
   const repoKey = normalizeProjectKey(repositoryName);
+
+  // Nourriture lapin et Pot au lapin sont deux projets différents malgré le mot « lapin ».
+  const localKeys = [localProject.id, localProject.title, localProject.localPage]
+    .map(normalizeProjectKey);
+  const mustStaySeparate = PROJECTS_THAT_MUST_STAY_SEPARATE.some(rule =>
+    normalizeProjectKey(rule.repository) === repoKey &&
+    rule.localIds.some(id => localKeys.some(key => key.includes(normalizeProjectKey(id))))
+  );
+  if (mustStaySeparate) return 0;
   const candidates = [
     localProject.id,
     localProject.title,
@@ -117,6 +186,7 @@ function findAutomaticLocalTarget(config, repositoryName) {
 // La fiche GitHub récupère la page, le titre et l'image de la fiche locale, puis la ligne locale est supprimée.
 function mergeAutomaticLocalDuplicates(config) {
   if (!config || !Array.isArray(config.projects)) return config;
+  ensureKnownDistinctProjects(config);
   const repositoryProjects = config.projects.filter(project => project.repository);
 
   for (const repositoryProject of repositoryProjects) {
@@ -176,6 +246,7 @@ async function detectRepositoryFramework(repo, token = "") {
 // Fusionne les doublons tout en gardant l’image et la page locale déjà créées.
 function consolidateMergedProjects(config) {
   if (!config || !Array.isArray(config.projects)) return config;
+  ensureKnownDistinctProjects(config);
   for (const rule of PROJECT_MERGE_RULES) {
     const target = config.projects.find(project => project.id === rule.targetId);
     if (!target) continue;

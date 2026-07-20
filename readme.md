@@ -33,6 +33,7 @@ portfolio/
 │   │   ├── bunny-click.css
 │   │   ├── dashboard.css
 │   │   ├── header.css
+│   │   ├── local-project-header.css
 │   │   ├── readme.css
 │   │   ├── style accueil.css
 │   │   └── style.css
@@ -71,7 +72,8 @@ portfolio/
 │   ├── AJOUTER-UNE-PAGE-LOCALE.txt
 │   ├── INSTRUCTIONS_TOKEN_GITHUB.txt
 │   ├── MODE-EMPLOI-PROJETS.txt
-│   ├── Guide_des_pages_et_fichiers_du_portfolio.docx
+│   ├── STRUCTURE-DU-PROJET.txt
+│   └── dashboard.txt
 │
 ├── outils/
 │   ├── lancer_portfolio.bat
@@ -322,3 +324,8 @@ Le portfolio met notamment en avant :
 
 **Florie Decitre**  
 Étudiante en première année de Mastère Data et Intelligence Artificielle, en alternance chez Oise Tourisme.
+
+
+## Exception de fusion
+
+- **Pot au lapin** et **Alimentation lapin / nourriture-lapin** sont deux projets différents et restent toujours séparés.
