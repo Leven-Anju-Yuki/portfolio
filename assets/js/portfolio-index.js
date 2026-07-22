@@ -7,6 +7,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const section = document.querySelector("section.row.justify-content-center");
     if (!section) return;
+    section.id = "projects-grid";
 
     try {
         const published = await loadPublishedConfig();
@@ -43,9 +44,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 ? `<div class="project-tags">${languages.map(language => `<span style="--language-color:${languageColor(language)}">${esc(language)}</span>`).join("")}</div>`
                 : "";
 
-            cards.push(`<aside class="col-12 col-lg-3 ${esc(category)}" data-category="${esc(category)}" data-category-label="${esc(primary.label)}" data-categories="${esc(category)}" data-project-id="${esc(project.id || project.repository)}">
+            cards.push(`<aside class="col-12 col-lg-3 ${esc(category)}" data-category="${esc(category)}" data-category-label="${esc(primary.label)}" data-categories="${esc(category)}" data-project-id="${esc(project.id || project.repository)}" data-repository="${esc(project.repository || "")}">
                 <center>
-                    <div class="cadre-container"><img class="projet" src="${esc(image)}" alt="Aperçu ${esc(project.title || repo.name)}" onerror="this.src='./assets/image/portefeuille.png'"></div>
+                    <div class="cadre-container"><img class="projet" src="${esc(image)}" alt="Aperçu ${esc(project.title || repo.name)}" onerror="this.onerror=null;this.src=PORTFOLIO_WORK_GIF"></div>
                     <h2>${esc(project.title || repo.name.replaceAll("-", " "))}</h2>
                     ${languageTags}
                     <a href="${esc(href)}" ${/^https?:/.test(href) ? 'target="_blank" rel="noopener noreferrer"' : ""}><button class="bouton"><h4>voir plus</h4></button></a>
@@ -54,8 +55,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         section.innerHTML = cards.join("");
-        if (typeof updateFilterCounts === "function") updateFilterCounts();
-        if (typeof filterProjects === "function") filterProjects("all");
+
+        // Les cartes viennent d’être remplacées : on rebranche la recherche et les filtres
+        // sur cette nouvelle grille, sans conserver les anciens événements du HTML.
+        if (typeof initialiseProjectSearchAndFilters === "function") {
+            initialiseProjectSearchAndFilters();
+        } else {
+            if (typeof updateFilterCounts === "function") updateFilterCounts();
+            if (typeof filterProjects === "function") filterProjects("all");
+        }
     } catch (error) {
         console.warn("Cartes dynamiques indisponibles, conservation des cartes HTML.", error);
     }

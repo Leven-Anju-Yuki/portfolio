@@ -10,6 +10,7 @@ const PORTFOLIO_CONFIG_URL = "./projects-config.json";
 const PORTFOLIO_DRAFT_KEY = "portfolio-projects-draft-v22";
 const PORTFOLIO_TOKEN_KEY = "portfolio-github-token-session";
 const PORTFOLIO_GITHUB_USER = "leven-anju-yuki";
+const PORTFOLIO_WORK_GIF = "https://res.cloudinary.com/dgrszi9wf/image/upload/v1701424796/Dragon/image/traveaux.gif";
 
 const PROJECT_MERGE_RULES = [
   { targetId: "projet-dragons", repositories: ["dragons", "dragon", "projet-dragons", "projet_dragon"] },
@@ -319,24 +320,91 @@ async function fetchRepositories(token="", includeStarred=false) {
 // Récupère la quantité de code utilisée pour chaque langage du dépôt.
 async function fetchLanguages(repo, token="") { try { return await githubFetch(repo.languages_url,token); } catch { return {}; } }
 // Liste tous les README présents à la racine ou dans les sous-dossiers.
+// Plusieurs méthodes sont utilisées car certains dépôts privés ne répondent pas toujours
+// correctement avec l'API « arbre Git ». Le README principal est recherché en priorité.
 async function fetchRepositoryReadmeFiles(repo, token="") {
   if (!repo || !repo.full_name) return [];
-  try {
-    const branch = encodeURIComponent(repo.default_branch || "main");
-    const tree = await githubFetch(`https://api.github.com/repos/${repo.full_name}/git/trees/${branch}?recursive=1`, token);
-    return (tree.tree || [])
-      .filter(item => item.type === "blob" && /(^|\/)readme(?:[-_. ][^\/]*)?\.(md|markdown|txt)$/i.test(item.path || ""))
-      .map(item => item.path)
-      .sort((a, b) => {
-        const aRoot = a.includes("/") ? 1 : 0;
-        const bRoot = b.includes("/") ? 1 : 0;
-        return aRoot - bRoot || a.localeCompare(b, "fr", { sensitivity: "base" });
-      });
-  } catch (error) {
-    console.warn(`Liste des README non récupérée pour ${repo.full_name}`, error);
-    return [];
+
+  const found = new Set();
+  const branchName = repo.default_branch || "main";
+  const encodedBranch = encodeURIComponent(branchName);
+  let lastAccessError = null;
+
+  function addReadmePath(path) {
+    if (path && /(^|\/)readme(?:[-_. ][^\/]*)?\.(md|markdown|txt)$/i.test(path)) {
+      found.add(path);
+    }
   }
+
+  // Vérifie d'abord les noms les plus courants directement.
+  // Cette vérification résout notamment les dépôts privés pour lesquels l'arbre Git
+  // complet n'est pas renvoyé alors que README.md existe bien à la racine.
+  const commonCandidates = [
+    "README.md", "readme.md", "README.MD", "README.markdown", "README.txt"
+  ];
+
+  for (const candidate of commonCandidates) {
+    try {
+      await githubFetch(
+        `https://api.github.com/repos/${repo.full_name}/contents/${encodeURIComponent(candidate)}?ref=${encodedBranch}`,
+        token
+      );
+      addReadmePath(candidate);
+    } catch (error) {
+      if ([401, 403].includes(error?.status)) lastAccessError = error;
+    }
+  }
+
+  // Route spéciale du README principal.
+  try {
+    const mainReadme = await githubFetch(
+      `https://api.github.com/repos/${repo.full_name}/readme?ref=${encodedBranch}`,
+      token
+    );
+    addReadmePath(mainReadme?.path || mainReadme?.name);
+  } catch (error) {
+    if ([401, 403].includes(error?.status)) lastAccessError = error;
+  }
+
+  // Arbre complet : permet de trouver les README des sous-dossiers.
+  try {
+    const tree = await githubFetch(
+      `https://api.github.com/repos/${repo.full_name}/git/trees/${encodedBranch}?recursive=1`,
+      token
+    );
+    for (const item of (tree.tree || [])) {
+      if (item.type === "blob") addReadmePath(item.path || "");
+    }
+  } catch (error) {
+    if ([401, 403].includes(error?.status)) lastAccessError = error;
+  }
+
+  // Liste de la racine comme dernière méthode de détection.
+  try {
+    const rootFiles = await githubFetch(
+      `https://api.github.com/repos/${repo.full_name}/contents?ref=${encodedBranch}`,
+      token
+    );
+    if (Array.isArray(rootFiles)) {
+      rootFiles.forEach(item => {
+        if (item.type === "file") addReadmePath(item.path || item.name || "");
+      });
+    }
+  } catch (error) {
+    if ([401, 403].includes(error?.status)) lastAccessError = error;
+  }
+
+  const files = [...found].sort((a, b) => {
+    const aRoot = a.includes("/") ? 1 : 0;
+    const bRoot = b.includes("/") ? 1 : 0;
+    return aRoot - bRoot || a.localeCompare(b, "fr", { sensitivity: "base" });
+  });
+
+  // On ne masque plus un problème de droit derrière « Aucun README trouvé ».
+  if (!files.length && lastAccessError) throw lastAccessError;
+  return files;
 }
+
 // Télécharge le texte du README choisi pour le copier dans la configuration.
 async function fetchReadmeMarkdown(repo, token="", readmePath="") {
   if (!repo || !repo.full_name) return "";
@@ -358,6 +426,72 @@ async function fetchReadmeMarkdown(repo, token="", readmePath="") {
     return "";
   }
 }
+
+// Repère les images Markdown et les balises HTML <img> contenues dans un README.
+function extractReadmeImagePaths(markdown="") {
+  const paths = new Set();
+  const markdownPattern = /!\[[^\]]*\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g;
+  const htmlPattern = /<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi;
+  let match;
+  while ((match = markdownPattern.exec(markdown))) paths.add(match[1]);
+  while ((match = htmlPattern.exec(markdown))) paths.add(match[1]);
+  return [...paths].filter(path => path && !/^(https?:|data:|#)/i.test(path));
+}
+
+// Transforme un chemin relatif au README en chemin réel dans le dépôt.
+function resolveRepositoryRelativePath(readmePath="", assetPath="") {
+  const cleanAsset = decodeURIComponent(String(assetPath).split(/[?#]/)[0]).replace(/^\.\//, "");
+  if (cleanAsset.startsWith("/")) return cleanAsset.slice(1);
+  const baseParts = String(readmePath || "").split("/").slice(0, -1);
+  const parts = [...baseParts, ...cleanAsset.split("/")];
+  const resolved = [];
+  for (const part of parts) {
+    if (!part || part === ".") continue;
+    if (part === "..") resolved.pop();
+    else resolved.push(part);
+  }
+  return resolved.join("/");
+}
+
+// Télécharge les petites images relatives d'un README et les stocke sous forme de data URL.
+// Ainsi, une image d'un dépôt privé reste visible sans donner accès au dépôt au visiteur.
+async function snapshotReadmeImages(repo, token="", readmePath="", markdown="") {
+  const assets = {};
+  const imagePaths = extractReadmeImagePaths(markdown);
+  const maxBytesPerImage = 2 * 1024 * 1024;
+  const maxImages = 10;
+
+  for (const originalPath of imagePaths.slice(0, maxImages)) {
+    const repositoryPath = resolveRepositoryRelativePath(readmePath, originalPath);
+    if (!repositoryPath) continue;
+
+    const headers = {
+      Accept: "application/vnd.github.raw+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    };
+    if (token) headers.Authorization = `Bearer ${token}`;
+
+    try {
+      const endpoint = `https://api.github.com/repos/${repo.full_name}/contents/${repositoryPath.split("/").map(encodeURIComponent).join("/")}`;
+      const response = await fetch(endpoint, { headers });
+      if (!response.ok) continue;
+      const blob = await response.blob();
+      if (!blob.type.startsWith("image/") || blob.size > maxBytesPerImage) continue;
+      const dataUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+      assets[originalPath] = dataUrl;
+      assets[repositoryPath] = dataUrl;
+    } catch (error) {
+      console.warn(`Image README non copiée : ${repositoryPath}`, error);
+    }
+  }
+  return assets;
+}
+
 // Construit le lien vers la page locale qui met le README en forme.
 function localReadmeUrl(project) {
   return `./readme.html?project=${encodeURIComponent(project.id || project.repository || "")}`;
@@ -451,6 +585,22 @@ function inferCategory(repo,setting={}) { return primaryProjectCategory(repo, se
 // Choisit le lien final du bouton « Voir plus ». 
 function destination(repo,p){ if(p.destination==='local'&&p.localPage)return p.localPage; if(p.destination==='demo'&&(p.publicUrl||repo.homepage))return p.publicUrl||repo.homepage; if(p.destination==='readme')return p.readmeMarkdown ? localReadmeUrl(p) : (p.private ? localReadmeUrl(p) : `${repo.html_url}#readme`); if(p.destination==='github')return repo.html_url; return p.localPage||p.publicUrl||repo.homepage||(p.readmeMarkdown?localReadmeUrl(p):`${repo.html_url}#readme`); }
 // Choisit l’image de la carte selon le mode sélectionné dans le dashboard.
-function projectImage(repo,p){ if(p.imageMode==='legacy'&&p.image)return p.image; if(p.imageMode==='asset'&&p.image)return p.image; if(p.imageMode==='screenshot'){const u=p.publicUrl||repo.homepage; if(u)return `https://api.microlink.io/?url=${encodeURIComponent(u)}&screenshot=true&meta=false&embed=screenshot.url`; } if(p.imageMode==='github')return `https://opengraph.githubassets.com/1/${repo.full_name}`; return p.image||`https://opengraph.githubassets.com/1/${repo.full_name}`; }
+function projectImage(repo, p) {
+  // Le GIF « travaux » sert de secours lorsqu’aucune image n’a été choisie
+  // ou lorsqu’un aperçu distant ne peut pas être chargé.
+  if (p.imageMode === "work") return PORTFOLIO_WORK_GIF;
+  if (p.imageMode === "legacy" && p.image) return p.image;
+  if (p.imageMode === "asset" && p.image) return p.image;
+  if (p.imageMode === "screenshot") {
+    const url = p.publicUrl || repo.homepage;
+    if (url) return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+  }
+  if (p.imageMode === "github" && repo.full_name) {
+    return `https://opengraph.githubassets.com/1/${repo.full_name}`;
+  }
+  if (p.image) return p.image;
+  if (repo.full_name) return `https://opengraph.githubassets.com/1/${repo.full_name}`;
+  return PORTFOLIO_WORK_GIF;
+}
 // Crée le fichier projects-config.json et lance son téléchargement.
 function downloadConfig(c){const b=new Blob([JSON.stringify(c,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='projects-config.json';a.click();URL.revokeObjectURL(u);}

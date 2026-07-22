@@ -69,3 +69,229 @@ nav a:active {
     width: 20% !important;
   } */
 }
+
+
+/* =====================================================================
+   BARRE DE NAVIGATION — MISE EN PAGE GÉNÉRALE
+   Ces règles complètent le CSS déjà présent sans supprimer les anciens effets.
+   ===================================================================== */
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 100%;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px !important;
+    background-color: #212529 !important;
+    box-sizing: border-box;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    padding: 0;
+}
+
+.navbar-brand .portefeuille,
+.navbar .portefeuille {
+    width: 64px !important;
+    height: 64px;
+    margin: 0 !important;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.navbar-brand:hover .portefeuille {
+    transform: scale(1.06);
+    filter: brightness(1.08);
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 12px !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 18px;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #ffffff !important;
+    background-color: rgba(19, 83, 90, 0.75);
+    transform: translateY(-1px);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(93, 37, 99, 0.85);
+}
+
+/* =====================================================================
+   BOUTON « INSTALLER L’APPLICATION »
+   Le bouton reste discret et s’intègre dans la barre sombre.
+   ===================================================================== */
+
+.install-nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.btn-install {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 8px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(93, 37, 99, 0.98),
+            rgba(19, 83, 90, 0.98)
+        );
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.btn-install:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-install:focus-visible {
+    outline: 3px solid rgba(190, 174, 226, 0.75);
+    outline-offset: 3px;
+}
+
+.btn-install:active {
+    transform: translateY(0);
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.35),
+        inset 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+
+.install-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.navbar-toggler {
+    padding: 6px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(190, 174, 226, 0.35) !important;
+}
+
+/* Le bouton garde un joli rendu même si l’ancien HTML ne contient pas
+   encore la classe install-nav-item autour de lui. */
+.navbar #installButton {
+    margin-left: 10px;
+}
+
+/* =====================================================================
+   VERSION MOBILE
+   ===================================================================== */
+
+@media screen and (max-width: 767px) {
+    .navbar {
+        min-height: 70px;
+        padding: 8px 15px !important;
+    }
+
+    .navbar-brand .portefeuille,
+    .navbar .portefeuille {
+        width: 52px !important;
+        height: 52px;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgba(33, 37, 41, 0.98);
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 10px 12px !important;
+    }
+
+    .install-nav-item {
+        width: 100%;
+        margin: 6px 0 0;
+    }
+
+    .btn-install,
+    .navbar #installButton {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        padding: 10px 15px;
+    }
+}

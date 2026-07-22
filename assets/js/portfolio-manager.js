@@ -195,8 +195,21 @@ async function loadReadmeFilesInBatches(repos, token, onProgress) {
     const batchSize = 6;
     for (let start = 0; start < repos.length; start += batchSize) {
         const batch = repos.slice(start, start + batchSize);
-        const values = await Promise.all(batch.map(async repo => [repo.name.toLowerCase(), await fetchRepositoryReadmeFiles(repo, token)]));
-        values.forEach(([name, files]) => result.set(name, files));
+        const values = await Promise.all(batch.map(async repo => {
+            try {
+                const files = await fetchRepositoryReadmeFiles(repo, token);
+                repo._readmeError = null;
+                return [repo.name.toLowerCase(), files];
+            } catch (error) {
+                // Un dépôt privé sans droit ne doit pas bloquer toute l'actualisation.
+                // On garde sa précédente liste et on mémorise l'erreur pour l'expliquer sur sa ligne.
+                repo._readmeError = error;
+                return [repo.name.toLowerCase(), null];
+            }
+        }));
+        values.forEach(([name, files]) => {
+            if (Array.isArray(files)) result.set(name, files);
+        });
         if (onProgress) onProgress(Math.min(start + batch.length, repos.length), repos.length);
     }
     return result;
@@ -313,8 +326,14 @@ async function portfolioRefresh(keepCurrentChoices = true) {
                 saved.languageBytes = languageBytes;
                 saved.primaryLanguage = primaryLanguage;
                 saved.topics = repo.topics || [];
-                saved.readmeFiles = readmeFilesByRepo.get(key) || saved.readmeFiles || [];
-                if (!saved.readmePath || !saved.readmeFiles.includes(saved.readmePath)) saved.readmePath = saved.readmeFiles[0] || "";
+                if (readmeFilesByRepo.has(key)) {
+                    saved.readmeFiles = readmeFilesByRepo.get(key) || [];
+                    if (!saved.readmePath || !saved.readmeFiles.includes(saved.readmePath)) {
+                        saved.readmePath = saved.readmeFiles[0] || "";
+                    }
+                } else {
+                    saved.readmeFiles = saved.readmeFiles || [];
+                }
                 saved.autoCategory = primaryCategory;
                 saved.autoCategoryLabel = framework?.label || primaryLanguage || "Autre";
                 const selectedCategory = saved.categoryOverride || primaryCategory;
@@ -396,9 +415,49 @@ function pmDestinationSettings(project, repo) {
     const destination = project.destination || "local";
     const localSelect = `<label class="pm-setting pm-setting-local"><span>Page locale</span><select class="pm-local">${pmOptionList(pmLocalPageOptions, project.localPage || "", "Choisir une page HTML")}</select></label>`;
     const publicInput = `<label class="pm-setting pm-setting-demo"><span>Lien public</span><input class="pm-public" value="${esc(project.publicUrl || repo?.homepage || "")}" placeholder="https://..."></label>`;
-    const readmeSelect = `<label class="pm-setting pm-setting-readme"><span>Fichier README</span><select class="pm-readme-path">${pmOptionList(project.readmeFiles || [], project.readmePath || "", "Choisir un README du dépôt")}</select></label>`;
+    const readmeSelect = `<label class="pm-setting pm-setting-readme"><span>Fichier README</span><div class="pm-readme-picker"><select class="pm-readme-path">${pmOptionList(project.readmeFiles || [], project.readmePath || "", "Choisir un README du dépôt")}</select>${project.repository ? `<button type="button" class="pm-readme-refresh" onclick="pmRefreshReadmesForRow(this)">Actualiser la liste</button>` : ""}</div><small>La liste vient directement des README présents dans le dépôt GitHub.</small></label>`;
     const githubInfo = `<div class="pm-setting pm-setting-github"><span>Dépôt GitHub</span><small>Le lien GitHub direct n’est conseillé que pour un dépôt public.</small></div>`;
     return `<div class="pm-destination-settings" data-active="${esc(destination)}">${localSelect}${publicInput}${readmeSelect}${githubInfo}</div>`;
+}
+
+// Recharge uniquement la liste des README du projet de cette ligne.
+// C’est utile lorsqu’un README vient d’être ajouté dans GitHub sans vouloir relire tous les dépôts.
+async function pmRefreshReadmesForRow(button) {
+    const row = button.closest("tr[data-pm]");
+    if (!row) return;
+    const id = row.dataset.pm;
+    const project = (pmConfig.projects || []).find(item => (item.id || item.repository) === id);
+    if (!project || !project.repository) return;
+
+    const repo = pmRepos.find(item => item.name.toLowerCase() === project.repository.toLowerCase());
+    if (!repo) {
+        alert("Actualise d’abord GitHub pour charger ce dépôt.");
+        return;
+    }
+
+    const token = document.getElementById("pm-token")?.value.trim() || sessionStorage.getItem(PORTFOLIO_TOKEN_KEY) || "";
+    button.disabled = true;
+    const previousText = button.textContent;
+    button.textContent = "Recherche…";
+    try {
+        const files = await fetchRepositoryReadmeFiles(repo, token);
+        project.readmeFiles = files;
+        if (!files.includes(project.readmePath)) project.readmePath = files[0] || "";
+
+        const select = row.querySelector(".pm-readme-path");
+        if (select) select.innerHTML = pmOptionList(files, project.readmePath, "Aucun README trouvé");
+
+        if (!files.length) {
+            alert("Aucun README détecté. Si le dépôt est privé, vérifie que le token a accès précisément à ce dépôt et possède la permission Contents en lecture.");
+        }
+    } catch (error) {
+        console.error(error);
+        const status = error?.status ? `GitHub ${error.status}` : "Erreur GitHub";
+        alert(`${status} : impossible de lire les README. Pour un dépôt privé, le token doit autoriser ce dépôt et la permission Contents.`);
+    } finally {
+        button.disabled = false;
+        button.textContent = previousText;
+    }
 }
 
 // Change immédiatement le champ visible quand la destination est modifiée.
@@ -493,6 +552,7 @@ function renderPM() {
                     <option value="asset" ${project.imageMode === "asset" ? "selected" : ""}>Image image-accueil</option>
                     <option value="screenshot" ${project.imageMode === "screenshot" ? "selected" : ""}>Capture du site</option>
                     <option value="github" ${project.imageMode === "github" ? "selected" : ""}>Image GitHub</option>
+                    <option value="work" ${project.imageMode === "work" ? "selected" : ""}>GIF travaux</option>
                 </select>
                 ${pmImageSettings(project)}
             </td>
@@ -548,11 +608,20 @@ async function pmSyncReadmes(config = pmConfig) {
         const markdown = await fetchReadmeMarkdown(repo, token, project.readmePath || "");
         if (markdown) {
             project.readmeMarkdown = markdown;
+            // Copie aussi les images relatives du README. Elles restent visibles même
+            // lorsque le dépôt GitHub est privé et que le visiteur n'a pas le token.
+            project.readmeAssets = await snapshotReadmeImages(
+                repo,
+                token,
+                project.readmePath || "",
+                markdown
+            );
             project.readmeSnapshotAt = new Date().toISOString();
             project.readmeAvailable = true;
         } else {
             project.readmeAvailable = false;
             project.readmeMarkdown = "";
+            project.readmeAssets = {};
         }
     }
     return config;

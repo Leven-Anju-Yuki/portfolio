@@ -37,3 +37,67 @@
 .readme-document a { color:#8b3f00; font-weight:700; }
 .readme-image-note { display:block; padding:.7rem; border:1px dashed #8b3f00; background:rgba(225,130,7,.1); }
 .readme-relative-link { font-weight:700; }
+
+/* Images copiées depuis les README GitHub. */
+.readme-inline-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 18px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Remplace les anciens <p align="center"> présents dans certains README. */
+.readme-center {
+    text-align: center;
+}
+
+.readme-center .readme-inline-image {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.readme-image-note {
+    display: block;
+    padding: 12px;
+    margin: 12px 0;
+    border-left: 4px solid #6f2c75;
+    background: rgba(190, 174, 226, 0.22);
+}
+
+
+/* =====================================================================
+   IMAGE PRINCIPALE DU PROJET
+   Cette image est la même que celle choisie pour la carte de l’index.
+   ===================================================================== */
+
+.readme-cover-container {
+    width: 100%;
+    margin: 0 auto 1.2rem;
+    overflow: hidden;
+    background: rgba(255, 248, 225, 0.94);
+    border: 3px solid #181818;
+    border-radius: 14px;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
+}
+
+.readme-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    margin: 0;
+    object-fit: contain;
+    background: rgba(190, 174, 226, 0.12);
+}
+
+/* Sur téléphone, on réduit uniquement l’ombre et les bordures. */
+@media screen and (max-width: 700px) {
+    .readme-cover-container {
+        border-width: 2px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
+    }
+}

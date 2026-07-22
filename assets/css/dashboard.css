@@ -539,3 +539,27 @@ body.dashboard-auth-pending {
     border-color: #e18207;
     box-shadow: 0 0 0 2px rgba(225, 130, 7, 0.25);
 }
+
+
+/* Le sélecteur de README et son bouton restent lisibles dans la cellule. */
+.pm-readme-picker {
+    display: flex;
+    gap: 6px;
+    align-items: stretch;
+}
+.pm-readme-picker select {
+    min-width: 180px;
+    flex: 1;
+}
+.pm-readme-refresh {
+    white-space: nowrap;
+    padding: 6px 9px;
+}
+
+/* Affiche uniquement l’aide correspondant au mode d’image choisi. */
+.pm-image-settings .pm-image-setting { display: none; }
+.pm-image-settings[data-image-mode="asset"] .pm-image-setting-asset,
+.pm-image-settings[data-image-mode="legacy"] .pm-image-setting-legacy,
+.pm-image-settings[data-image-mode="screenshot"] .pm-image-setting-screenshot,
+.pm-image-settings[data-image-mode="github"] .pm-image-setting-github,
+.pm-image-settings[data-image-mode="work"] .pm-image-setting-work { display: block; }

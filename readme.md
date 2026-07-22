@@ -329,3 +329,9 @@ Le portfolio met notamment en avant :
 ## Exception de fusion
 
 - **Pot au lapin** et **Alimentation lapin / nourriture-lapin** sont deux projets différents et restent toujours séparés.
+
+
+## Mise à jour V24
+
+- La liste des README utilise désormais trois méthodes GitHub : README principal, arbre Git et contenu de la racine.
+- Les images des cartes gardent leur proportion naturelle : elles occupent toute la largeur sans être étirées ni recadrées.

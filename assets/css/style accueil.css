@@ -138,6 +138,11 @@ section {
 /* =================================================== */
 
 .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -377,4 +382,92 @@ aside {
 .project-tags span {
     border: 2px solid var(--language-color, #e18207) !important;
     box-shadow: inset 0 -3px 0 color-mix(in srgb, var(--language-color, #e18207) 35%, transparent);
+}
+
+
+/* =================================================== */
+/* ===== GRILLE DES CARTES ET IMAGES HARMONISÉES ====== */
+/* =================================================== */
+
+/* Quatre cartes par ligne sur les grands écrans. */
+.accueil section.row.justify-content-center {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    width: min(1500px, 96%);
+    margin: 0 auto 20px !important;
+    align-items: stretch;
+}
+
+.accueil section.row.justify-content-center > aside {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0 8px;
+    overflow: hidden;
+    display: flex;
+}
+
+.accueil section.row.justify-content-center > aside > center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Toutes les cartes gardent le même cadre d'image.
+   object-fit: contain montre l'image entière sans la rogner ni l'étirer.
+   Selon son format, une petite zone de fond peut rester visible autour d'elle :
+   c'est nécessaire pour respecter l'image originale. */
+.accueil .cadre-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 7px 7px 0 0;
+    background: rgba(255, 255, 255, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.accueil .cadre-container .projet {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0;
+}
+
+.accueil section.row.justify-content-center h2 {
+    padding: 8px 8px 0;
+    font-size: clamp(1rem, 1.4vw, 1.45rem);
+}
+
+.accueil .project-tags {
+    padding: 0 8px;
+}
+
+.accueil section.row.justify-content-center .bouton {
+    margin-top: auto;
+}
+
+@media (max-width: 1200px) {
+    .accueil section.row.justify-content-center {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .accueil section.row.justify-content-center {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .accueil section.row.justify-content-center {
+        grid-template-columns: 1fr;
+    }
 }

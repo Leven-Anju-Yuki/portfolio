@@ -4,26 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Présentation du projet - Portfolio</title>
+
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/readme.css">
+    <link rel="stylesheet" href="./assets/css/bunny-click.css">
+
     <link rel="shortcut icon" type="image/png" href="./assets/image/portefeuille.png">
-<link rel="stylesheet" href="./assets/css/bunny-click.css"/>
 </head>
+
 <body class="readme-page">
-<main class="readme-shell">
-    <a class="readme-back" href="./index.html">← Retour aux projets</a>
-    <header class="readme-hero">
-        <h1 id="readme-title">Chargement…</h1>
-        <p id="readme-description"></p>
-        <div id="readme-tags" class="readme-tags"></div>
-    </header>
-    <article id="readme-content" class="readme-document">
-        <p>Chargement du README…</p>
-    </article>
-</main>
-<script src="./assets/js/portfolio-common.js"></script>
-<script src="./assets/js/readme-viewer.js"></script>
-<script src="./assets/js/bunny-click.js"></script>
+    <main class="readme-shell">
+        <a class="readme-back" href="./index.html">← Retour aux projets</a>
+
+        <header class="readme-hero">
+            <h1 id="readme-title">Chargement…</h1>
+            <p id="readme-description"></p>
+            <div id="readme-tags" class="readme-tags"></div>
+        </header>
+
+        <!--
+            Cette zone affiche automatiquement la même image
+            que celle sélectionnée pour la carte de l’index.
+        -->
+        <div id="readme-cover-container" class="readme-cover-container" hidden>
+            <img
+                id="readme-cover"
+                class="readme-cover"
+                src=""
+                alt=""
+                loading="lazy"
+            >
+        </div>
+
+        <article id="readme-content" class="readme-document">
+            <p>Chargement du README…</p>
+        </article>
+    </main>
+
+    <script src="./assets/js/portfolio-common.js"></script>
+    <script src="./assets/js/readme-viewer.js"></script>
+    <script src="./assets/js/bunny-click.js"></script>
 </body>
 </html>
