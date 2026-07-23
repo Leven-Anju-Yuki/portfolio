@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="./assets/css/style accueil.css" rel="stylesheet" />
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./assets/css/header.css" rel="stylesheet" />
     <link href="./assets/image/portefeuille.png" rel="shortcut icon" type="image/png" />
     <!-- Fichier manifest pour les applications web progressives -->
     <link href="./manifest.json" rel="manifest" />
@@ -51,9 +52,9 @@
                         <a class="nav-link" href="./apropos.html">A propos</a>
                     </li>
                     <li class="nav-item install-nav-item">
-                        <button class="btn-install" id="installButton" type="button" style="display: none">
-                            <span class="install-icon">📲</span>
-                            <span>Installer l’application</span>
+                        <button id="installButton" class="install-app-button" type="button" style="display: none">
+                            <span class="install-app-icon" aria-hidden="true">↓</span>
+                            <span>Installer</span>
                         </button>
                     </li>
                 </ul>

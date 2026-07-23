@@ -101,3 +101,66 @@
         box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
     }
 }
+
+
+/* =====================================================================
+   TABLEAUX DES README
+   Ces règles transforment les tableaux Markdown en vrais tableaux HTML.
+   ===================================================================== */
+
+/*
+ * Le conteneur autorise un défilement horizontal sur téléphone
+ * sans élargir toute la page.
+ */
+.readme-table-wrapper {
+    width: 100%;
+    margin: 24px 0;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+/* Tableau principal */
+.readme-document table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+
+    background: rgba(255, 248, 225, 0.97);
+    border: 2px solid #13535a;
+}
+
+/* Cellules d'en-tête et cellules normales */
+.readme-document th,
+.readme-document td {
+    padding: 12px 14px;
+
+    border: 1px solid rgba(19, 83, 90, 0.3);
+
+    text-align: left;
+    vertical-align: top;
+}
+
+/* En-tête prune pour bien distinguer les colonnes */
+.readme-document th {
+    background: #5d2563;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Une ligne sur deux en lavande légère */
+.readme-document tbody tr:nth-child(even) {
+    background: rgba(190, 174, 226, 0.18);
+}
+
+/* Mise en évidence discrète au survol */
+.readme-document tbody tr:hover {
+    background: rgba(19, 83, 90, 0.12);
+}
+
+/* Les paragraphes ou codes présents dans les cellules ne créent
+   pas d'espacement excessif. */
+.readme-document th p,
+.readme-document td p {
+    margin: 0;
+    padding: 0;
+}

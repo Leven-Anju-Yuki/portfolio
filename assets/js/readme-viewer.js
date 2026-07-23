@@ -49,6 +49,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
+
+// Corrige les chemins des images du portfolio maintenant que readme.html
+// se trouve dans le dossier Projet_qui_ne_sont_pas_en_lien.
+function resolvePortfolioImageUrl(originalUrl) {
+    const url = String(originalUrl || "").trim();
+
+    if (!url) {
+        return "";
+    }
+
+    // Les liens Internet, data et blob fonctionnent déjà tels quels.
+    if (/^(https?:|data:|blob:)/i.test(url)) {
+        return url;
+    }
+
+    // Retire ./ ou / au début pour obtenir un chemin propre.
+    const cleanUrl = url
+        .replace(/^\.?\//, "")
+        .replace(/^\//, "");
+
+    // Les images du portfolio sont un niveau au-dessus de readme.html.
+    if (cleanUrl.startsWith("assets/")) {
+        return `../${cleanUrl}`;
+    }
+
+    return url;
+}
+
 // Affiche l'image choisie dans le dashboard pour la carte du projet.
 // Aucune deuxième image n'est à renseigner : on utilise directement project.image.
 function displayProjectCover(project) {
@@ -66,7 +94,7 @@ function displayProjectCover(project) {
         return;
     }
 
-    image.src = imageUrl;
+    image.src = resolvePortfolioImageUrl(imageUrl);
     image.alt = `Illustration du projet ${project.title || project.repository || ""}`;
 
     // Une ancienne adresse d'image ne doit pas laisser une icône cassée.

@@ -1,51 +1,74 @@
 // =====================================================================
-// NOTES PERSONNELLES
-// Gère l'installation du portfolio comme application web.
-// Notes simples pour comprendre rapidement le rôle du fichier lors d’une future reprise.
+// INSTALLATION DU PORTFOLIO COMME APPLICATION
+// Ce fichier affiche le bouton seulement lorsque le navigateur autorise
+// réellement l'installation de la PWA.
 // =====================================================================
 
-// Vérifier si le navigateur supporte les Service Workers
+// Sur GitHub Pages, le portfolio est dans un sous-dossier.
+// Un chemin relatif évite de chercher sw.js à la racine du domaine.
 if ("serviceWorker" in navigator) {
-    // Enregistrer le Service Worker
-    navigator.serviceWorker.register("/sw.js").then(
-        function(registration) {
-            console.log("Service Worker registration successful with scope: ", registration.scope);
-        },
-        function(error) {
-            console.log("Service Worker registration failed: ", error);
-        }
-    );
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").then(
+            (registration) => {
+                console.log(
+                    "Service Worker enregistré avec le scope :",
+                    registration.scope
+                );
+            },
+            (error) => {
+                console.log(
+                    "Échec de l'enregistrement du Service Worker :",
+                    error
+                );
+            }
+        );
+    });
 }
 
-// Variable pour stocker l'événement beforeinstallprompt
-let deferredPrompt;
-// Sélectionner le bouton d'installation
+// L'événement d'installation est conservé jusqu'au clic de l'utilisateur.
+let deferredPrompt = null;
+
+// Le bouton peut ne pas être présent sur toutes les pages.
 const installButton = document.getElementById("installButton");
 
-// Écouter l'événement beforeinstallprompt
-window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault(); // Empêcher l'affichage automatique de l'invite d'installation
-    deferredPrompt = e; // Stocker l'événement
-    installButton.style.display = "block"; // Afficher le bouton d'installation
-});
+if (installButton) {
+    // Le bouton reste caché tant que Chrome ne propose pas l'installation.
+    installButton.style.display = "none";
 
-// Écouter le clic sur le bouton d'installation
-installButton.addEventListener("click", () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt(); // Afficher l'invite d'installation
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === "accepted") {
-                console.log("User accepted the A2HS prompt"); // L'utilisateur a accepté l'installation
-            } else {
-                console.log("User dismissed the A2HS prompt"); // L'utilisateur a refusé l'installation
-            }
-            deferredPrompt = null; // Réinitialiser l'événement
-            installButton.style.display = "none"; // Masquer le bouton d'installation
-        });
-    }
-});
+    window.addEventListener("beforeinstallprompt", (event) => {
+        // Empêche Chrome d'afficher sa propre bannière automatiquement.
+        event.preventDefault();
 
-// Écouter l'événement appinstalled
-window.addEventListener("appinstalled", () => {
-    console.log("PWA was installed"); // La PWA a été installée
-});
+        // Garde l'événement pour l'utiliser lors du clic.
+        deferredPrompt = event;
+
+        // inline-flex permet au texte et à l'icône de rester bien alignés.
+        installButton.style.display = "inline-flex";
+    });
+
+    installButton.addEventListener("click", async () => {
+        if (!deferredPrompt) return;
+
+        // Ouvre la fenêtre officielle d'installation du navigateur.
+        deferredPrompt.prompt();
+
+        const choiceResult = await deferredPrompt.userChoice;
+
+        if (choiceResult.outcome === "accepted") {
+            console.log("Installation acceptée.");
+        } else {
+            console.log("Installation annulée.");
+        }
+
+        // L'invite ne peut être utilisée qu'une fois.
+        deferredPrompt = null;
+        installButton.style.display = "none";
+    });
+
+    window.addEventListener("appinstalled", () => {
+        // Une fois installée, l'application n'a plus besoin du bouton.
+        deferredPrompt = null;
+        installButton.style.display = "none";
+        console.log("Le portfolio a été installé.");
+    });
+}

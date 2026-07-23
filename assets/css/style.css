@@ -212,275 +212,261 @@ div {
         background-size: cover;
     }
 }
+
 /* ==========================================================
-   PAGE CONCOURS D'ELOQUENCE
+   PAGE CONCOURS D'ÉLOQUENCE
+   Toutes les règles restent limitées au body.eloquence.
+   Le fond général du portfolio est conservé.
    ========================================================== */
 
-.eloquence{
+/*
+ * On garde uniquement la police spécifique.
+ * Aucun background blanc ici : le body général continue donc
+ * d'afficher le fond commun du portfolio.
+ */
+body.eloquence {
     font-family: Arial, Helvetica, sans-serif;
-    background:#fff;
+}
+
+/* Le conteneur de l'en-tête local reste au-dessus du contenu. */
+body.eloquence .local-project-header-shell {
+    width: min(92%, 1200px);
+    margin: 25px auto 0;
 }
 
 /* ==========================================================
-   LAYOUT
+   CONTENU PRINCIPAL
    ========================================================== */
 
-.eloquence .main{
-    display:grid;
-    grid-template-columns:1.4fr 1fr;
-    gap:50px;
-    max-width:1700px;
-    margin:auto;
-    padding:40px 30px;
-    align-items:start;
+/*
+ * Les règles générales de style.css donnent aux sections une
+ * marge fixe et aux articles/asides une largeur de 50 %.
+ * On les réinitialise ici pour cette page uniquement.
+ */
+body.eloquence section.main {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(520px, 1.6fr);
+    gap: 42px;
+    align-items: start;
+
+    width: min(92%, 1500px);
+    margin: 45px auto !important;
+    padding: 0;
+}
+
+/* Colonne texte */
+body.eloquence .main > article.eloquence-text {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 28px;
+
+    line-height: 1.8;
+    font-size: 1.04rem;
+
+    background-color: rgba(255, 248, 225, 0.94);
+    border: 1px solid rgba(93, 37, 99, 0.25);
+    border-left: 5px solid #5d2563;
+    border-radius: 16px;
+
+    box-shadow: 5px 5px 0 rgba(19, 83, 90, 0.22);
+}
+
+/* Colonne vidéo */
+body.eloquence .main > aside.eloquence-media {
+    display: block;
+    position: sticky;
+    top: 20px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
 }
 
 /* ==========================================================
-   TEXTE
+   CARROUSEL ET VIDÉOS
    ========================================================== */
 
-.eloquence article{
-    line-height:1.8;
-    font-size:1.05rem;
+body.eloquence .carousel {
+    width: 100%;
 }
 
-.eloquence article p{
-    margin-bottom:18px;
+body.eloquence .carousel-inner {
+    overflow: hidden;
+    border-radius: 16px;
+    background: rgba(255, 248, 225, 0.95);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.28);
+}
+
+body.eloquence .video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+
+    overflow: hidden;
+    background: #111;
+}
+
+body.eloquence .video-container video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #111;
+}
+
+/* Légende sous chaque vidéo */
+body.eloquence .caption-box {
+    padding: 18px 22px;
+    text-align: center;
+
+    background: rgba(255, 248, 225, 0.98);
+    border-top: 1px solid rgba(19, 83, 90, 0.2);
+}
+
+body.eloquence .caption-box h5 {
+    margin: 0 0 8px;
+    color: #5d2563;
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+body.eloquence .caption-box p {
+    margin: 0;
+    padding: 0;
+    color: #13535a;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+body.eloquence .carousel-control-prev,
+body.eloquence .carousel-control-next {
+    width: 9%;
 }
 
 /* ==========================================================
-   COLONNE VIDEO
+   RETOURS / TÉMOIGNAGES
    ========================================================== */
 
-.eloquence aside{
-    position:sticky;
-    top:20px;
+body.eloquence section.testimonials {
+    display: block;
+
+    width: min(92%, 1100px);
+    margin: 55px auto 70px !important;
+    padding: 42px 28px;
+
+    text-align: center;
+
+    background: rgba(255, 248, 225, 0.92);
+    border: 2px solid rgba(19, 83, 90, 0.35);
+    border-radius: 18px;
+
+    box-shadow: 6px 6px 0 rgba(93, 37, 99, 0.24);
+}
+
+body.eloquence .testimonials h2 {
+    margin: 0 0 30px;
+    color: #5d2563;
+    text-shadow: none !important;
+}
+
+body.eloquence .testimonial-card {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+body.eloquence .testimonial-card img {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 18px;
+
+    object-fit: cover;
+    border: 4px solid #beaee2;
+    border-radius: 50%;
+
+    box-shadow: 3px 3px 0 rgba(19, 83, 90, 0.35);
+}
+
+body.eloquence .testimonial-card p {
+    margin: 0;
+    padding: 0;
+
+    color: #13535a;
+    font-size: 1.02rem;
+    font-style: italic;
+    line-height: 1.75;
+    text-align: center;
+}
+
+body.eloquence a img {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+body.eloquence a img:hover {
+    transform: scale(1.05);
 }
 
 /* ==========================================================
-   CAROUSEL
+   RESPONSIVE
    ========================================================== */
 
-.eloquence .carousel{
-    width:100%;
+@media screen and (max-width: 1150px) {
+    body.eloquence section.main {
+        grid-template-columns: minmax(280px, 0.85fr) minmax(440px, 1.3fr);
+        gap: 28px;
+    }
 }
 
-.eloquence .video-container{
-    width:100%;
-    aspect-ratio:16/9;
-    min-height:520px;
-    background:#000;
-    border-radius:12px 12px 0 0;
-    overflow:hidden;
-}
-
-.eloquence .video-container video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-/* ==========================================================
-   LEGENDE
-   ========================================================== */
-
-.eloquence .caption-box{
-    background:#fff;
-    padding:18px;
-    text-align:center;
-    border:1px solid #ddd;
-    border-top:none;
-    border-radius:0 0 12px 12px;
-}
-
-.eloquence .caption-box h5{
-    font-size:1.05rem;
-    margin-bottom:10px;
-    font-weight:600;
-}
-
-.eloquence .caption-box p{
-    margin:0;
-    font-size:.95rem;
-    line-height:1.5;
-}
-
-/* ==========================================================
-   CONTROLES
-   ========================================================== */
-
-.eloquence .carousel-control-prev,
-.eloquence .carousel-control-next{
-    width:8%;
-}
-
-/* ==========================================================
-   TEMOIGNAGES
-   ========================================================== */
-
-.eloquence .testimonials{
-    background:#f5f5f5;
-    padding:60px 20px;
-    text-align:center;
-}
-
-.eloquence .testimonials h2{
-    margin-bottom:40px;
-}
-
-.eloquence .testimonial-card{
-    max-width:650px;
-    margin:auto;
-}
-
-.eloquence .testimonial-card img{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:15px;
-}
-
-.eloquence .testimonial-card p{
-    font-style:italic;
-    line-height:1.7;
-}
-
-/* ==========================================================
-   IMAGES
-   ========================================================== */
-
-.eloquence img{
-    max-width:100%;
-    height:auto;
-}
-
-.eloquence a img{
-    cursor:pointer;
-    transition:transform .25s ease;
-}
-
-.eloquence a img:hover{
-    transform:scale(1.05);
-}
-
-/* ==========================================================
-   GRANDS ECRANS
-   ========================================================== */
-
-@media (min-width:1800px){
-
-    .eloquence .main{
-        max-width:1850px;
+@media screen and (max-width: 900px) {
+    body.eloquence section.main {
+        grid-template-columns: 1fr;
+        width: min(94%, 850px);
+        margin: 30px auto !important;
     }
 
-    .eloquence .video-container{
-        min-height:620px;
+    body.eloquence .main > aside.eloquence-media {
+        position: static;
     }
 
+    body.eloquence .main > article.eloquence-text {
+        padding: 22px;
+    }
 }
 
-/* ==========================================================
-   ORDINATEURS PORTABLES
-   ========================================================== */
-
-@media (max-width:1200px){
-
-    .eloquence .main{
-        grid-template-columns:1.2fr 1fr;
-        gap:35px;
+@media screen and (max-width: 600px) {
+    body.eloquence .local-project-header-shell {
+        width: 94%;
+        margin-top: 15px;
     }
 
-    .eloquence .video-container{
-        min-height:420px;
+    body.eloquence section.main {
+        width: 94%;
+        gap: 20px;
+        margin: 22px auto !important;
     }
 
-}
-
-/* ==========================================================
-   TABLETTES
-   ========================================================== */
-
-@media (max-width:992px){
-
-    .eloquence .main{
-        grid-template-columns:1fr;
-        gap:30px;
-        padding:30px 20px;
+    body.eloquence .main > article.eloquence-text {
+        padding: 18px;
+        font-size: 0.96rem;
+        line-height: 1.7;
+        border-left-width: 4px;
     }
 
-    .eloquence article{
-        order:1;
-        font-size:1rem;
+    body.eloquence .carousel-inner {
+        border-radius: 11px;
     }
 
-    .eloquence aside{
-        order:2;
-        position:static;
+    body.eloquence .caption-box {
+        padding: 14px;
     }
 
-    .eloquence .video-container{
-        min-height:auto;
-        aspect-ratio:16/9;
+    body.eloquence section.testimonials {
+        width: 94%;
+        margin: 35px auto 50px !important;
+        padding: 30px 18px;
     }
-
-}
-
-/* ==========================================================
-   MOBILE
-   ========================================================== */
-
-@media (max-width:768px){
-
-    .eloquence .main{
-        padding:20px 15px;
-    }
-
-    .eloquence article{
-        font-size:.98rem;
-        line-height:1.7;
-    }
-
-    .eloquence .caption-box{
-        padding:14px;
-    }
-
-    .eloquence .caption-box h5{
-        font-size:1rem;
-    }
-
-    .eloquence .caption-box p{
-        font-size:.9rem;
-    }
-
-    .eloquence .testimonial-card img{
-        width:80px;
-        height:80px;
-    }
-
-}
-
-/* ==========================================================
-   PETITS TELEPHONES
-   ========================================================== */
-
-@media (max-width:480px){
-
-    .eloquence .main{
-        padding:15px;
-    }
-
-    .eloquence article{
-        font-size:.95rem;
-    }
-
-    .eloquence .video-container{
-        border-radius:10px 10px 0 0;
-    }
-
-    .eloquence .caption-box{
-        border-radius:0 0 10px 10px;
-    }
-
 }

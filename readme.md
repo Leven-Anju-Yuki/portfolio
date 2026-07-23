@@ -33,7 +33,6 @@ portfolio/
 │   │   ├── bunny-click.css
 │   │   ├── dashboard.css
 │   │   ├── header.css
-│   │   ├── local-project-header.css
 │   │   ├── readme.css
 │   │   ├── style accueil.css
 │   │   └── style.css
@@ -90,13 +89,13 @@ portfolio/
 │   ├── pot_au_lapin.html
 │   ├── projet_dragons.html
 │   ├── projet_manga_jeux.html
+│   ├── readme.html
 │   └── refuge.html
 │
 ├── apropos.html
 ├── index.html
 ├── manifest.json
 ├── projects-config.json
-├── readme.html
 ├── readme.md
 └── sw.js
 ```
