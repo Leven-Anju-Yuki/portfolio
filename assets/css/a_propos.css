@@ -1,88 +1,257 @@
 /* =====================================================================
-   NOTES PERSONNELLES
-   Ce fichier contient les styles de : a_propos.
-   Je garde ces commentaires pour retrouver rapidement le rôle du fichier.
+   PAGE À PROPOS
+   Toutes les règles sont limitées à body.apropos pour ne pas modifier
+   les autres pages du portfolio.
    ===================================================================== */
 
-/*=================PAGE A PROPOS=================*/
-.apropos section .articlemax h3 {
-    text-decoration: underline red;
-}
-.apropos h2 {
-    margin-left: 10px;
-}
-.apropos section .articlemax {
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-}
-.apropos section aside img {
-    box-shadow: none !important;
-    border-radius: 0px !important;
-}
-.logo-competence {
-    width: 15%;
+body.apropos {
+    overflow-x: hidden;
 }
 
-.azetmoi {
-    width: 100%;
-}
-/* .sectionazetmoi {
-  display: flex;
-  width: 96%;
-} */
-.sectionazetmoi article {
-    width: 90%;
-}
-.sectionazetmoi article strong {
-    color: red;
-}
-.sectionazetmoi article h2 {
-    text-transform: none !important;
-    text-align: center;
-    text-decoration: underline red;
-}
-.sectionazetmoi aside {
-    width: 50%;
-    margin-right: 5px;
-}
-.diplomes-section {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
-
-.diplome-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-.bouton a {
-    text-decoration: none;
-    font-size: 1.2em;
-    color: red;
-}
-.bouton a:hover {
-    text-decoration: none;
-    color: black;
-}
-.diplome-item {
-    height: 300px !important;
-    width: 50%;
-    padding: 0; /* enlève tout espace interne */
-    margin: 0; /* enlève tout espace externe */
+/* Les éléments prennent en compte leurs bordures dans leur largeur. */
+body.apropos *,
+body.apropos *::before,
+body.apropos *::after {
     box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 15px;
+}
+
+/* Titres principaux de la page. */
+body.apropos>h2 {
+    width: min(94%, 1400px);
+    margin: 28px auto 16px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* =====================================================================
+   PRÉSENTATION
+   ===================================================================== */
+
+body.apropos .sectionazetmoi {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.4fr);
+    gap: 28px;
+    align-items: stretch;
+
+    width: min(94%, 1400px);
+    margin: 20px auto 42px !important;
+}
+
+body.apropos .sectionazetmoi>aside,
+body.apropos .sectionazetmoi>article {
+    width: 100%;
+    margin: 0;
+}
+
+body.apropos .sectionazetmoi>aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.apropos .azetmoi {
+    display: block;
+    width: min(100%, 430px);
+    height: auto;
+    margin: auto;
+    border-radius: 18px;
+}
+
+body.apropos .presentation-card {
+    min-width: 0;
+    padding: clamp(18px, 3vw, 34px);
+
+    background: rgba(255, 248, 225, 0.94);
+    border: 2px solid rgba(93, 37, 99, 0.35);
+    border-radius: 18px;
+    box-shadow: 5px 5px 0 rgba(19, 83, 90, 0.24);
+}
+
+body.apropos .presentation-card h2,
+body.apropos .presentation-card h3 {
+    overflow-wrap: anywhere;
+}
+
+body.apropos .presentation-card p,
+body.apropos .presentation-card li {
+    line-height: 1.7;
+}
+
+/* =====================================================================
+   CARTES DES DIPLÔMES
+   ===================================================================== */
+
+body.apropos .diplomes-section {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+
+    width: min(94%, 1400px);
+    margin: 20px auto 45px !important;
+}
+
+body.apropos .diplome-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 18px;
+
+    background: rgba(255, 248, 225, 0.94);
+    border: 3px solid #ec0000;
+    border-radius: 18px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.26);
 }
+
+body.apropos .diplome-date {
+    display: flex;
+    justify-content: center;
+    margin: -33px auto 14px;
+}
+
+body.apropos .diplome-date span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 13px;
+    border-radius: 999px;
+
+    background: #e6b75a;
+    color: #ffffff;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+body.apropos .diplome-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+body.apropos .diplome-info p,
+body.apropos .diplome-info li,
+body.apropos .diplome-info a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+}
+
+body.apropos .diplome-info ul {
+    padding-left: 1.25rem;
+}
+
+body.apropos .diplome-info p:last-child {
+    margin-top: auto;
+}
+
+body.apropos .diplome-info .bouton {
+    max-width: 100%;
+}
+
+body.apropos .diplome-info .bouton a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.Logo_ecole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.nexi {
+    width: 30%;
+}
+
+/* =====================================================================
+   COMPÉTENCES
+   ===================================================================== */
+
+body.apropos .competence-title {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+body.apropos .competence-title h3 {
+    margin: 22px 0 8px;
+    text-decoration: underline;
+}
+
+body.apropos .competence-row {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(300px, 1fr);
+    gap: 22px;
+    align-items: center;
+
+    width: min(94%, 1400px);
+    margin: 0 auto 20px !important;
+}
+
+body.apropos .competence-list {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 20px 24px;
+
+    background: rgba(255, 248, 225, 0.94);
+    border: 1px solid rgba(93, 37, 99, 0.24);
+    border-radius: 18px;
+    box-shadow: 3px 3px 0 rgba(236, 0, 0, 0.72);
+}
+
+body.apropos .competence-list ul {
+    margin: 0;
+    padding-left: 1.35rem;
+}
+
+body.apropos .competence-logos {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+body.apropos .competence-logos .logo-competence {
+    display: block;
+    flex: 0 1 130px;
+
+    width: 130px;
+    max-width: 130px;
+    min-width: 0;
+    height: 130px;
+    margin: 0;
+
+    object-fit: contain;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    box-shadow: none;
+}
+
 /* =================================================== */
 /* ================  BOUTON SCROLL UP  ================ */
 /* =================================================== */
@@ -118,79 +287,132 @@
     transform: translate(3px, 3px);
 }
 
-/* 🖥️ PC : 4 par ligne, collés */
-@media (min-width: 992px) {
-    .diplome-item {
-        width: 25%;
+/* =====================================================================
+   TABLETTE
+   ===================================================================== */
+
+@media screen and (max-width: 1050px) {
+    body.apropos .diplomes-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 34px;
+    }
+
+    body.apropos .sectionazetmoi {
+        grid-template-columns: 1fr;
+    }
+
+    body.apropos .sectionazetmoi>aside {
+        order: 1;
+    }
+
+    body.apropos .sectionazetmoi>article {
+        order: 2;
     }
 }
 
-.diplome-date {
-    background-color: rgb(233, 178, 77);
-    color: white;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+/* =====================================================================
+   MOBILE
+   ===================================================================== */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 700px) {
+    body.apropos>h2 {
+        width: 92%;
+        margin-top: 24px;
+        font-size: 1.65rem;
+    }
 
-    font-weight: bold;
-    font-size: 15px;
-    text-align: center;
-    /* margin-left: 50%;
-    transform: translateX(-50%); */
-}
-.diplome-info {
-    color: #333;
+    body.apropos .sectionazetmoi {
+        width: 92%;
+        gap: 18px;
+        margin: 14px auto 35px !important;
+    }
+
+    body.apropos .presentation-card {
+        padding: 18px;
+    }
+
+    body.apropos .presentation-card h2 {
+        font-size: 1.55rem;
+    }
+
+    body.apropos .presentation-card h3 {
+        font-size: 1.05rem;
+        line-height: 1.45;
+    }
+
+    /* Une carte par ligne, parfaitement centrée. */
+    body.apropos .diplomes-section {
+        grid-template-columns: minmax(0, 1fr);
+        width: min(92%, 430px);
+        gap: 34px;
+        margin: 28px auto 40px !important;
+    }
+
+    body.apropos .diplome-item {
+        width: 100%;
+        margin: 0 auto;
+        padding: 18px 16px;
+    }
+
+    body.apropos .diplome-info p,
+    body.apropos .diplome-info li {
+        font-size: 0.96rem;
+        line-height: 1.55;
+    }
+
+    /* Liste puis grille de logos sur toute la largeur. */
+    body.apropos .competence-row {
+        grid-template-columns: 1fr;
+        width: 92%;
+        gap: 14px;
+        margin: 0 auto 26px !important;
+    }
+
+    body.apropos .competence-list {
+        padding: 18px 20px;
+    }
+
+    /* Deux logos par ligne sur téléphone. */
+    body.apropos .competence-logos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 92px));
+        justify-content: center;
+        align-items: center;
+        gap: 12px 18px;
+
+        overflow: visible;
+    }
+
+    body.apropos .competence-logos .logo-competence {
+        width: 92px;
+        max-width: 92px;
+        height: 92px;
+        flex: none;
+    }
 }
 
-.diplome-info p {
-    margin: 0;
-}
+/* Très petits écrans. */
+@media screen and (max-width: 380px) {
 
-.diplome-info b {
-    color: red;
-}
-.nexi {
-    margin-top: -20px !important;
-    width: 30%;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-.diplome-info b:hover {
-    text-decoration: underline black;
-}
-/* .cadre-container {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    aspect-ratio: 1 / 1; /* carré */
-/* overflow: hidden;
-}  */
+    body.apropos .diplomes-section,
+    body.apropos .sectionazetmoi,
+    body.apropos .competence-row,
+    body.apropos>h2 {
+        width: 94%;
+    }
 
-/* Image du projet : on veut la voir ENTIEREMENT */
-.cadre-container .logo-competence {
-    width: 100%;
-    height: 150px;
-    margin-top: -5px;
-    border-radius: 7px 7px 0px 0px;
-    object-fit: contain; /* montre toute l’image */
-    object-position: center;
-    display: block;
-    /* background: #000; optionnel : pour éviter les trous transparents*/
-}
+    body.apropos .diplome-item {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
 
-/* Cadre doré */
-.cadre-container::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("../image/cadre.png");
-    background-size: cover;
-    background-position: center;
-    pointer-events: none;
-    z-index: 10;
+    body.apropos .competence-logos {
+        grid-template-columns: repeat(2, minmax(0, 78px));
+    }
+
+    body.apropos .competence-logos .logo-competence {
+        width: 78px;
+        max-width: 78px;
+        height: 78px;
+    }
 }
-/*=================FIN PAGE A PROPOS=================*/
