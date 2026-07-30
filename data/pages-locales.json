@@ -2,43 +2,47 @@
   "pages": [
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/bibliotheque.html",
-      "title": "Bibliotheque"
+      "title": "bibliotheque"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/cledefa.html",
-      "title": "Cledefa"
+      "title": "cledefa"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/Concours_Eloquence.html",
-      "title": "Concours eloquence"
+      "title": "Concours Eloquence"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/epave.html",
-      "title": "Epave"
+      "title": "epave"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/magasin.html",
-      "title": "Magasin"
+      "title": "magasin"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/mise a jour.html",
-      "title": "Mise a jour"
+      "title": "mise a jour"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/pot_au_lapin.html",
-      "title": "Pot au lapin"
+      "title": "pot au lapin"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/projet_dragons.html",
-      "title": "Projet dragons"
+      "title": "projet dragons"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/projet_manga_jeux.html",
-      "title": "Projet manga jeux"
+      "title": "projet manga jeux"
+    },
+    {
+      "path": "Projet_qui_ne_sont_pas_en_lien/readme.html",
+      "title": "readme"
     },
     {
       "path": "Projet_qui_ne_sont_pas_en_lien/refuge.html",
-      "title": "Refuge"
+      "title": "refuge"
     }
   ]
 }
