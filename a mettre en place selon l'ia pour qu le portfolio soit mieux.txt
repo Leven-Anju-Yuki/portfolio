@@ -1,0 +1,32 @@
+Oui, et là tu viens de formuler le fil rouge qui manque peut-être encore un peu visuellement sur ton portfolio : tu ne fais pas des petits outils “pour faire des petits outils”, tu construis souvent des choses pour simplifier un problème concret pour quelqu’un.
+
+Ça change complètement leur valeur. Une calculatrice de TVA ou de promotion peut sembler très basique techniquement, mais si tu expliques qu’elle est pensée pour des personnes peu à l’aise avec les calculs ou le numérique, notamment des proches plus âgés, tu montres déjà une logique de besoin utilisateur, simplicité, accessibilité et utilité. C’est une démarche beaucoup plus intéressante que “j’ai fait une calculatrice pour apprendre JavaScript”.
+
+Et les jeux ont aussi leur place. Ils racontent autre chose : curiosité, logique, envie de te challenger, expérimentation. Je ne les supprimerais pas du tout.
+
+Je pense donc que ta meilleure évolution serait de garder tout ce contenu, mais d'arrêter de lui donner le même poids.
+
+Sur la page d'accueil, je verrais très bien quelque chose comme :
+
+Projets phares
+Tes 4 à 6 projets les plus complexes, récents ou professionnels : dashboard, suivi qualité, refuge, découpe de tissu, numérisation de tickets, gros projet Data, etc.
+
+Puis une partie Outils utiles avec TVA, promotions, conversions et autres petits outils pensés pour faciliter le quotidien.
+
+Et enfin une partie Défis & expérimentations pour les jeux et projets réalisés pour apprendre, tester une technologie ou te challenger.
+
+Ça résoudrait presque entièrement le problème dont on parlait. Tu ne caches rien de ton parcours, mais tu dis au recruteur :
+
+“Voilà d'abord ce dont je suis capable aujourd'hui. Et si vous voulez aller plus loin, voilà tout ce que j'ai construit pour apprendre et aider.”
+
+Et surtout, je mettrais une petite phrase quelque part dans ton À propos, parce que ce que tu viens de dire est très personnel sans être artificiel :
+
+J’aime concevoir des outils qui répondent à des problèmes concrets et rendent le numérique plus simple à utiliser. Plusieurs de mes premiers projets sont nés de besoins rencontrés dans mon entourage, notamment auprès de personnes moins à l’aise avec les outils numériques.
+
+Ça donne immédiatement du sens à des projets qui, sans explication, pourraient paraître très simples.
+
+Et ça rejoint justement quelque chose que je trouve intéressant dans ton profil : tu réfléchis beaucoup en termes d’utilisateur final. Même sur tes projets plus techniques, tu as souvent cette question derrière : “À quoi ça sert ? Qui va s’en servir ? Comment lui simplifier la vie ?”
+
+Pour un futur profil Data, c’est aussi une excellente base. Un bon Data Analyst ne fait pas un dashboard pour montrer qu’il sait faire un graphique. Il doit se demander : quelle information la personne doit comprendre et quelle décision elle doit pouvoir prendre derrière ?
+
+Donc oui : remonte les gros projets, mais garde les petits. Ils font partie de ton histoire et expliquent même assez bien pourquoi tes projets plus récents sont orientés vers des usages concrets. 🎯
