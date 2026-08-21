@@ -471,3 +471,158 @@ aside {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =====================================================================
+   GROUPES DE PROJETS : PHARES / OUTILS / EXPÉRIMENTATIONS
+   ===================================================================== */
+.accueil #projects-grid {
+    display: block !important;
+    width: min(1500px, 96%);
+    margin: 0 auto 30px !important;
+}
+
+.accueil .portfolio-section {
+    width: 100%;
+    margin: 0 0 34px;
+}
+
+.accueil .portfolio-section-heading {
+    margin: 0 0 14px;
+    padding: 14px 18px;
+    background: rgba(255, 248, 225, 0.82);
+    border-left: 5px solid #5d2563;
+    border-radius: 10px;
+}
+
+.accueil .portfolio-section-heading h2 {
+    margin: 0;
+    text-align: left;
+    text-transform: none !important;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.accueil .portfolio-section-heading p {
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.accueil .portfolio-section-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+}
+
+.accueil .portfolio-project-card {
+    position: relative;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 0 8px;
+    overflow: hidden;
+    display: flex;
+}
+
+.accueil .portfolio-project-card > center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Les projets phares ont une présence légèrement plus forte, sans changer
+   complètement le style historique du portfolio. */
+.accueil .portfolio-project-card.is-featured {
+    border-width: 3px;
+    box-shadow: 5px 5px 0 rgba(93, 37, 99, 0.32);
+}
+
+.accueil .featured-project-badge {
+    position: absolute;
+    z-index: 4;
+    top: 8px;
+    left: 8px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(93, 37, 99, 0.94);
+    color: white;
+    font-size: .78rem;
+    font-weight: 700;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.25);
+}
+
+@media (max-width: 1200px) {
+    .accueil .portfolio-section-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 850px) {
+    .accueil .portfolio-section-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+    .accueil .portfolio-section-grid { grid-template-columns: 1fr; }
+    .accueil .portfolio-section-heading { padding: 12px 14px; }
+}
+
+
+/* =====================================================================
+   BADGES DE CONTEXTE DES PROJETS
+   Le badge diplôme complète le classement sans créer une nouvelle catégorie.
+   ===================================================================== */
+
+.accueil .project-context-badges {
+    position: absolute;
+    z-index: 4;
+    top: 8px;
+    left: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    max-width: calc(100% - 16px);
+}
+
+/* Le badge Projet phare reste prune mais n'a plus besoin d'être positionné seul. */
+.accueil .project-context-badges .featured-project-badge {
+    position: static;
+    top: auto;
+    left: auto;
+}
+
+/* Badge secondaire : il indique le contexte scolaire sans modifier le classement. */
+.accueil .diploma-project-badge {
+    display: inline-flex;
+    align-items: center;
+
+    max-width: 100%;
+    padding: 5px 9px;
+
+    border: 1px solid rgba(93, 37, 99, 0.35);
+    border-radius: 999px;
+
+    background: rgba(190, 174, 226, 0.95);
+    color: #35173a;
+
+    font-size: .76rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .22);
+}
+
+@media (max-width: 520px) {
+    .accueil .project-context-badges {
+        top: 6px;
+        left: 6px;
+        gap: 4px;
+    }
+
+    .accueil .diploma-project-badge,
+    .accueil .project-context-badges .featured-project-badge {
+        font-size: .7rem;
+        padding: 4px 7px;
+    }
+}

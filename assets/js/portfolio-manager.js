@@ -488,6 +488,27 @@ function pmCategoryChoices(project) {
     return options.join("");
 }
 
+// Construit le menu qui décide où le projet apparaît sur la page d’accueil.
+function pmPortfolioSectionChoices(project, repo = {}) {
+    const automatic = inferPortfolioSection(repo, {...project, portfolioSectionOverride: ""});
+    const selected = project.portfolioSectionOverride || "auto";
+    const choices = [
+        ["featured", "⭐ Projet phare"],
+        ["useful", "🧰 Outil utile"],
+        ["experiments", "🧪 Défi & expérimentation"]
+    ];
+
+    const options = [
+        `<option value="auto" ${selected === "auto" ? "selected" : ""}>Automatique — ${esc(portfolioSectionLabel(automatic))}</option>`
+    ];
+
+    choices.forEach(([value, label]) => {
+        options.push(`<option value="${value}" ${selected === value ? "selected" : ""}>${label}</option>`);
+    });
+
+    return options.join("");
+}
+
 // Filtre les lignes du tableau avec la même idée que la recherche de l'index.
 // On compare le texte saisi avec le titre du projet et le nom de son dépôt GitHub.
 function filterDashboardProjects() {
@@ -538,7 +559,18 @@ function renderPM() {
             <td><strong>${esc(project.title)}</strong><br><small>${esc(statusText)}</small></td>
             <td>${esc(project.repository || "Page locale")}</td>
             <td><div class="pm-languages">${languageHtml}</div></td>
-            <td><select class="pm-category" aria-label="Catégorie de ${esc(project.title)}">${pmCategoryChoices(project)}</select></td>
+            <td><select class="pm-category" aria-label="Catégorie technique de ${esc(project.title)}">${pmCategoryChoices(project)}</select></td>
+            <td>
+                <div class="pm-home-group-setting">
+                    <select class="pm-portfolio-section" aria-label="Groupe d’accueil de ${esc(project.title)}">
+                        ${pmPortfolioSectionChoices(project, repo || {})}
+                    </select>
+                    <label class="pm-diploma-label" title="Ajoute uniquement un badge sur la carte, sans modifier la catégorie ni le groupe d’accueil.">
+                        <input class="pm-diploma-validation" type="checkbox" ${project.diplomaValidation === true ? "checked" : ""}>
+                        <span>🎓 Validation de diplôme</span>
+                    </label>
+                </div>
+            </td>
             <td><select class="pm-destination" onchange="pmUpdateDestinationRow(this)">
                 <option value="local" ${project.destination === "local" ? "selected" : ""}>Page créée</option>
                 <option value="demo" ${project.destination === "demo" ? "selected" : ""}>Lien public</option>
@@ -577,6 +609,18 @@ function pmCollect(updateDate = true) {
         project.category = primary.category;
         project.categoryLabel = primary.label;
         project.categories = [primary.category];
+
+        const sectionChoice = row.querySelector(".pm-portfolio-section")?.value || "auto";
+        project.portfolioSectionOverride = sectionChoice === "auto" ? "" : sectionChoice;
+        project.portfolioSection = inferPortfolioSection(repo, project);
+        project.portfolioSectionLabel = portfolioSectionLabel(project.portfolioSection);
+
+        // Ce marqueur est indépendant du groupe d'accueil :
+        // il ajoute seulement le badge 🎓 sur la carte du projet.
+        project.diplomaValidation = Boolean(
+            row.querySelector(".pm-diploma-validation")?.checked
+        );
+
         project.destination = row.querySelector(".pm-destination").value;
         project.localPage = row.querySelector(".pm-local")?.value.trim() || "";
         project.publicUrl = row.querySelector(".pm-public")?.value.trim() || "";

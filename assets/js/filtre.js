@@ -13,7 +13,7 @@ window.currentCategory = "all";
 function getProjectCards() {
     const grid = document.getElementById("projects-grid")
         || document.querySelector("section.row.justify-content-center");
-    return grid ? Array.from(grid.querySelectorAll(":scope > aside")) : [];
+    return grid ? Array.from(grid.querySelectorAll(".portfolio-project-card")) : [];
 }
 
 // Retourne le libellé lisible d'une catégorie.
@@ -99,6 +99,13 @@ function filterProjects(category = window.currentCategory || "all") {
         project.hidden = !isVisible;
 
         if (isVisible) visibleCount += 1;
+    });
+
+    // Masque aussi un titre de groupe lorsque toutes ses cartes sont filtrées.
+    document.querySelectorAll("#projects-grid .portfolio-section").forEach(group => {
+        const hasVisibleCard = Array.from(group.querySelectorAll(".portfolio-project-card"))
+            .some(card => !card.hidden);
+        group.hidden = !hasVisibleCard;
     });
 
     if (noResults) {

@@ -109,7 +109,7 @@ function simplifyProjectToken(token) {
 // Garde uniquement les mots qui décrivent vraiment le projet.
 // Les mots génériques comme "projet", "application" ou "Symfony" ne servent pas à identifier un doublon.
 function meaningfulProjectTokens(value) {
-  const ignored = new Set(["projet", "project", "application", "appli", "app", "pour", "les", "des", "dans", "avec", "sans", "de", "du", "la", "le", "en", "symfo", "symfony", "php", "web", "site", "gestion"]);
+  const ignored = new Set(["projet","project","application","appli","app","pour","les","des","dans","avec","sans","de","du","la","le","en","symfo","symfony","php","web","site","gestion"]);
   return [...new Set(
     normalizeProjectKey(value)
       .split("-")
@@ -235,12 +235,12 @@ async function detectRepositoryFramework(repo, token = "") {
         return "Symfony";
       }
     }
-  } catch (_) { }
+  } catch (_) {}
   try {
     const root = await githubFetch(`https://api.github.com/repos/${repo.full_name}/contents`, token);
     const names = Array.isArray(root) ? root.map(item => String(item.name || "").toLowerCase()) : [];
     if (names.includes("wp-content") || names.includes("wp-config.php")) return "WordPress";
-  } catch (_) { }
+  } catch (_) {}
   return "";
 }
 
@@ -303,26 +303,26 @@ async function githubFetch(url, token = "") {
   return response.json();
 }
 // Parcourt toutes les pages de résultats de l’API GitHub.
-async function fetchPaged(url, token = "") {
-  const all = []; for (let page = 1; ; page++) {
-    const join = url.includes('?') ? '&' : '?'; const batch = await githubFetch(`${url}${join}per_page=100&page=${page}`, token);
-    all.push(...batch); if (batch.length < 100) break;
+async function fetchPaged(url, token="") {
+  const all=[]; for(let page=1;;page++){
+    const join=url.includes('?')?'&':'?'; const batch=await githubFetch(`${url}${join}per_page=100&page=${page}`,token);
+    all.push(...batch); if(batch.length<100) break;
   } return all;
 }
 // Récupère les dépôts publics et privés autorisés, puis éventuellement les favoris.
-async function fetchRepositories(token = "", includeStarred = false) {
+async function fetchRepositories(token="", includeStarred=false) {
   const base = token ? "https://api.github.com/user/repos?affiliation=owner,collaborator,organization_member&visibility=all&sort=updated" : `https://api.github.com/users/${PORTFOLIO_GITHUB_USER}/repos?type=all&sort=updated`;
-  const owned = await fetchPaged(base, token);
-  let starred = []; if (includeStarred) starred = await fetchPaged(`https://api.github.com/users/${PORTFOLIO_GITHUB_USER}/starred`, token);
-  const map = new Map();[...owned, ...starred].forEach(r => map.set(r.full_name, r));
+  const owned=await fetchPaged(base,token);
+  let starred=[]; if(includeStarred) starred=await fetchPaged(`https://api.github.com/users/${PORTFOLIO_GITHUB_USER}/starred`,token);
+  const map=new Map(); [...owned,...starred].forEach(r=>map.set(r.full_name,r));
   return [...map.values()];
 }
 // Récupère la quantité de code utilisée pour chaque langage du dépôt.
-async function fetchLanguages(repo, token = "") { try { return await githubFetch(repo.languages_url, token); } catch { return {}; } }
+async function fetchLanguages(repo, token="") { try { return await githubFetch(repo.languages_url,token); } catch { return {}; } }
 // Liste tous les README présents à la racine ou dans les sous-dossiers.
 // Plusieurs méthodes sont utilisées car certains dépôts privés ne répondent pas toujours
 // correctement avec l'API « arbre Git ». Le README principal est recherché en priorité.
-async function fetchRepositoryReadmeFiles(repo, token = "") {
+async function fetchRepositoryReadmeFiles(repo, token="") {
   if (!repo || !repo.full_name) return [];
 
   const found = new Set();
@@ -406,7 +406,7 @@ async function fetchRepositoryReadmeFiles(repo, token = "") {
 }
 
 // Télécharge le texte du README choisi pour le copier dans la configuration.
-async function fetchReadmeMarkdown(repo, token = "", readmePath = "") {
+async function fetchReadmeMarkdown(repo, token="", readmePath="") {
   if (!repo || !repo.full_name) return "";
   const headers = {
     Accept: "application/vnd.github.raw+json",
@@ -428,7 +428,7 @@ async function fetchReadmeMarkdown(repo, token = "", readmePath = "") {
 }
 
 // Repère les images Markdown et les balises HTML <img> contenues dans un README.
-function extractReadmeImagePaths(markdown = "") {
+function extractReadmeImagePaths(markdown="") {
   const paths = new Set();
   const markdownPattern = /!\[[^\]]*\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g;
   const htmlPattern = /<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi;
@@ -439,7 +439,7 @@ function extractReadmeImagePaths(markdown = "") {
 }
 
 // Transforme un chemin relatif au README en chemin réel dans le dépôt.
-function resolveRepositoryRelativePath(readmePath = "", assetPath = "") {
+function resolveRepositoryRelativePath(readmePath="", assetPath="") {
   const cleanAsset = decodeURIComponent(String(assetPath).split(/[?#]/)[0]).replace(/^\.\//, "");
   if (cleanAsset.startsWith("/")) return cleanAsset.slice(1);
   const baseParts = String(readmePath || "").split("/").slice(0, -1);
@@ -455,7 +455,7 @@ function resolveRepositoryRelativePath(readmePath = "", assetPath = "") {
 
 // Télécharge les petites images relatives d'un README et les stocke sous forme de data URL.
 // Ainsi, une image d'un dépôt privé reste visible sans donner accès au dépôt au visiteur.
-async function snapshotReadmeImages(repo, token = "", readmePath = "", markdown = "") {
+async function snapshotReadmeImages(repo, token="", readmePath="", markdown="") {
   const assets = {};
   const imagePaths = extractReadmeImagePaths(markdown);
   const maxBytesPerImage = 2 * 1024 * 1024;
@@ -497,13 +497,13 @@ function localReadmeUrl(project) {
   return `./Projet_qui_ne_sont_pas_en_lien/readme.html?project=${encodeURIComponent(project.id || project.repository || "")}`;
 }
 // Lit projects-config.json publié à la racine du portfolio.
-async function loadPublishedConfig() { try { const r = await fetch(`${PORTFOLIO_CONFIG_URL}?v=${Date.now()}`); if (!r.ok) throw 0; return await r.json(); } catch { return { githubUser: PORTFOLIO_GITHUB_USER, projects: [] }; } }
+async function loadPublishedConfig(){ try { const r=await fetch(`${PORTFOLIO_CONFIG_URL}?v=${Date.now()}`); if(!r.ok) throw 0; return await r.json(); } catch { return {githubUser:PORTFOLIO_GITHUB_USER,projects:[]}; } }
 // Lit le brouillon enregistré dans le navigateur par le dashboard.
-function loadDraftConfig() { try { return JSON.parse(localStorage.getItem(PORTFOLIO_DRAFT_KEY)); } catch { return null; } }
+function loadDraftConfig(){ try{return JSON.parse(localStorage.getItem(PORTFOLIO_DRAFT_KEY));}catch{return null;} }
 // Enregistre le brouillon du dashboard dans le navigateur.
-function saveDraftConfig(c) { localStorage.setItem(PORTFOLIO_DRAFT_KEY, JSON.stringify(c)); }
+function saveDraftConfig(c){localStorage.setItem(PORTFOLIO_DRAFT_KEY,JSON.stringify(c));}
 // Protège un texte avant de l’insérer dans du HTML.
-function esc(v) { return String(v ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'); }
+function esc(v){return String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');}
 
 const LANGUAGE_META = {
   "HTML": { slug: "html", color: "#e34c26" },
@@ -542,7 +542,7 @@ function languageCategory(language) {
 }
 // Transforme le nom technique d’une catégorie en libellé lisible.
 function languageLabelFromSlug(slug) {
-  const found = Object.entries(LANGUAGE_META).find(([, meta]) => meta.slug === slug);
+  const found = Object.entries(LANGUAGE_META).find(([,meta]) => meta.slug === slug);
   return found ? found[0] : String(slug || 'autre').replaceAll('-', ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 // Retourne la couleur associée au langage ou à la catégorie.
@@ -556,7 +556,7 @@ function languageColor(languageOrSlug) {
 function languageCategories(languages = []) { return [...new Set(languages.filter(Boolean).map(languageCategory))]; }
 // Choisit le langage qui représente le plus grand nombre d’octets de code.
 function dominantLanguage(languageBytes = {}, languages = []) {
-  const entries = Object.entries(languageBytes || {}).sort((a, b) => b[1] - a[1]);
+  const entries = Object.entries(languageBytes || {}).sort((a,b) => b[1]-a[1]);
   return entries[0]?.[0] || languages[0] || '';
 }
 // Donne la priorité à Symfony ou WordPress sur le simple langage PHP.
@@ -580,10 +580,72 @@ function primaryProjectCategory(repo = {}, project = {}) {
   const primary = project.primaryLanguage || dominantLanguage(project.languageBytes || repo._languageBytes || {}, project.languages || Object.keys(repo._languages || {}));
   return { category: languageCategory(primary || 'Autre'), label: primary || 'Autre' };
 }
+
+
+// =====================================================================
+// GROUPE DE PRÉSENTATION SUR LA PAGE D’ACCUEIL
+// =====================================================================
+// Cette classification ne remplace pas la catégorie technique.
+// Elle sert uniquement à organiser le portfolio selon l’intérêt du projet.
+const PORTFOLIO_SECTION_META = {
+  featured: { label: "Projets phares", icon: "⭐" },
+  useful: { label: "Outils utiles", icon: "🧰" },
+  experiments: { label: "Défis & expérimentations", icon: "🧪" }
+};
+
+function portfolioSectionLabel(section) {
+  return PORTFOLIO_SECTION_META[section]?.label || PORTFOLIO_SECTION_META.experiments.label;
+}
+
+// Propose intelligemment le groupe d’un projet.
+// Le choix manuel du dashboard reste toujours prioritaire.
+function inferPortfolioSection(repo = {}, project = {}) {
+  if (project.portfolioSectionOverride && PORTFOLIO_SECTION_META[project.portfolioSectionOverride]) {
+    return project.portfolioSectionOverride;
+  }
+
+  const technical = primaryProjectCategory(repo, {...project, categoryOverride: project.categoryOverride || ""});
+  const text = [
+    project.title, project.repository, project.description, project.localPage,
+    repo.name, repo.description, ...(repo.topics || [])
+  ].filter(Boolean).join(" ").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  // Petits outils pensés pour rendre une tâche concrète plus simple.
+  if (/calculatrice|convertisseur|conversion|tva|promotion|age|unite|devise|alimentation|nourriture|cours[- _]|generateur/.test(text)) {
+    return "useful";
+  }
+
+  // Jeux, exercices et projets conçus principalement pour apprendre ou se challenger.
+  if (/jeu|game|shifumi|wolf|dragon|manga|clicker|cliker|quiz|concours|eloquence|pot[- _]au[- _]lapin/.test(text)) {
+    return "experiments";
+  }
+
+  // Les projets Data, d’automatisation ou les applications plus structurées
+  // sont proposés comme projets phares.
+  if (/data|qualite|automatisation|reattribution|scanner|ticket|decoupe|dashboard|refuge|bibliotheque|epave/.test(text)) {
+    return "featured";
+  }
+
+  if (["jupyter-notebook", "python", "symfony"].includes(technical.category)) {
+    return "featured";
+  }
+
+  // Petit score de complexité pour les projets qui ne correspondent
+  // à aucun mot-clé évident.
+  let score = 0;
+  const languages = project.languages || Object.keys(repo._languages || {});
+  if (languages.length >= 3) score += 1;
+  if (project.readmeMarkdown || project.readmeAvailable) score += 1;
+  if (project.localPage) score += 1;
+  if (detectFrameworkCategory(repo, project)) score += 2;
+
+  return score >= 3 ? "featured" : "experiments";
+}
+
 // Retourne rapidement la catégorie principale d’un projet.
-function inferCategory(repo, setting = {}) { return primaryProjectCategory(repo, setting).category; }
+function inferCategory(repo,setting={}) { return primaryProjectCategory(repo, setting).category; }
 // Choisit le lien final du bouton « Voir plus ». 
-function destination(repo, p) { if (p.destination === 'local' && p.localPage) return p.localPage; if (p.destination === 'demo' && (p.publicUrl || repo.homepage)) return p.publicUrl || repo.homepage; if (p.destination === 'readme') return p.readmeMarkdown ? localReadmeUrl(p) : (p.private ? localReadmeUrl(p) : `${repo.html_url}#readme`); if (p.destination === 'github') return repo.html_url; return p.localPage || p.publicUrl || repo.homepage || (p.readmeMarkdown ? localReadmeUrl(p) : `${repo.html_url}#readme`); }
+function destination(repo,p){ if(p.destination==='local'&&p.localPage)return p.localPage; if(p.destination==='demo'&&(p.publicUrl||repo.homepage))return p.publicUrl||repo.homepage; if(p.destination==='readme')return p.readmeMarkdown ? localReadmeUrl(p) : (p.private ? localReadmeUrl(p) : `${repo.html_url}#readme`); if(p.destination==='github')return repo.html_url; return p.localPage||p.publicUrl||repo.homepage||(p.readmeMarkdown?localReadmeUrl(p):`${repo.html_url}#readme`); }
 // Choisit l’image de la carte selon le mode sélectionné dans le dashboard.
 function projectImage(repo, p) {
   // Le GIF « travaux » sert de secours lorsqu’aucune image n’a été choisie
@@ -603,4 +665,4 @@ function projectImage(repo, p) {
   return PORTFOLIO_WORK_GIF;
 }
 // Crée le fichier projects-config.json et lance son téléchargement.
-function downloadConfig(c) { const b = new Blob([JSON.stringify(c, null, 2)], { type: 'application/json' }); const u = URL.createObjectURL(b); const a = document.createElement('a'); a.href = u; a.download = 'projects-config.json'; a.click(); URL.revokeObjectURL(u); }
+function downloadConfig(c){const b=new Blob([JSON.stringify(c,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='projects-config.json';a.click();URL.revokeObjectURL(u);}
