@@ -330,89 +330,28 @@ async function fetchLanguages(repo, token="") { try { return await githubFetch(r
 // Plusieurs méthodes sont utilisées car certains dépôts privés ne répondent pas toujours
 // correctement avec l'API « arbre Git ». Le README principal est recherché en priorité.
 async function fetchRepositoryReadmeFiles(repo, token="") {
-  if (!repo || !repo.full_name) return [];
-
-  const found = new Set();
-  const branchName = repo.default_branch || "main";
-  const encodedBranch = encodeURIComponent(branchName);
-  let lastAccessError = null;
-
-  function addReadmePath(path) {
-    if (path && /(^|\/)readme(?:[-_. ][^\/]*)?\.(md|markdown|txt)$/i.test(path)) {
-      found.add(path);
-    }
-  }
-
-  // Vérifie d'abord les noms les plus courants directement.
-  // Cette vérification résout notamment les dépôts privés pour lesquels l'arbre Git
-  // complet n'est pas renvoyé alors que README.md existe bien à la racine.
-  const commonCandidates = [
-    "README.md", "readme.md", "README.MD", "README.markdown", "README.txt"
-  ];
-
-  for (const candidate of commonCandidates) {
-    try {
-      await githubFetch(
-        `https://api.github.com/repos/${repo.full_name}/contents/${encodeURIComponent(candidate)}?ref=${encodedBranch}`,
-        token
-      );
-      addReadmePath(candidate);
-    } catch (error) {
-      if ([401, 403].includes(error?.status)) lastAccessError = error;
-    }
-  }
-
-  // Route spéciale du README principal.
+  if (!repo?.full_name) return [];
+  const branch = encodeURIComponent(repo.default_branch || "main");
+  const base = "https://api.github.com/repos/" + repo.full_name;
+  let files = [];
   try {
-    const mainReadme = await githubFetch(
-      `https://api.github.com/repos/${repo.full_name}/readme?ref=${encodedBranch}`,
-      token
-    );
-    addReadmePath(mainReadme?.path || mainReadme?.name);
+    const tree = await githubFetch(base + "/git/trees/" + branch + "?recursive=1", token);
+    files = (tree.tree || []).filter(item => item.type === "blob"
+      && /(^|\/)readme(?:[-_. ][^\/]*)?\.(md|markdown|txt)$/i.test(item.path)).map(item => item.path);
+    if (!tree.truncated) return files.sort((a,b) => Number(a.includes("/")) - Number(b.includes("/")) || a.localeCompare(b));
   } catch (error) {
-    if ([401, 403].includes(error?.status)) lastAccessError = error;
+    if (error.status !== 404 && error.status !== 409) throw error;
   }
-
-  // Arbre complet : permet de trouver les README des sous-dossiers.
   try {
-    const tree = await githubFetch(
-      `https://api.github.com/repos/${repo.full_name}/git/trees/${encodedBranch}?recursive=1`,
-      token
-    );
-    for (const item of (tree.tree || [])) {
-      if (item.type === "blob") addReadmePath(item.path || "");
-    }
+    const readme = await githubFetch(base + "/readme?ref=" + branch, token);
+    const name = readme.path || readme.name;
+    if (name && !files.includes(name)) files.unshift(name);
   } catch (error) {
-    if ([401, 403].includes(error?.status)) lastAccessError = error;
+    if (error.status !== 404 && error.status !== 409) throw error;
   }
-
-  // Liste de la racine comme dernière méthode de détection.
-  try {
-    const rootFiles = await githubFetch(
-      `https://api.github.com/repos/${repo.full_name}/contents?ref=${encodedBranch}`,
-      token
-    );
-    if (Array.isArray(rootFiles)) {
-      rootFiles.forEach(item => {
-        if (item.type === "file") addReadmePath(item.path || item.name || "");
-      });
-    }
-  } catch (error) {
-    if ([401, 403].includes(error?.status)) lastAccessError = error;
-  }
-
-  const files = [...found].sort((a, b) => {
-    const aRoot = a.includes("/") ? 1 : 0;
-    const bRoot = b.includes("/") ? 1 : 0;
-    return aRoot - bRoot || a.localeCompare(b, "fr", { sensitivity: "base" });
-  });
-
-  // On ne masque plus un problème de droit derrière « Aucun README trouvé ».
-  if (!files.length && lastAccessError) throw lastAccessError;
   return files;
 }
 
-// Télécharge le texte du README choisi pour le copier dans la configuration.
 async function fetchReadmeMarkdown(repo, token="", readmePath="") {
   if (!repo || !repo.full_name) return "";
   const headers = {
@@ -672,4 +611,14 @@ function projectImage(repo, p) {
   return PORTFOLIO_WORK_GIF;
 }
 // Crée le fichier projects-config.json et lance son téléchargement.
-function downloadConfig(c){const b=new Blob([JSON.stringify(c,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='projects-config.json';a.click();URL.revokeObjectURL(u);}
+function downloadConfig(c) {
+  const blob = new Blob([JSON.stringify(c, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "projects-config.json";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}

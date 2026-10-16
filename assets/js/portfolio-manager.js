@@ -689,12 +689,18 @@ async function pmSave() {
 async function pmExport() {
     const button = document.activeElement;
     if (button?.tagName === "BUTTON") button.disabled = true;
+    const message = document.getElementById("pm-message");
     try {
         const config = pmCollect();
-        await pmSyncReadmes(config);
-        saveDraftConfig(config);
+        // Exporter les donnees deja chargees ne demande aucun appel GitHub.
+        let saved = true;
+        try { saveDraftConfig(config); } catch { saved = false; }
         downloadConfig(config);
-        document.getElementById("pm-message").textContent = "projects-config.json téléchargé avec les README copiés localement. Aucun token n’est exporté.";
+        message.textContent = saved
+            ? "Export JSON lance. Remplace projects-config.json dans le portfolio avec le fichier telecharge."
+            : "Export JSON lance. Stockage du navigateur plein : conserve le fichier telecharge.";
+    } catch (error) {
+        message.textContent = "Export impossible : " + error.message;
     } finally {
         if (button?.tagName === "BUTTON") button.disabled = false;
     }
