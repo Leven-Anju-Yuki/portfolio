@@ -63,6 +63,10 @@
     {
       "path": "assets/image/image-accueil/wolf.png",
       "title": "wolf"
+    },
+    {
+      "path": "assets/image/image-accueil/Extranet_VIT.png",
+      "title": "Extranet VIT"
     }
   ]
 }
