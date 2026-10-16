@@ -322,29 +322,6 @@ aside {
 /* ===============  ACCES DASHBOARD  =================== */
 /* =================================================== */
 
-/* Bouton volontairement discret : pas de bordure ni de fond visible,
-   juste assez opaque pour rester cliquable. Placé dans le footer. */
-#dashboard-lock-btn {
-    position: fixed;
-    bottom: 8px;
-    left: 8px;
-    z-index: 200;
-    width: 22px;
-    height: 22px;
-    border: none;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.15);
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 0;
-    line-height: 22px;
-    text-align: center;
-}
-
-#dashboard-lock-btn:hover {
-    color: rgba(255, 255, 255, 0.5);
-}
-
 /* =================================================== */
 /* ===================  RESPONSIVE  ==================== */
 /* =================================================== */

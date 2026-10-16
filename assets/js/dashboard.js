@@ -235,7 +235,7 @@ async function refreshAll() {
     lastUpdate.textContent = "Dernière actualisation : " + new Date().toLocaleString("fr-FR");
 }
 
-refreshAll();
+loadCategoryPanel().catch(console.error);
 
 // =====================================================================
 // CHARTS

@@ -155,7 +155,8 @@ async function portfolioManagerInit() {
     const tokenInput = document.getElementById("pm-token");
     if (tokenInput && savedToken) tokenInput.value = savedToken;
 
-    await portfolioRefresh(false);
+    renderPM();
+    document.getElementById("pm-status").textContent = "Configuration locale chargee. Clique sur Actualiser GitHub pour synchroniser.";
 }
 
 // Recopie les choix visibles du tableau avant une actualisation pour ne rien perdre.
@@ -253,8 +254,7 @@ async function portfolioRefresh(keepCurrentChoices = true) {
             activeToken = "";
 
             status.className = "pending";
-            status.textContent = "Token GitHub invalide ou expiré. Chargement des dépôts publics…";
-            pmRepos = await fetchRepositories("", starred);
+            throw new Error("Token GitHub invalide ou expire. Remplace-le avant de relancer la synchronisation.");
         }
 
         status.textContent = `Dépôts trouvés : ${pmRepos.length}. Lecture des langages…`;

@@ -1,6 +1,6 @@
 // Service Worker du portfolio.
 // Le numéro change à chaque correction importante pour supprimer l'ancien cache.
-const CACHE_NAME = "portfolio";
+const CACHE_NAME = "portfolio-v2";
 
 const ASSETS = [
     "./",
@@ -37,6 +37,9 @@ self.addEventListener("fetch", event => {
 
     const url = new URL(event.request.url);
 
+    // Les extensions et les services externes restent geres par le navigateur.
+    if (!["http:", "https:"].includes(url.protocol) || url.origin !== self.location.origin) return;
+
     // Ces fichiers changent souvent : le réseau est toujours prioritaire pour
     // éviter qu'un ancien JavaScript casse la recherche, les filtres ou le dashboard.
     if (
@@ -51,8 +54,14 @@ self.addEventListener("fetch", event => {
     event.respondWith(
         fetch(event.request)
             .then(response => {
-                const copy = response.clone();
-                caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+                if (response.ok && response.status !== 206) {
+                    const copy = response.clone();
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.put(event.request, copy))
+                            .catch(error => console.warn("Cache du portfolio indisponible :", error))
+                    );
+                }
                 return response;
             })
             .catch(() => caches.match(event.request))

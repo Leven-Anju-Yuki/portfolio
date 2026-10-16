@@ -295,7 +295,14 @@ async function githubFetch(url, token = "") {
 
   // On garde le numéro HTTP dans l'erreur pour pouvoir réagir proprement à un token invalide.
   if (!response.ok) {
-    const error = new Error(`GitHub ${response.status} : ${response.statusText}`);
+    const details = await response.json().catch(() => ({}));
+    const rateLimited = response.status === 429
+      || (response.status === 403 && (response.headers.get("x-ratelimit-remaining") === "0"
+        || /rate limit/i.test(details.message || "")));
+    const message = rateLimited
+      ? "Limite de requ\u00eates GitHub atteinte. Ajoute un token GitHub dans le dashboard ou r\u00e9essaie plus tard."
+      : (details.message || response.statusText || "Acc\u00e8s refus\u00e9 par GitHub");
+    const error = new Error(`GitHub ${response.status} : ${message}`);
     error.status = response.status;
     throw error;
   }

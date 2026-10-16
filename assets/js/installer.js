@@ -4,28 +4,32 @@
 // réellement l'installation de la PWA.
 // =====================================================================
 
-// Sur GitHub Pages, le portfolio est dans un sous-dossier.
-// Un chemin relatif évite de chercher sw.js à la racine du domaine.
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js").then(
-            (registration) => {
-                console.log(
-                    "Service Worker enregistré avec le scope :",
-                    registration.scope
-                );
-            },
-            (error) => {
-                console.log(
-                    "Échec de l'enregistrement du Service Worker :",
-                    error
-                );
+// Aucun service worker en local pour eviter les anciennes versions en cache.
+const portfolioWorkerUrl = new URL("../../sw.js", document.currentScript.src);
+const portfolioLocalHost = location.protocol === "file:"
+    || ["localhost", "127.0.0.1", "[::1]", "::1"].includes(location.hostname)
+    || location.hostname.endsWith(".localhost");
+if ("serviceWorker" in navigator && location.protocol !== "file:") {
+    window.addEventListener("load", async () => {
+        try {
+            if (portfolioLocalHost) {
+                const scope = new URL("./", portfolioWorkerUrl).href;
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                let removed = false;
+                for (const registration of registrations) {
+                    if (registration.scope === scope) removed = (await registration.unregister()) || removed;
+                }
+                if (removed && navigator.serviceWorker.controller) location.reload();
+                return;
             }
-        );
+            const registration = await navigator.serviceWorker.register(portfolioWorkerUrl.href, { updateViaCache: "none" });
+            await registration.update();
+        } catch (error) {
+            console.warn("Mise a jour du service worker impossible :", error);
+        }
     });
 }
 
-// L'événement d'installation est conservé jusqu'au clic de l'utilisateur.
 let deferredPrompt = null;
 
 // Le bouton peut ne pas être présent sur toutes les pages.

@@ -1,6 +1,6 @@
 {
   "githubUser": "leven-anju-yuki",
-  "generatedAt": "2026-08-24T07:52:18.054Z",
+  "generatedAt": "2026-10-16T13:50:12.994Z",
   "projects": [
     {
       "id": "projet-dragons",
@@ -137,10 +137,8 @@
         "CSS": 2902,
         "JavaScript": 25
       },
-      "readmeFiles": [
-        "README.md"
-      ],
-      "readmePath": "README.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "symfony",
       "autoCategoryLabel": "Symfony",
       "categoryOverride": "",
@@ -242,10 +240,8 @@
         "CSS": 7483
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [
-        "README.md"
-      ],
-      "readmePath": "README.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -285,10 +281,8 @@
         "CSS": 6461
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -328,10 +322,8 @@
         "CSS": 9719
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -371,10 +363,8 @@
         "CSS": 5032
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [
-        "README.md"
-      ],
-      "readmePath": "README.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -414,10 +404,8 @@
         "CSS": 2500
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -539,10 +527,8 @@
         "CSS": 3689
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -582,10 +568,8 @@
         "CSS": 3430
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -625,10 +609,8 @@
         "CSS": 1221
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [
-        "README.md"
-      ],
-      "readmePath": "README.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -668,10 +650,8 @@
         "HTML": 5586
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -715,16 +695,14 @@
         "HTML": 3283,
         "CSS": 1913
       },
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryOverride": "",
-      "readmeMarkdown": "# 🧵 Tissu Planner – Scanner de tickets\n\n📸 Une application web pour **scanner des tickets de tissu**,  \n📊 **organiser ses tenues**,  \n💰 **calculer automatiquement les coûts**,  \n📱 et l’utiliser facilement sur **téléphone** grâce à une PWA.\n\n---\n\n## ✨ Fonctionnalités\n\n- 📸 Scan de tickets (OCR avec Tesseract.js)\n- ✍️ Pré-remplissage automatique des champs\n- 🧾 Gestion de plusieurs tenues dans un seul tableau\n- 💰 Calcul automatique du prix total\n- 🖨️ Impression propre (A4 paysage)\n- 📱 Installable sur téléphone (PWA)\n- 🌐 Fonctionne hors ligne\n\n---\n\n## 🧱 Structure du projet\n\nSccanner Ticket/\n\n├── index.html\n├── manifest.json\n├── sw.js\n├── assets/\n│ ├── css/\n│ ├── js/\n│ └── icons/\n└── README.md\n\n---\n\n## 🚀 Installation en local\n\n```bash\ngit clone https://github.com/ton-repo/tissu-planner.git\ncd tissu-planner\n```\n- ➡️ Ouvre index.html via un serveur local\n(ex : Live Server sur VS Code)\n\n## 📱 Installation sur téléphone\n- Ouvre l’app dans Chrome\n\n- Clique sur Installer l’application\n\n- L’app s’ajoute à l’écran d’accueil 🎉\n\n## 🛠️ Technologies utilisées\n- HTML / CSS / JavaScript\n\n- 📸 Tesseract.js (OCR)\n\n- 📱 Progressive Web App (PWA)\n\n- 🧾 Google Sheets (à venir)\n\n💜 Projet personnel\nApplication créée pour simplifier la gestion des achats de tissu et mercerie\net éviter la saisie manuelle longue et répétitive ✂️🧵",
+      "readmeMarkdown": "",
       "readmeSnapshotAt": "2026-08-24T07:52:18.076Z",
-      "readmeAvailable": true,
+      "readmeAvailable": false,
       "readmeAssets": {},
       "portfolioSectionOverride": "",
       "portfolioSection": "featured",
@@ -732,46 +710,52 @@
       "diplomaValidation": false
     },
     {
-      "id": "clikergame",
-      "repository": "clikergame",
-      "title": "clikergame",
+      "id": "warrenfall",
+      "repository": "warrenfall",
+      "title": "Warrenfall",
       "visible": true,
-      "category": "html",
+      "category": "javascript",
       "destination": "demo",
       "localPage": "",
-      "publicUrl": "https://leven-anju-yuki.github.io/clikergame/",
-      "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/clikergame/&screenshot=true&meta=false&embed=screenshot.url",
-      "imageMode": "legacy",
+      "publicUrl": "https://leven-anju-yuki.github.io/warrenfall/",
+      "image": "assets/image/image-accueil/Warrenfall.png",
+      "imageMode": "asset",
       "description": "",
       "languages": [
-        "HTML",
         "JavaScript",
-        "CSS"
+        "CSS",
+        "HTML",
+        "Python",
+        "PowerShell",
+        "Jupyter Notebook",
+        "Batchfile"
       ],
       "topics": [],
       "private": false,
       "fork": false,
       "framework": "",
       "languageBytes": {
-        "HTML": 111248,
-        "JavaScript": 20821,
-        "CSS": 6060
+        "JavaScript": 569436,
+        "CSS": 308032,
+        "HTML": 83737,
+        "Python": 66761,
+        "PowerShell": 18397,
+        "Jupyter Notebook": 11351,
+        "Batchfile": 74
       },
-      "primaryLanguage": "HTML",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
-      "autoCategory": "html",
-      "autoCategoryLabel": "HTML",
-      "categoryLabel": "HTML",
+      "primaryLanguage": "JavaScript",
+      "readmeFiles": [],
+      "readmePath": "",
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryLabel": "JavaScript",
       "categories": [
-        "html"
+        "javascript"
       ],
       "categoryOverride": "",
-      "portfolioSectionOverride": "",
-      "portfolioSection": "experiments",
-      "portfolioSectionLabel": "Défis & expérimentations",
+      "portfolioSectionOverride": "featured",
+      "portfolioSection": "featured",
+      "portfolioSectionLabel": "Projets phares",
       "diplomaValidation": false
     },
     {
@@ -801,10 +785,8 @@
         "CSS": 6512
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -831,23 +813,21 @@
       "description": "",
       "languages": [
         "HTML",
-        "JavaScript",
-        "CSS"
+        "CSS",
+        "JavaScript"
       ],
       "topics": [],
       "private": false,
       "fork": false,
       "framework": "",
       "languageBytes": {
-        "HTML": 67893,
-        "JavaScript": 6689,
-        "CSS": 6217
+        "HTML": 78315,
+        "CSS": 6857,
+        "JavaScript": 4229
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -947,11 +927,8 @@
         "CSS": 3090
       },
       "primaryLanguage": "PHP",
-      "readmeFiles": [
-        "README.md",
-        "node_modules/leaflet/README.md"
-      ],
-      "readmePath": "README.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "autoCategory": "symfony",
       "autoCategoryLabel": "Symfony",
       "categoryOverride": "",
@@ -1024,10 +1001,8 @@
       },
       "primaryLanguage": "JavaScript",
       "topics": [],
-      "readmeFiles": [
-        "readme.md"
-      ],
-      "readmePath": "readme.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "private": false,
       "fork": false,
       "framework": "",
@@ -1147,21 +1122,8 @@
       },
       "primaryLanguage": "HTML",
       "topics": [],
-      "readmeFiles": [
-        "assets/font/dragon/Exo_2/README.txt",
-        "assets/font/dragon/playfair-Display/README.txt",
-        "assets/font/dragon/Raleway/README.txt",
-        "assets/font/dragon/Smooch_Sans/README.txt",
-        "assets/font/dragon/Space_Grotesk/README.txt",
-        "assets/font/dragon/Teko/README.txt",
-        "assets/font/manga-game/beast-tamer/sono/README.txt",
-        "assets/font/manga-game/bofuri/Josefin_Sans/README.txt",
-        "assets/font/manga-game/dungeons/Alkatra/README.txt",
-        "assets/font/manga-game/strike-the-blood/playfair-Display/README.txt",
-        "assets/font/manga-game/tokyo-ghoul/rubik/README.txt",
-        "assets/font/manga-game/zelda/EB-Garamond/README.txt"
-      ],
-      "readmePath": "assets/font/dragon/Exo_2/README.txt",
+      "readmeFiles": [],
+      "readmePath": "",
       "private": false,
       "fork": false,
       "framework": "",
@@ -1234,10 +1196,8 @@
       "languageBytes": {},
       "primaryLanguage": "",
       "topics": [],
-      "readmeFiles": [
-        "README.md"
-      ],
-      "readmePath": "README.md",
+      "readmeFiles": [],
+      "readmePath": "",
       "private": false,
       "fork": false,
       "framework": "",
