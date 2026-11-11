@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const draft = loadDraftConfig();
     const config = consolidateMergedProjects(draft || published);
     const project = (config.projects || []).find(item =>
-        String(item.id || item.repository || "") === projectId
+        [item.id, item.repository].some(value => value && String(value).toLowerCase() === projectId.toLowerCase())
     );
 
     if (!project) {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ).join("");
 
     if (!project.readmeMarkdown) {
-        content.innerHTML = `<p>Le README n’a pas encore été copié dans le portfolio. Retourne dans le dashboard, choisis « README local », sélectionne le fichier, puis enregistre la configuration.</p>`;
+        content.innerHTML = "<p>La présentation de ce projet sera bientôt disponible.</p>";
         return;
     }
 
@@ -128,7 +128,7 @@ function resolveReadmeImage(project, originalUrl) {
 function renderReadmeImage(project, url, alt = "", width = "") {
     const source = resolveReadmeImage(project, url);
     if (!source) {
-        return `<span class="readme-image-note">🖼️ ${esc(alt || "Image du README")} — retourne dans le dashboard et enregistre de nouveau le README pour copier l’image.</span>`;
+        return `<span class="readme-image-note">${esc(alt || "Image du README")} — image indisponible.`;
     }
 
     const numericWidth = String(width || "").match(/^\d{1,4}$/)?.[0];

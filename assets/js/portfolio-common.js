@@ -6,7 +6,14 @@
 
 // Le dashboard est dans /admin tandis que l'index est à la racine.
 // La balise <base> du dashboard permet à ce chemin de fonctionner dans les deux pages.
-const PORTFOLIO_CONFIG_URL = "./projects-config.json";
+const PORTFOLIO_ROOT_URL = new URL("../../", document.currentScript.src);
+const PORTFOLIO_CONFIG_URL = new URL("projects-config.json", PORTFOLIO_ROOT_URL).href;
+
+function isLocalPortfolio() {
+  return location.protocol === "file:"
+    || ["localhost", "127.0.0.1", "[::1]", "::1"].includes(location.hostname)
+    || location.hostname.endsWith(".localhost");
+}
 const PORTFOLIO_DRAFT_KEY = "portfolio-projects-draft-v22";
 const PORTFOLIO_TOKEN_KEY = "portfolio-github-token-session";
 const PORTFOLIO_GITHUB_USER = "leven-anju-yuki";
@@ -440,12 +447,12 @@ async function snapshotReadmeImages(repo, token="", readmePath="", markdown="") 
 
 // Construit le lien vers la page locale qui met le README en forme.
 function localReadmeUrl(project) {
-  return `./Projet_qui_ne_sont_pas_en_lien/readme.html?project=${encodeURIComponent(project.id || project.repository || "")}`;
+  return new URL(`Projet_qui_ne_sont_pas_en_lien/readme.html?project=${encodeURIComponent(project.id || project.repository || "")}`, PORTFOLIO_ROOT_URL).href;
 }
 // Lit projects-config.json publié à la racine du portfolio.
 async function loadPublishedConfig(){ try { const r=await fetch(`${PORTFOLIO_CONFIG_URL}?v=${Date.now()}`); if(!r.ok) throw 0; return await r.json(); } catch { return {githubUser:PORTFOLIO_GITHUB_USER,projects:[]}; } }
 // Lit le brouillon enregistré dans le navigateur par le dashboard.
-function loadDraftConfig(){ try{return JSON.parse(localStorage.getItem(PORTFOLIO_DRAFT_KEY));}catch{return null;} }
+function loadDraftConfig(){ if (!isLocalPortfolio()) return null; try{return JSON.parse(localStorage.getItem(PORTFOLIO_DRAFT_KEY));}catch{return null;} }
 // Enregistre le brouillon du dashboard dans le navigateur.
 function saveDraftConfig(c){localStorage.setItem(PORTFOLIO_DRAFT_KEY,JSON.stringify(c));}
 // Protège un texte avant de l’insérer dans du HTML.
