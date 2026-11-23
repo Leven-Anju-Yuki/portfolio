@@ -1,6 +1,6 @@
 {
   "githubUser": "leven-anju-yuki",
-  "generatedAt": "2026-10-16T13:50:12.994Z",
+  "generatedAt": "2026-11-23T16:59:33.508Z",
   "projects": [
     {
       "id": "projet-dragons",
@@ -137,8 +137,10 @@
         "CSS": 2902,
         "JavaScript": 25
       },
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
       "autoCategory": "symfony",
       "autoCategoryLabel": "Symfony",
       "categoryOverride": "",
@@ -172,8 +174,7 @@
       "portfolioSectionOverride": "",
       "portfolioSection": "useful",
       "portfolioSectionLabel": "Outils utiles",
-      "diplomaValidation": false,
-      "readmeFiles": []
+      "diplomaValidation": false
     },
     {
       "id": "magasin",
@@ -241,8 +242,10 @@
         "CSS": 7483
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -282,8 +285,10 @@
         "CSS": 6461
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -323,8 +328,10 @@
         "CSS": 9719
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -364,8 +371,10 @@
         "CSS": 5032
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -405,8 +414,10 @@
         "CSS": 2500
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -528,8 +539,10 @@
         "CSS": 3689
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -569,8 +582,10 @@
         "CSS": 3430
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -610,8 +625,10 @@
         "CSS": 1221
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -651,8 +668,10 @@
         "HTML": 5586
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -679,8 +698,8 @@
       "description": "",
       "languages": [
         "JavaScript",
-        "HTML",
-        "CSS"
+        "CSS",
+        "HTML"
       ],
       "topics": [],
       "private": false,
@@ -692,12 +711,14 @@
       ],
       "framework": "",
       "languageBytes": {
-        "JavaScript": 6795,
-        "HTML": 3283,
-        "CSS": 1913
+        "JavaScript": 138935,
+        "CSS": 15168,
+        "HTML": 12180
       },
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryOverride": "",
@@ -711,38 +732,32 @@
       "diplomaValidation": false
     },
     {
-      "id": "warrenfall",
-      "repository": "warrenfall",
-      "title": "Warrenfall",
+      "id": "clikergame",
+      "repository": "clikergame",
+      "title": "clikergame",
       "visible": true,
       "category": "javascript",
       "destination": "demo",
       "localPage": "",
-      "publicUrl": "https://leven-anju-yuki.github.io/warrenfall/",
-      "image": "assets/image/image-accueil/Warrenfall.png",
-      "imageMode": "asset",
+      "publicUrl": "https://leven-anju-yuki.github.io/clikergame/",
+      "image": "https://api.microlink.io/?url=https://leven-anju-yuki.github.io/clikergame/&screenshot=true&meta=false&embed=screenshot.url",
+      "imageMode": "legacy",
       "description": "",
       "languages": [
         "JavaScript",
         "CSS",
         "HTML",
-        "Python",
-        "PowerShell",
-        "Jupyter Notebook",
-        "Batchfile"
+        "Jupyter Notebook"
       ],
       "topics": [],
       "private": false,
       "fork": false,
       "framework": "",
       "languageBytes": {
-        "JavaScript": 569436,
-        "CSS": 308032,
-        "HTML": 83737,
-        "Python": 66761,
-        "PowerShell": 18397,
-        "Jupyter Notebook": 11351,
-        "Batchfile": 74
+        "JavaScript": 198398,
+        "CSS": 115514,
+        "HTML": 34503,
+        "Jupyter Notebook": 11351
       },
       "primaryLanguage": "JavaScript",
       "readmeFiles": [
@@ -763,9 +778,9 @@
         "javascript"
       ],
       "categoryOverride": "",
-      "portfolioSectionOverride": "featured",
-      "portfolioSection": "featured",
-      "portfolioSectionLabel": "Projets phares",
+      "portfolioSectionOverride": "",
+      "portfolioSection": "experiments",
+      "portfolioSectionLabel": "Défis & expérimentations",
       "diplomaValidation": false
     },
     {
@@ -783,20 +798,24 @@
       "languages": [
         "JavaScript",
         "HTML",
-        "CSS"
+        "CSS",
+        "PowerShell"
       ],
       "topics": [],
       "private": false,
       "fork": false,
       "framework": "",
       "languageBytes": {
-        "JavaScript": 75470,
-        "HTML": 45649,
-        "CSS": 6512
+        "JavaScript": 147468,
+        "HTML": 37570,
+        "CSS": 27611,
+        "PowerShell": 2808
       },
       "primaryLanguage": "JavaScript",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "javascript",
       "autoCategoryLabel": "JavaScript",
       "categoryLabel": "JavaScript",
@@ -836,8 +855,10 @@
         "JavaScript": 4229
       },
       "primaryLanguage": "HTML",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "autoCategory": "html",
       "autoCategoryLabel": "HTML",
       "categoryLabel": "HTML",
@@ -875,8 +896,7 @@
       "portfolioSectionOverride": "",
       "portfolioSection": "featured",
       "portfolioSectionLabel": "Projets phares",
-      "diplomaValidation": false,
-      "readmeFiles": []
+      "diplomaValidation": false
     },
     {
       "id": "cle-de-fa",
@@ -903,8 +923,7 @@
       "portfolioSectionOverride": "",
       "portfolioSection": "experiments",
       "portfolioSectionLabel": "Défis & expérimentations",
-      "diplomaValidation": false,
-      "readmeFiles": []
+      "diplomaValidation": false
     },
     {
       "id": "projet-epave",
@@ -939,8 +958,11 @@
         "CSS": 3090
       },
       "primaryLanguage": "PHP",
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "README.md",
+        "node_modules/leaflet/README.md"
+      ],
+      "readmePath": "README.md",
       "autoCategory": "symfony",
       "autoCategoryLabel": "Symfony",
       "categoryOverride": "",
@@ -1004,17 +1026,19 @@
         "Batchfile"
       ],
       "languageBytes": {
-        "JavaScript": 120676,
-        "HTML": 112197,
-        "CSS": 64696,
+        "JavaScript": 119132,
+        "HTML": 112005,
+        "CSS": 64164,
         "Python": 6336,
         "Shell": 80,
         "Batchfile": 59
       },
       "primaryLanguage": "JavaScript",
       "topics": [],
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "readme.md"
+      ],
+      "readmePath": "readme.md",
       "private": false,
       "fork": false,
       "framework": "",
@@ -1134,8 +1158,21 @@
       },
       "primaryLanguage": "HTML",
       "topics": [],
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "assets/font/dragon/Exo_2/README.txt",
+        "assets/font/dragon/playfair-Display/README.txt",
+        "assets/font/dragon/Raleway/README.txt",
+        "assets/font/dragon/Smooch_Sans/README.txt",
+        "assets/font/dragon/Space_Grotesk/README.txt",
+        "assets/font/dragon/Teko/README.txt",
+        "assets/font/manga-game/beast-tamer/sono/README.txt",
+        "assets/font/manga-game/bofuri/Josefin_Sans/README.txt",
+        "assets/font/manga-game/dungeons/Alkatra/README.txt",
+        "assets/font/manga-game/strike-the-blood/playfair-Display/README.txt",
+        "assets/font/manga-game/tokyo-ghoul/rubik/README.txt",
+        "assets/font/manga-game/zelda/EB-Garamond/README.txt"
+      ],
+      "readmePath": "assets/font/dragon/Exo_2/README.txt",
       "private": false,
       "fork": false,
       "framework": "",
@@ -1208,8 +1245,10 @@
       "languageBytes": {},
       "primaryLanguage": "",
       "topics": [],
-      "readmeFiles": [],
-      "readmePath": "",
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
       "private": false,
       "fork": false,
       "framework": "",
@@ -1682,8 +1721,7 @@
       "portfolioSectionOverride": "",
       "portfolioSection": "experiments",
       "portfolioSectionLabel": "Défis & expérimentations",
-      "diplomaValidation": false,
-      "readmeFiles": []
+      "diplomaValidation": false
     },
     {
       "id": "automatisation_suivi_qualite",
@@ -1708,7 +1746,7 @@
         "Jupyter Notebook"
       ],
       "languageBytes": {
-        "Jupyter Notebook": 969388
+        "Jupyter Notebook": 384019
       },
       "primaryLanguage": "Jupyter Notebook",
       "topics": [],
@@ -1841,6 +1879,105 @@
       "readmeAssets": {},
       "readmeSnapshotAt": "2026-09-29T07:40:05.403Z",
       "readmeAvailable": true
+    },
+    {
+      "id": "observatoire_meteo_frequentation",
+      "repository": "Observatoire_meteo_frequentation",
+      "title": "Observatoire meteo frequentation",
+      "visible": true,
+      "autoCategory": "python",
+      "autoCategoryLabel": "Python",
+      "categoryOverride": "",
+      "category": "python",
+      "categoryLabel": "Python",
+      "categories": [
+        "python"
+      ],
+      "destination": "readme",
+      "localPage": "",
+      "publicUrl": "",
+      "image": "assets/image/image-accueil/couverture-observatoire.png",
+      "imageMode": "asset",
+      "description": "",
+      "languages": [
+        "Python",
+        "HTML",
+        "Jupyter Notebook"
+      ],
+      "languageBytes": {
+        "Python": 54875,
+        "HTML": 46028,
+        "Jupyter Notebook": 17905
+      },
+      "primaryLanguage": "Python",
+      "topics": [],
+      "readmeFiles": [
+        "README.md"
+      ],
+      "readmePath": "README.md",
+      "private": true,
+      "fork": false,
+      "framework": "",
+      "portfolioSectionOverride": "",
+      "portfolioSection": "featured",
+      "portfolioSectionLabel": "Projets phares",
+      "diplomaValidation": false
+    },
+    {
+      "id": "warrenfall",
+      "repository": "warrenfall",
+      "title": "warrenfall",
+      "visible": false,
+      "autoCategory": "javascript",
+      "autoCategoryLabel": "JavaScript",
+      "categoryOverride": "",
+      "category": "javascript",
+      "categoryLabel": "JavaScript",
+      "categories": [
+        "javascript"
+      ],
+      "destination": "demo",
+      "localPage": "",
+      "publicUrl": "https://leven-anju-yuki.github.io/warrenfall/",
+      "image": "",
+      "imageMode": "screenshot",
+      "description": "",
+      "languages": [
+        "JavaScript",
+        "CSS",
+        "Python",
+        "HTML",
+        "PowerShell",
+        "Jupyter Notebook",
+        "Batchfile"
+      ],
+      "languageBytes": {
+        "JavaScript": 973727,
+        "CSS": 313093,
+        "Python": 296215,
+        "HTML": 84960,
+        "PowerShell": 30677,
+        "Jupyter Notebook": 11351,
+        "Batchfile": 204
+      },
+      "primaryLanguage": "JavaScript",
+      "topics": [],
+      "readmeFiles": [
+        "readme.md",
+        "assets/audio/egg/README.txt",
+        "assets/audio/evenements/nouvel_an_chinois/README.txt",
+        "assets/audio/README_AUDIO.txt",
+        "docs/archives/a-faire/README.md",
+        "tools/agent_lapinous/README_INSTALLATION.md"
+      ],
+      "readmePath": "readme.md",
+      "private": false,
+      "fork": false,
+      "framework": "",
+      "portfolioSectionOverride": "",
+      "portfolioSection": "experiments",
+      "portfolioSectionLabel": "Défis & expérimentations",
+      "diplomaValidation": false
     }
   ]
 }
